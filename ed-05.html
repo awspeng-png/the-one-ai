@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 - 20260518</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #E8E6DD;
+    padding: 24px 12px;
+    line-height: 1.6;
+    color: #2C2C2A;
+  }
+
+  .paper {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #FAFAF7;
+    border: 1px solid #D3D1C7;
+    padding: 36px 44px 32px;
+    position: relative;
+  }
+
+  /* 報頭 */
+  .masthead {
+    border-bottom: 2px solid #A32D2D;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .brand {
+    font-family: 'Noto Serif TC', serif;
+    color: #A32D2D;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 8px;
+  }
+  .meta .subtitle {
+    font-size: 13px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .meta .date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 1px;
+  }
+
+  /* 主標 */
+  .headline {
+    margin: 24px 0 18px;
+  }
+  .headline h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .headline .lede {
+    font-size: 13.5px;
+    color: #5F5E5A;
+    line-height: 1.7;
+    border-left: 3px solid #D3D1C7;
+    padding-left: 12px;
+  }
+
+  /* 三層分類區 */
+  .section {
+    margin-top: 20px;
+    padding: 16px 18px 18px;
+    border-radius: 6px;
+  }
+  .section h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .news-item {
+    padding: 9px 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .news-item:first-of-type { border-top: none; padding-top: 4px; }
+  .news-item .num {
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 6px;
+  }
+  .news-item .title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+  }
+  .news-item .body {
+    font-size: 13px;
+    color: #444441;
+    line-height: 1.75;
+    margin-top: 5px;
+  }
+  .news-item .source {
+    font-size: 11.5px;
+    color: #5F5E5A;
+    margin-top: 4px;
+    font-style: normal;
+  }
+
+  /* 三層配色 */
+  .sec-digitize { background: #EAF3DE; }
+  .sec-digitize h2 { color: #27500A; }
+  .sec-digitize .num { color: #639922; }
+
+  .sec-optimize { background: #E6F1FB; }
+  .sec-optimize h2 { color: #0C447C; }
+  .sec-optimize .num { color: #185FA5; }
+
+  .sec-transform { background: #EEEDFE; }
+  .sec-transform h2 { color: #3C3489; }
+  .sec-transform .num { color: #534AB7; }
+
+  /* 治理重點 */
+  .governance {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background: #FAFAF7;
+    border: 1px solid #D3D1C7;
+    border-radius: 6px;
+  }
+  .governance .gov-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #A32D2D;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .gov-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .gov-cell h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5F5E5A;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #B4B2A9;
+    letter-spacing: 0.5px;
+  }
+  .gov-cell p {
+    font-size: 12.5px;
+    color: #2C2C2A;
+    line-height: 1.7;
+  }
+  .gov-cell .option {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.7;
+    margin-top: 4px;
+  }
+  .gov-cell .option b {
+    color: #2C2C2A;
+  }
+  .gov-cell .question-box {
+    background: #EEEDFE;
+    border-left: 3px solid #534AB7;
+    padding: 8px 10px;
+    margin-top: 4px;
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+    color: #3C3489;
+    line-height: 1.7;
+  }
+
+  /* 反思區 */
+  .reflection {
+    margin-top: 22px;
+    padding: 18px 20px 18px 60px;
+    background: #FFFCF7;
+    border: 1.5px solid #BA7517;
+    border-radius: 8px;
+    position: relative;
+  }
+  .reflection .bulb {
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #EF9F27;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .reflection h2 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #854F0B;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .reflection p {
+    font-size: 13.5px;
+    color: #2C2C2A;
+    line-height: 1.95;
+    margin-bottom: 8px;
+  }
+  .reflection p:last-child { margin-bottom: 0; }
+  .reflection .highlight {
+    color: #854F0B;
+    font-weight: 700;
+  }
+
+  /* 來源清單 */
+  .sources {
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px dashed #B4B2A9;
+  }
+  .sources h3 {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #5F5E5A;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .sources ol {
+    list-style: decimal inside;
+    font-size: 11px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+  .sources li {
+    word-break: break-all;
+  }
+
+  /* 隱性編號 */
+  .edition {
+    position: absolute;
+    bottom: 14px;
+    right: 18px;
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="paper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="brand">THE ONE AI 週報</div>
+    <div class="meta">
+      <div class="subtitle">AI 驅動轉型治理核心資訊</div>
+      <div class="date">20260518 / 2026 年 5 月 18 日（週一）</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="headline">
+    <h1>AI 24 小時盯著孩子讀書——<br>你的學校要推、要擋、還是要學？</h1>
+    <div class="lede">
+      五則新聞、一個提問——AI 進化得比學生快，學校在準備什麼樣的下一代？
+    </div>
+  </div>
+
+  <!-- 一、數位化 -->
+  <div class="section sec-digitize">
+    <h2>一、數位化（工具技術更迭）</h2>
+
+    <div class="news-item">
+      <div>
+        <span class="num">[1]</span><span class="title">中國用 AI 自習室盯孩子坐姿，350 億人民幣產業崛起</span>
+      </div>
+      <div class="body">
+        《紐約時報》報導：中國家長把孩子教育快速交給 AI——「母語星球」教英文、字節跳動「豆包」批改作業並用手機前鏡頭監測孩子坐姿駝背。截至 2024 年 7 月，全中國已開設 5 萬間「AI 自習室」，2024 年市場規模達 350 億人民幣（約 1,620 億台幣）。「雙減」政策下傳統補習班退場，AI 教育意外接收這塊空缺。
+      </div>
+      <div class="source">來源：TechNews 科技新報（2026/05/16）</div>
+    </div>
+
+    <div class="news-item">
+      <div>
+        <span class="num">[2]</span><span class="title">AI 像過去的好學生：成績優異，但不會思考</span>
+      </div>
+      <div class="body">
+        期刊《國家科學開放取用》研究：被宣傳能「模擬人類認知」的 Centaur AI 模型，把選項改成「請選擇選項 A」後，仍會選原資料庫的「正確答案」——它只是死記，不理解問題。LinkedIn 執行長同步點名 AI 無法取代的五大能力：好奇心、勇氣、創造力、溝通、同理心。
+      </div>
+      <div class="source">來源：TechNews 科技新報（2026/05/14）</div>
+    </div>
+  </div>
+
+  <!-- 二、數位優化 -->
+  <div class="section sec-optimize">
+    <h2>二、數位優化（流程組織再造）</h2>
+
+    <div class="news-item">
+      <div>
+        <span class="num">[3]</span><span class="title">Anthropic 財務長：Claude 寫 90% 程式，每個人都變「經理級」</span>
+      </div>
+      <div class="body">
+        Anthropic 財務長 Krishna Rao 在 Podcast「Invest Like the Best」上揭露：公司 90% 程式碼由 Claude Code 撰寫，月財報製作從數小時縮短到 30 分鐘。他直言「每個人某種程度都變成經理級」——員工不再執行任務，而是同時管理多個 AI 代理。組織追求的不是擴編人力，而是「人才密度」。
+      </div>
+      <div class="source">來源：TechNews 財經新報（2026/05/14）</div>
+    </div>
+
+    <div class="news-item">
+      <div>
+        <span class="num">[4]</span><span class="title">美國學生閱讀倒退十年，83% 學區成績下降</span>
+      </div>
+      <div class="body">
+        哈佛、史丹佛、達特茅斯學者分析美國 38 州 5,000 多學區三到八年級成績：83% 學區閱讀下降、70% 數學下降，不分貧富、不分種族。衰退起點不是疫情，而是 2010 年代中期——2015 年美國廢除《不讓一個孩子掉隊法案》，加上智慧型手機普及，學生專注力同步崩塌。
+      </div>
+      <div class="source">來源：TechNews 科技新報（2026/05/14）</div>
+    </div>
+  </div>
+
+  <!-- 三、數位轉型 -->
+  <div class="section sec-transform">
+    <h2>三、數位轉型（文化價值提升）</h2>
+
+    <div class="news-item">
+      <div>
+        <span class="num">[5]</span><span class="title">AI 預測通膨完全無用，誤差是舊模型 12 倍</span>
+      </div>
+      <div class="body">
+        舊金山聯邦儲備銀行研究：讓 ChatGPT-4 Turbo 預測美國通膨，誤差比克利夫蘭聯儲的「低技術含量」舊模型高出 12 倍。英國經濟學家直言 ChatGPT 在宏觀經濟預測「完全沒用」。研究結論：面對複雜、定性、非量化的情境，AI 整合資料能力強，但「判斷」仍只能依賴人類。
+      </div>
+      <div class="source">來源：TechNews 財經新報（2026/05/15）</div>
+    </div>
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-title">校長治理重點</div>
+    <div class="gov-grid">
+      <div class="gov-cell">
+        <h3>看趨勢</h3>
+        <p>AI 進化得比學生快——校長要在「擁抱 AI 工具」與「守住人的核心能力」之間，找出自己學校的尺。</p>
+      </div>
+      <div class="gov-cell">
+        <h3>看自己</h3>
+        <p style="font-size:11.5px; margin-bottom:6px;">你的學校現在最像哪一邊？</p>
+        <div class="option"><b>A 積極導入派</b><br>已推 AI 工具進課堂</div>
+        <div class="option"><b>B 觀察等待派</b><br>讓老師自由試用</div>
+        <div class="option"><b>C 守住底線派</b><br>先顧好閱讀寫作思考</div>
+      </div>
+      <div class="gov-cell">
+        <h3>看行動 ・ 本週提問</h3>
+        <div class="question-box">
+          假設明天 AI 自習室開到你的學校旁邊，每月只收 3,000 元、24 小時個別化輔導——你會建議家長去試，還是擋？這個答案，需要全校共識嗎？
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思 -->
+  <div class="reflection">
+    <div class="bulb">💡</div>
+    <h2>本週觀察反思</h2>
+    <p>看到中國 5 萬間供不應求的 AI 自習室，我不禁思考一件事：AI 已經在某種程度上取代教學了——你可以接受 AI 取代到什麼程度？</p>
+    <p>AI 可以取代、甚至優化教學流程；但如果 AI 真的能突破老師現在做不到的事，我想，應該是在更適性化的自主學習歷程吧。</p>
+    <p>還記得老三台的年代，要看什麼節目，就是要準時收看——是「人」去適應節目。隨著科技進步，現在則是隨選視訊——是節目去適應人可以觀看的時間。準時收看的收視習慣，就好像現在的教學：固定的課程、固定的上課時間、固定的進度。<span class="highlight">AI 帶來的，不該只是優化這些既有流程，而是帶來「結構」的改變。</span></p>
+    <p>未來的教育，可能沒有上下課鐘聲、沒有老師盯著你學習、沒有定期評量——反而才真正能回到「以學習者為中心」的學習。</p>
+  </div>
+
+  <!-- 來源清單 -->
+  <div class="sources">
+    <h3>本期參考文章來源</h3>
+    <ol>
+      <li>https://technews.tw/2026/05/16/china-to-rely-on-artificial-intelligence-in-education-reform-bid/</li>
+      <li>https://technews.tw/2026/05/14/ai-can-not-understand-the-meaning/</li>
+      <li>https://finance.technews.tw/2026/05/14/anthropic-cfo-says-ai-now-writes-90-of-its-code-changing-white-collar-jobs-from-execution-to-oversight/</li>
+      <li>https://technews.tw/2026/05/14/reading-ability-get-worse-in-decades/</li>
+      <li>https://finance.technews.tw/2026/05/15/ai-can-not-predict-inflation-rate/</li>
+    </ol>
+  </div>
+
+  <div class="edition">ed.05</div>
+
+</div>
+
+</body>
+</html>
