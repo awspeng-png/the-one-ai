@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報 ed.06</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #F0EEEA;
+    font-family: 'Georgia', '新細明體', serif;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .page {
+    width: 680px;
+    background: #FAFAF7;
+    border: 1.5px solid #D3D1C7;
+    padding: 36px 40px 28px 40px;
+  }
+
+  /* ── 報頭 ── */
+  .masthead {
+    border-bottom: 2px solid #A32D2D;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .masthead-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+    font-family: 'Georgia', serif;
+  }
+  .masthead-meta {
+    text-align: right;
+    font-size: 11px;
+    color: #6B6860;
+    line-height: 1.6;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #6B6860;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── 主標 ── */
+  .main-headline {
+    margin: 18px 0 6px 0;
+  }
+  .main-headline h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+  }
+  .main-headline .sub {
+    font-size: 12px;
+    color: #6B6860;
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+
+  /* ── 分隔線 ── */
+  .divider {
+    border: none;
+    border-top: 1px solid #D3D1C7;
+    margin: 14px 0;
+  }
+
+  /* ── 新聞區塊 ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .news-block {
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+
+  /* 數位化 綠 */
+  .digital {
+    background: #EAF3DE;
+  }
+  .digital .section-label { color: #27500A; }
+  .digital .news-num { color: #639922; }
+  .digital .news-title a { color: #27500A; }
+
+  /* 數位優化 藍 */
+  .optimize {
+    background: #E6F1FB;
+  }
+  .optimize .section-label { color: #0C447C; }
+  .optimize .news-num { color: #185FA5; }
+  .optimize .news-title a { color: #0C447C; }
+
+  /* 數位轉型 紫 */
+  .transform {
+    background: #EEEDFE;
+  }
+  .transform .section-label { color: #3C3489; }
+  .transform .news-num { color: #534AB7; }
+  .transform .news-title a { color: #3C3489; }
+
+  .news-num {
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  .news-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  .news-title a {
+    text-decoration: none;
+  }
+  .news-title a:hover {
+    text-decoration: underline;
+    color: #A32D2D !important;
+  }
+
+  .news-body {
+    font-size: 11.5px;
+    color: #3A3830;
+    line-height: 1.7;
+  }
+
+  .news-source {
+    font-size: 10px;
+    color: #8A8880;
+    margin-top: 5px;
+  }
+
+  /* ── 治理重點 ── */
+  .gov-section {
+    margin: 16px 0 0 0;
+  }
+  .gov-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-left: 3px solid #A32D2D;
+    padding-left: 8px;
+  }
+
+  .gov-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gov-card {
+    background: #F3F1EC;
+    border: 1px solid #D3D1C7;
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .gov-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8A8880;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .gov-card-content {
+    font-size: 11.5px;
+    color: #3A3830;
+    line-height: 1.6;
+  }
+
+  /* 看自己選項 */
+  .self-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 5px;
+    font-size: 11.5px;
+    color: #3A3830;
+    line-height: 1.5;
+  }
+  .dot-green { color: #4A8A2A; font-size: 13px; }
+  .dot-yellow { color: #C49A00; font-size: 13px; }
+  .dot-red { color: #B83A2A; font-size: 13px; }
+
+  /* ── 反思區 ── */
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 16px 18px;
+    margin-top: 14px;
+    background: #FFFDF8;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .reflection-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .reflection-body {}
+  .reflection-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .reflection-text {
+    font-size: 11.5px;
+    color: #3A3830;
+    line-height: 1.8;
+  }
+  .reflection-text p + p {
+    margin-top: 8px;
+  }
+
+  /* ── 來源 + 編號 ── */
+  .footer {
+    margin-top: 18px;
+    border-top: 1px solid #D3D1C7;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .footer-sources {
+    font-size: 9.5px;
+    color: #8A8880;
+    line-height: 1.7;
+  }
+  .footer-sources strong {
+    font-size: 9.5px;
+    color: #6B6860;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .edition-num {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div>
+      <div class="masthead-title">THE ONE AI 週報</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+    <div class="masthead-meta">
+      2026/05/21<br>
+      觀察反思版
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="main-headline">
+    <h1>AI 說的是 fact，你的學校追求的是 truth 嗎？</h1>
+    <div class="sub">五則新聞、一份反思——當 AI 的幻覺與人的偏見同時出現，校長如何在 fact 的洪流中，守住學校的 truth？</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 一、數位化 -->
+  <div class="news-block digital">
+    <div class="section-label">一、數位化｜工具技術更迭</div>
+
+    <div class="news-title">
+      <span class="news-num">[1]</span>
+      <a href="https://www.inside.com.tw/article/41341-google-gemini-spark-ai-agent-launch-missed-marketing" target="_blank">AI Agent 時代來了，但沒有好故事就沒有人用</a>
+    </div>
+    <div class="news-body">Google 在 I/O 2026 發布面向一般大眾的 AI Agent 服務 Gemini Spark，整合 Gmail、Drive、日曆等日常工具，讓使用者無需程式知識即可讓 AI 自動完成跨應用任務。科技評論人施典志指出：安全性與易用性已不再是門檻，但 Google 選在開發者大會上發表大眾產品、示範案例也缺乏吸引力，讓有實力的產品錯失引爆點。AI 工具再強，沒有讓人「想用」的故事，就沒有人真的用。</div>
+    <div class="news-source">來源：INSIDE</div>
+  </div>
+
+  <!-- 二、數位優化 -->
+  <div class="news-block optimize">
+    <div class="section-label">二、數位優化｜流程組織再造</div>
+
+    <div class="news-title">
+      <span class="news-num">[2]</span>
+      <a href="https://infosecu.technews.tw/2026/05/19/ai-can-extract-fingerprints-from-clear-v-sign-photos/" target="_blank">自拍 V 字手勢，可能洩漏你的指紋</a>
+    </div>
+    <div class="news-body">資安專家警告，AI 影像處理技術成熟後，拍攝距離 1.5 公尺內的清晰手指照片，足以提取完整指紋，進而偽造指紋攻擊手機、電腦及支付系統；距離拉至 1.5 至 3 公尺仍可還原約五成。師生習慣在社群媒體以 V 字手勢自拍，等於將生物特徵公開曝光。推動 AI 數位工具的同時，「個人資訊防護」教育必須同步跟上。</div>
+    <div class="news-source">來源：TechNews 資安快報</div>
+  </div>
+
+  <div class="news-block optimize">
+    <div class="news-title">
+      <span class="news-num">[3]</span>
+      <a href="https://www.bnext.com.tw/article/90993/uspace-ai-implementation-customer-service-parking" target="_blank">一個 AI 長，讓近 10 位非技術主管自己寫工具</a>
+    </div>
+    <div class="news-body">台灣智慧停車新創 USPACE 設立「AI 長」職位，由前街聲總經理曾明賢出任，以「打造者」思維推動全公司 AI 落地。他在內部辦「AI 1-on-1」工作坊，請同仁帶著每週最耗時的 4 小時工作來，一起用 AI 找解方——但由本人動手完成。目前已有近 10 位非技術主管能獨立撰寫自動化工具。關鍵不是買工具，而是「賦能讓人自己解決自己的痛點」。</div>
+    <div class="news-source">來源：BNext 數位時代</div>
+  </div>
+
+  <!-- 三、數位轉型 -->
+  <div class="news-block transform">
+    <div class="section-label">三、數位轉型｜文化價值提升</div>
+
+    <div class="news-title">
+      <span class="news-num">[4]</span>
+      <a href="https://technews.tw/2026/05/19/ai-vs-human/" target="_blank">莫內真跡被批 AI 廢畫：人的幻覺，比 AI 更嚴重</a>
+    </div>
+    <div class="news-body">X 用戶將莫內〈睡蓮〉真跡標上 #MadewithAI，引來逾 400 萬人圍觀，評論區充斥「毫無靈魂」「缺乏激情」等批判。真相揭露後，所有指責瞬間崩塌。心理學的「廉價紅酒實驗」早有佐證：先入為主的標籤，讓人「尋找」缺點而非「感受」作品。AI 時代的真正警訊：人的認知偏差可能比 AI 幻覺更危險——我們越來越像自己想像中的 AI，輸入標籤，輸出預設結論，中間省略思考。</div>
+    <div class="news-source">來源：TechNews 科技新報</div>
+  </div>
+
+  <div class="news-block transform">
+    <div class="news-title">
+      <span class="news-num">[5]</span>
+      <a href="https://technews.tw/2026/05/18/ai-godfather-warns-hyperintelligent-ai-with-its-own-preservation-goals-could-make-humans-extinct/" target="_blank">AI 教父：五到十年內，超智慧 AI 可能讓人類滅絕</a>
+    </div>
+    <div class="news-body">圖靈獎得主、「AI 教父」約書亞·班吉歐（Yoshua Bengio）再度示警：若科技公司持續打造具「自我保全目標」的超智慧機器，人類可能在五至十年內面臨重大風險。他創辦非營利組織 LawZero，募得 3,000 萬美元，致力打造不主動執行任務的「非代理型安全 AI」，並呼籲建立獨立第三方監督機制。他強調：哪怕災難發生機率只有 1%，也不能接受。</div>
+    <div class="news-source">來源：TechNews 科技新報</div>
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="gov-section">
+    <div class="gov-title">校長治理重點</div>
+    <div class="gov-grid">
+      <div class="gov-card">
+        <div class="gov-card-label">👁 看趨勢</div>
+        <div class="gov-card-content">AI 愈來愈能產出 fact，人卻愈來愈難追問 truth。</div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-card-label">🪞 看自己</div>
+        <div class="gov-card-content">
+          <div style="font-size:11px;color:#6B6860;margin-bottom:6px;">你能說出你學校的 truth 嗎？</div>
+          <div class="self-option"><span class="dot-green">●</span> 我能清楚說出學校相信什麼、想培養什麼樣的人</div>
+          <div class="self-option"><span class="dot-yellow">●</span> 我有方向，但還沒整理成清晰的論述</div>
+          <div class="self-option"><span class="dot-red">●</span> 我的日常大多在處理 fact，還沒有餘裕想 truth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思 -->
+  <div class="reflection">
+    <div class="reflection-icon">💡</div>
+    <div class="reflection-body">
+      <div class="reflection-label">本週觀察反思</div>
+      <div class="reflection-text">
+        <p>在 AI 時代，大家最關心的是 AI 幻覺——到底 AI 的內容有多少基於 fact。Fact 固然重要，但如果只停留在確認 fact，就會錯過 truth。</p>
+        <p>本週莫內那則新聞，群眾在 fact 層挑毛病，卻錯過了莫內在白內障下所繪出的視野。</p>
+        <p>治理學校也是如此。升學率、學生成績、校隊得名，都是 fact；但讓一所學校成為一所學校的，是這所學校相信什麼、堅持什麼、想培養什麼樣的人——那才是 truth。</p>
+        <p>校長的工作，不只看 fact，更要看見學校的 truth。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong>
+      [1] INSIDE　[2] TechNews 資安快報　[3] BNext 數位時代<br>
+      [4] TechNews 科技新報　[5] TechNews 科技新報
+    </div>
+    <div class="edition-num">ed.06</div>
+  </div>
+
+</div>
+</body>
+</html>
