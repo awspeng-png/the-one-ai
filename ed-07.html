@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報 ed.07</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@700;900&display=swap');
+
+  :root {
+    --bg: #FAFAF7;
+    --border: #D3D1C7;
+    --red: #A32D2D;
+    --text-dark: #1A1A18;
+    --text-mid: #4A4A45;
+    --text-light: #A8A6A0;
+
+    /* 三層色系 */
+    --green-bg: #EAF3DE;
+    --green-text: #27500A;
+    --green-num: #639922;
+
+    --blue-bg: #E6F1FB;
+    --blue-text: #0C447C;
+    --blue-num: #185FA5;
+
+    --purple-bg: #EEEDFE;
+    --purple-text: #3C3489;
+    --purple-num: #534AB7;
+
+    /* 反思橘 */
+    --orange-border: #BA7517;
+    --orange-icon: #EF9F27;
+    --orange-title: #854F0B;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #E8E6DF;
+    font-family: 'Noto Sans TC', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 24px 16px;
+  }
+
+  .page {
+    background: var(--bg);
+    width: 680px;
+    border: 1px solid var(--border);
+    padding: 36px 40px 28px;
+    position: relative;
+  }
+
+  /* ── 報頭區 ── */
+  .header {
+    border-bottom: 2.5px solid var(--red);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header-left {}
+
+  .masthead {
+    font-family: 'Playfair Display', 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .subtitle {
+    font-size: 10.5px;
+    color: var(--text-mid);
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .date-main {
+    font-size: 11px;
+    color: var(--text-mid);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .date-sub {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  /* ── 主標區 ── */
+  .headline-block {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .main-headline {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .sub-headline {
+    font-size: 11px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── 層次標題 ── */
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .section-green { background: var(--green-bg); color: var(--green-text); }
+  .section-blue  { background: var(--blue-bg);  color: var(--blue-text);  }
+  .section-purple{ background: var(--purple-bg); color: var(--purple-text);}
+
+  /* ── 新聞項目 ── */
+  .news-section {
+    margin-bottom: 16px;
+  }
+
+  .news-item {
+    padding: 11px 14px;
+    margin-bottom: 8px;
+    border-left: 3px solid;
+    background: #fff;
+    position: relative;
+  }
+
+  .news-item-green  { border-color: var(--green-num);  background: var(--green-bg); }
+  .news-item-blue   { border-color: var(--blue-num);   background: var(--blue-bg);  }
+  .news-item-purple { border-color: var(--purple-num); background: var(--purple-bg);}
+
+  .news-num {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .num-green  { color: var(--green-num);  }
+  .num-blue   { color: var(--blue-num);   }
+  .num-purple { color: var(--purple-num); }
+
+  .news-title {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 3px;
+  }
+
+  .news-title-green  { color: var(--green-text);  }
+  .news-title-blue   { color: var(--blue-text);   }
+  .news-title-purple { color: var(--purple-text); }
+
+  .news-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .news-title a:hover {
+    text-decoration: underline;
+    color: var(--red);
+  }
+
+  .news-tag {
+    font-size: 10px;
+    color: var(--text-mid);
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+
+  .news-body {
+    font-size: 11px;
+    color: var(--text-dark);
+    line-height: 1.8;
+  }
+
+  /* ── 分隔線 ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 18px 0;
+  }
+
+  /* ── 治理重點 ── */
+  .gov-block {
+    margin-bottom: 18px;
+  }
+
+  .gov-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+
+  .gov-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gov-card {
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+  }
+
+  .gov-card-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E8E6DF;
+  }
+
+  .gov-card-body {
+    font-size: 10.5px;
+    color: var(--text-dark);
+    line-height: 1.75;
+  }
+
+  .gov-action-box {
+    background: var(--purple-bg);
+    border: 1px solid var(--purple-num);
+    border-radius: 2px;
+    padding: 10px 12px;
+    margin-top: 8px;
+  }
+
+  .gov-action-q {
+    font-size: 11px;
+    color: var(--purple-text);
+    line-height: 1.75;
+    font-weight: 500;
+  }
+
+  /* ── 反思區 ── */
+  .reflection-block {
+    border: 1.5px solid var(--orange-border);
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    position: relative;
+    background: #fff;
+  }
+
+  .reflection-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .bulb {
+    width: 22px;
+    height: 22px;
+    background: var(--orange-icon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .reflection-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange-title);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .reflection-body {
+    font-size: 11.5px;
+    color: var(--text-dark);
+    line-height: 1.9;
+  }
+
+  .reflection-body p {
+    margin-bottom: 9px;
+  }
+
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .reflection-quote {
+    border-left: 2px solid var(--orange-border);
+    padding-left: 12px;
+    margin: 10px 0;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--orange-title);
+    line-height: 1.8;
+  }
+
+  .reflection-quote-zh {
+    font-size: 10.5px;
+    color: var(--text-mid);
+    margin-top: 4px;
+    font-style: normal;
+  }
+
+  /* ── 頁尾 ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .sources {
+    font-size: 9px;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  .sources-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+
+  .edition-mark {
+    font-size: 9px;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+    text-align: right;
+    align-self: flex-end;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 報頭 -->
+  <div class="header">
+    <div class="header-left">
+      <div class="masthead">THE ONE AI 週報</div>
+      <div class="subtitle">AI 驅動轉型治理核心資訊</div>
+    </div>
+    <div class="header-right">
+      <div class="date-main">2026 / 05 / 25</div>
+      <div class="date-sub">主管提問版</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="headline-block">
+    <div class="main-headline">你的學生每天在用 AI，<br>還是在被 AI 用？</div>
+    <div class="sub-headline">五則新聞、一個提問——當新一代已是「AI 原住民」，校長該如何思考學習的本質？</div>
+  </div>
+
+  <!-- 一、數位化 -->
+  <div class="news-section">
+    <div class="section-title section-green">數位化｜工具技術更迭</div>
+
+    <div class="news-item news-item-green">
+      <div class="news-num num-green">[1]</div>
+      <div class="news-title news-title-green">
+        <a href="https://technews.tw/2026/05/22/you-will-likely-never-be-truly-ai-native/" target="_blank">
+          20 歲工程師天生「以 AI 思考」，30 歲以上可能永遠跟不上
+        </a>
+      </div>
+      <div class="news-tag">OpenAI 前技術人員 Caitlin Kalinowski｜TechNews 科技新報</div>
+      <div class="news-body">OpenAI 機器人部門前技術人員 Caitlin Kalinowski 指出，真正的「AI 原生代」多半是 20 出頭的工程師——他們從解題起點就把 AI 納入思維，不像年長工作者是後來才把 AI 加進既有習慣裡。她直言很難找到 30 幾歲、能被稱為「完全 AI 原生」的人，並把這一代比做早期的網路原生族群：對新技術有天生的直覺優勢，而這種優勢，學出來和長出來，差別很大。</div>
+    </div>
+  </div>
+
+  <!-- 二、數位優化 -->
+  <div class="news-section">
+    <div class="section-title section-blue">數位優化｜流程組織再造</div>
+
+    <div class="news-item news-item-blue">
+      <div class="news-num num-blue">[2]</div>
+      <div class="news-title news-title-blue">
+        <a href="https://www.bnext.com.tw/article/90994/ai-outsource-learning" target="_blank">
+          Google AI 總監警告：把學習外包給 AI，你累積的是「認知負債」
+        </a>
+      </div>
+      <div class="news-tag">Google 雲端 AI 總監 Addy Osmani｜BNext 數位時代</div>
+      <div class="news-body">Google 雲端 AI 總監 Addy Osmani 提出「認知負債（Cognitive Debt）」警示：用 AI 省下當下的思考，代價是未來失去獨立判斷的能力。Anthropic 研究顯示，AI 輔助組的理解力測驗得分僅 50%，遠低於純手動學習組的 67%；MIT 腦電圖研究也發現，使用大型語言模型者的大腦各部位連通性最弱。Osmani 強調：工具消除了所有摩擦，但學習往往存在於摩擦之中。</div>
+    </div>
+
+    <div class="news-item news-item-blue">
+      <div class="news-num num-blue">[3]</div>
+      <div class="news-title news-title-blue">
+        <a href="https://technews.tw/2026/05/22/trump-cancels-signing-of-a-i-executive-order/" target="_blank">
+          川普臨時喊停 AI 行政命令：「不想做任何削弱美國領先優勢的事」
+        </a>
+      </div>
+      <div class="news-tag">中央社｜TechNews 科技新報</div>
+      <div class="news-body">美國總統川普於 5 月 21 日臨時取消原定簽署儀式，延後頒布一項 AI 行政命令。他表示，不希望採取任何可能削弱美國在 AI 競爭中領先中國優勢的措施。原定命令草案要求 AI 開發商在公開發布前先提交政府審查（自願性框架）；科技業者擔憂此舉可能拖慢新模型上市速度。「創新速度」與「安全審查」的優先順序，連全球最大政府都還沒有答案。</div>
+    </div>
+  </div>
+
+  <!-- 三、數位轉型 -->
+  <div class="news-section">
+    <div class="section-title section-purple">數位轉型｜文化價值提升</div>
+
+    <div class="news-item news-item-purple">
+      <div class="news-num num-purple">[4]</div>
+      <div class="news-title news-title-purple">
+        <a href="https://technews.tw/2026/05/24/generation-z-struggles-to-survive-under-the-pressure-of-technological-anxiety/" target="_blank">
+          畢業典禮噓 AI 講者，下課後開 AI 完成作業：Z 世代的認知失調
+        </a>
+      </div>
+      <div class="news-tag">TechNews 科技新報</div>
+      <div class="news-body">今年美國大學畢業季，前 Google 執行長施密特在演說中談到 AI 衝擊，遭上萬名學生噓聲以對。但 Lumina-Gallup 調查顯示，57% 的美國大學生每週課業都用 AI 工具，普林斯頓因 AI 作弊風險廢除沿用 133 年的榮譽制度。學者指出，這是「認知失調」：學生一方面擔憂 AI 削弱思考能力，另一方面又深怕不用就落後——這個矛盾，正在每所校園蔓延。</div>
+    </div>
+
+    <div class="news-item news-item-purple">
+      <div class="news-num num-purple">[5]</div>
+      <div class="news-title news-title-purple">
+        <a href="https://technews.tw/2026/05/23/schmidt-ai-fear-young-generation-encourages-newcomers-shape-ai/" target="_blank">
+          施密特回應噓聲：「AI 一定會塑造世界，真正的問題是你們能否塑造 AI」
+        </a>
+      </div>
+      <div class="news-tag">遠見雜誌授權｜TechNews 科技新報</div>
+      <div class="news-body">面對學生的噓聲，前 Google 執行長施密特（Eric Schmidt）坦言理解這一代的恐懼——對失業的焦慮、對繼承爛攤子的憤怒，他認為這些恐懼「合理」。但他的回應是積極的：哈佛甘迺迪學院民調顯示，59% 的 18–29 歲美國年輕人擔憂 AI 威脅就業前景；然而施密特說，塑造 AI 的主動權，仍然在人的手裡。</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 治理重點 -->
+  <div class="gov-block">
+    <div class="gov-label">校長治理重點</div>
+    <div class="gov-grid">
+      <div class="gov-card">
+        <div class="gov-card-title">👁 看趨勢</div>
+        <div class="gov-card-body">AI 不是一種趨勢，而是一種事實；現在已從 why AI 到 how AI。57% 的美國大學生每週課業都在用 AI，同時在畢業典禮上對提到 AI 的講者噓聲不斷——這個矛盾，就是我們現在所在的位置。</div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-card-title">🪞 看自己</div>
+        <div class="gov-card-body">你還停留在「為什麼要使用 AI」的階段，還是已經意識到「和 AI 共創」的階段？</div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-card-title">⚡ 看行動</div>
+        <div class="gov-card-body">
+          你平常用 AI 的順序是什麼——
+          <div class="gov-action-box">
+            <div class="gov-action-q">先人後機、先機後人，還是看議題決定？這個習慣，你有沒有跟你的主管們說過？</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 反思 -->
+  <div class="reflection-block">
+    <div class="reflection-header">
+      <div class="bulb">💡</div>
+      <div class="reflection-label">本週觀察反思</div>
+    </div>
+    <div class="reflection-body">
+      <p>以前說現在的孩子是數位原住民，但這個說法已經過時了——數位原住民都是上一代了，最新一個世代是 AI 的原住民。每一個世代都存在落差，差別在於你如何面對新一代資訊科技的心態，那個心態展現在：你是不是把學習外包給 AI？</p>
+      <p>李佳達最近提到一個有趣的觀察：圍棋進步最快的黃金年代，反而是 AI 和人類對奕的過程中。因為 AI 提供了一些人們想不到的對奕視角，豐富了人們的視野。因此，如何和 AI 互動，就決定了你的競爭力。</p>
+      <p>但這樣的心態，再進一步會碰到矛盾。對政府而言，美國看到中國對 AI 的做法，對於安全性的管制，川普遲疑了——約束 AI，怕落後中國，這是兩難；對個人而言，前 Google 執行長施密特在畢典演講中居然被學生噓聲，展現出這一代對 AI 時代的焦慮，以及又不得不接受的矛盾心情。</p>
+      <p>怎麼辦呢？施密特自己給了答案：</p>
+      <div class="reflection-quote">
+        The question isn't whether AI will shape the world. It will. The question is whether you will help shape AI.
+        <div class="reflection-quote-zh">問題不在 AI 會不會塑造這個世界——它一定會。問題是，你願不願意一起塑造 AI。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="sources">
+      <div class="sources-title">本期參考來源</div>
+      [1] TechNews 科技新報 2026/05/22　[2] BNext 數位時代 2026/05/22<br>
+      [3] TechNews 科技新報 2026/05/22　[4] TechNews 科技新報 2026/05/24<br>
+      [5] TechNews 科技新報（遠見雜誌授權）2026/05/23
+    </div>
+    <div class="edition-mark">ed.07</div>
+  </div>
+
+</div>
+</body>
+</html>
