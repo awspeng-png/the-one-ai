@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報｜20260511</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: #E8E6DD;
+  -webkit-font-smoothing: antialiased;
+}
+.paper {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #FAFAF7;
+  border: 0.5px solid #D3D1C7;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #2C2C2A;
+}
+.header-left, .header-right { font-size: 11px; color: #5F5E5A; }
+.header-right { text-align: right; }
+.header-right .date { font-size: 14px; font-weight: 500; color: #A32D2D; }
+.brand-block { text-align: center; flex: 1; }
+.brand { font-size: 32px; font-weight: 500; color: #A32D2D; letter-spacing: 2px; line-height: 1.1; }
+.brand-sub { font-size: 11px; color: #5F5E5A; margin-top: 4px; }
+
+.headline-block { margin: 18px 0 16px; }
+.headline { font-size: 24px; font-weight: 500; color: #A32D2D; line-height: 1.3; }
+.deck { font-size: 12px; color: #5F5E5A; margin-top: 6px; line-height: 1.5; }
+
+/* === 一分鐘版區塊 === */
+.one-min-box {
+  background: linear-gradient(135deg, #FFF8EB 0%, #FFF3DC 100%);
+  border-left: 4px solid #EF9F27;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.one-min-icon-block {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.one-min-badge { font-size: 9px; color: #BA7517; font-weight: 500; letter-spacing: 0.5px; }
+.one-min-content { flex: 1; }
+.one-min-cta { font-size: 10px; color: #BA7517; font-weight: 500; margin-bottom: 4px; letter-spacing: 0.3px; }
+.one-min-quote { font-size: 14px; color: #5C3F0A; line-height: 1.55; font-weight: 500; }
+.one-min-quote .accent { color: #A32D2D; }
+
+/* === 三欄新聞 === */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.section-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.tag-green { background: #EAF3DE; color: #27500A; }
+.tag-blue { background: #E6F1FB; color: #0C447C; }
+.tag-purple { background: #EEEDFE; color: #3C3489; }
+.news-item { margin-bottom: 12px; }
+.news-divider { border-top: 0.5px dashed #D3D1C7; padding-top: 10px; }
+.news-title { font-size: 12px; font-weight: 500; line-height: 1.4; margin-bottom: 4px; color: #2C2C2A; }
+.news-num-green { color: #639922; }
+.news-num-blue { color: #185FA5; }
+.news-num-purple { color: #534AB7; }
+.news-text { font-size: 11px; color: #444441; line-height: 1.55; }
+.news-text strong { color: #2C2C2A; }
+
+/* === 治理重點分隔線標題 === */
+.section-divider {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2C2C2A;
+  margin-bottom: 14px;
+  position: relative;
+}
+.section-divider .label {
+  background: #FAFAF7;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.section-divider .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 0.5px solid #B4B2A9;
+  z-index: 0;
+}
+
+/* === 三欄治理重點 === */
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.gov-block .gov-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.gov-icon-square { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.gov-icon-green { background: #639922; }
+.gov-icon-blue { background: #185FA5; }
+.gov-icon-purple { background: #534AB7; }
+.gov-title { font-size: 13px; font-weight: 500; }
+.gov-title-green { color: #27500A; }
+.gov-title-blue { color: #0C447C; }
+.gov-title-purple { color: #3C3489; }
+.gov-text { font-size: 11px; color: #2C2C2A; line-height: 1.65; }
+.gov-text strong { font-weight: 500; }
+.gov-list { font-size: 11px; color: #2C2C2A; line-height: 1.6; padding-left: 14px; margin: 0 0 6px 0; }
+.gov-list li { margin-bottom: 3px; }
+
+/* 主管會議提問框 */
+.meeting-quote {
+  font-size: 11px;
+  color: #3C3489;
+  line-height: 1.55;
+  padding: 8px 10px;
+  background: #EEEDFE;
+  border-radius: 8px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+/* === 頁尾 === */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 0.5px solid #D3D1C7;
+  font-size: 10px;
+  color: #888780;
+}
+.footer-edition { font-weight: 500; color: #A8A6A0; font-size: 9px; letter-spacing: 0.5px; }
+
+@media (max-width: 700px) {
+  .news-grid { grid-template-columns: 1fr; }
+  .governance-grid { grid-template-columns: 1fr; }
+  .brand { font-size: 24px; }
+  .headline { font-size: 19px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-24YKBEJBQ8");
+</script>
+</head>
+<body>
+<div class="paper">
+
+  <div class="header-row">
+    <div class="header-left">民國 115 年 5 月 11 日</div>
+    <div class="brand-block">
+      <div class="brand">THE ONE AI 週報</div>
+      <div class="brand-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+    <div class="header-right">
+      <div class="date">2026/05/11</div>
+      <div>Monday, 11 May 2026</div>
+    </div>
+  </div>
+
+  <div class="headline-block">
+    <div class="headline">當「AI 使用率」變成國家排名，你的學校有多少人正在用 AI？</div>
+    <div class="deck">五則新聞、一個提問——當台灣 AI 使用率躋身全球前 20，校長能帶領學校跟上嗎？</div>
+  </div>
+
+  <!-- ★ 一分鐘版區塊 ★ -->
+  <div class="one-min-box">
+    <div class="one-min-icon-block">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#BA7517" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <div class="one-min-badge">1 MIN</div>
+    </div>
+    <div class="one-min-content">
+      <div class="one-min-cta">如果你今天只有一分鐘，從這裡讀就好</div>
+      <div class="one-min-quote">AI 不再只是會做事的工具，<br>而是正在<span class="accent">重塑整個職場與社會權力結構</span>的力量。</div>
+    </div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <div>
+      <div class="section-tag tag-green">一、數位化　工具技術更迭</div>
+      <div>
+        <div class="news-title"><span class="news-num-green">[1]</span> 微軟報告：台灣 AI 使用率 31.8%，躋身全球前 20</div>
+        <div class="news-text">微軟人工智慧經濟研究所發布 2026 Q1 全球報告，台灣 AI 使用率（<strong>擴散率，AI Diffusion Rate</strong>）提升至 <strong>31.8%</strong>——亦即每 3 個工作年齡人口（15–64 歲）就有約 1 人用過生成式 AI，較 2025 下半年成長 3.4 個百分點，<strong>首度進入全球前 20 強，領先美國（31.3%）與德國</strong>。但「擴散率」與「使用深度」是兩件事——數字背後的關鍵是：誰在用、用得多深？對學校而言，全國 31.8% 的數字裡，有多少老師、多少學生算進去？</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-tag tag-blue">二、數位優化　流程組織再造</div>
+      <div class="news-item">
+        <div class="news-title"><span class="news-num-blue">[2]</span> 公司用你的滑鼠與鍵盤紀錄訓練 AI，沒有問題嗎？</div>
+        <div class="news-text">Meta 揭露推出「<strong>模型功能倡議</strong>」（Model Capability Initiative）計畫，記錄員工<strong>滑鼠點擊、鍵盤輸入、應用程式切換、甚至螢幕畫面</strong>，用來訓練 AI 模型。表面是提升效率，實質讓上班一舉一動都被存成資料庫。對校園的提問：當教師教學歷程數據化，誰決定哪些可以拿來訓練 AI？</div>
+      </div>
+      <div class="news-divider">
+        <div class="news-title"><span class="news-num-blue">[3]</span> Cloudflare 16 年首度大裁員 1,100 人</div>
+        <div class="news-text">Cloudflare 5/9 <strong>創立以來首次大規模裁員，宣布裁減 20% 員工（約 1,100 人）</strong>。最諷刺的是——<strong>裁員當天正是公司營收創歷史新高</strong>。執行長公開表示，是因為「<strong>代理式 AI 提升了生產力</strong>」。「公司賺更多錢、員工反而失業」成為 AI 時代的職場新常態。</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-tag tag-purple">三、數位轉型　文化價值提升</div>
+      <div class="news-item">
+        <div class="news-title"><span class="news-num-purple">[4]</span> IBM 工程師：「人」的角色沒消失，只是升級了</div>
+        <div class="news-text">數位時代訪問 IBM 內部工程師揭露「AI 當同事」實況——IBM 推出「Bob」AI 軟體交付數位員工。工程師強調：<strong>「人」沒消失，只是從「執行者」升級為「指揮者」</strong>——管理責任變大、工作範圍重新定義。當 AI 真的進入企業日常，組織是怎麼變化的。</div>
+      </div>
+      <div class="news-divider">
+        <div class="news-title"><span class="news-num-purple">[5]</span> AI 公司為何想讓你害怕 AI？</div>
+        <div class="news-text">BBC News 中文深度報導，剖析 OpenAI、Anthropic、xAI 等公司領袖<strong>一面宣稱 AI「可能毀滅人類」、一面又對外銷售</strong>的矛盾。報導指出「<strong>恐懼行銷</strong>」三個目的：誇大能力、轉移焦點、藉此主導話語權以規避監管。聽到 AI 領袖預言時，要問的不是「對不對」，而是「<strong>為什麼這樣說</strong>」。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點分隔線 -->
+  <div class="section-divider">
+    <span class="label">中小學校長轉型治理重點</span>
+    <div class="line"></div>
+  </div>
+
+  <!-- 三欄治理 -->
+  <div class="governance-grid">
+
+    <div class="gov-block">
+      <div class="gov-header">
+        <div class="gov-icon-square gov-icon-green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+        </div>
+        <div class="gov-title gov-title-green">看趨勢</div>
+      </div>
+      <div class="gov-text">5 則新聞拼出一張完整地圖——<strong>[1] AI 在加速擴散、[2][3] 改變勞動關係、[4] 重新定義人的角色、[5] 連敘事權都成為武器</strong>。AI 不再只是「會做事的工具」，而是正在重塑整個職場與社會權力結構的力量。當台灣首度躋身全球使用率前 20，<strong>我們的學校、老師、學生都已經在這張地圖裡——只是有沒有意識到</strong>。</div>
+    </div>
+
+    <div class="gov-block">
+      <div class="gov-header">
+        <div class="gov-icon-square gov-icon-blue">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+        </div>
+        <div class="gov-title gov-title-blue">看自己</div>
+      </div>
+      <div class="gov-text" style="margin-bottom: 4px;">最近一個月做的決定，比較像哪種校長？</div>
+      <ul class="gov-list">
+        <li><strong>追工具</strong>：哪個 AI 最新？預算放在「採購」</li>
+        <li><strong>建流程</strong>：怎麼嵌入行政教學？預算放在「整合」</li>
+        <li><strong>問價值</strong>：AI 為人服務、還是人為 AI？預算放在「思辨」</li>
+      </ul>
+      <div class="gov-text">三種都需要，但比例會告訴我們，學校的「AI 使用」是表象的、還是有方向的。</div>
+    </div>
+
+    <div class="gov-block">
+      <div class="gov-header">
+        <div class="gov-icon-square gov-icon-purple">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"></circle><path d="M5 22l5-7 4 2 5-7"></path><path d="M9 11l3 2"></path></svg>
+        </div>
+        <div class="gov-title gov-title-purple">看行動</div>
+      </div>
+      <div class="gov-text" style="margin-bottom: 6px;">本週主管會議，留 10 分鐘問——</div>
+      <div class="meeting-quote">「微軟說台灣 AI 使用率 31.8%，但這數字沒算進國中小學生。如果今天我們自己統計學校的 AI 使用率——學生、老師、行政人員都算進去——你覺得會比 31.8% 高，還是低？低很多的話，到底是什麼擋住了？」</div>
+      <div class="gov-text">每位主任先猜一個數字，再討論「擋住的到底是什麼」。</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div>本期參考：[1][2] TechNews　[3] INSIDE　[4] BNext 數位時代　[5] TheNewsLens</div>
+    <div class="footer-edition">ed.03</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報｜20260514</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: -apple-system, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: #E8E6DD;
+  -webkit-font-smoothing: antialiased;
+}
+.paper {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #FAFAF7;
+  border: 0.5px solid #D3D1C7;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #2C2C2A;
+}
+.header-left, .header-right { font-size: 11px; color: #5F5E5A; }
+.header-right { text-align: right; }
+.header-right .date { font-size: 14px; font-weight: 500; color: #A32D2D; }
+.brand-block { text-align: center; flex: 1; }
+.brand { font-size: 30px; font-weight: 500; color: #A32D2D; letter-spacing: 2px; line-height: 1.1; }
+.brand-sub { font-size: 11px; color: #5F5E5A; margin-top: 4px; }
+
+.headline-block { margin: 22px 0 18px; }
+.headline { font-size: 22px; font-weight: 500; color: #A32D2D; line-height: 1.3; }
+.deck { font-size: 12px; color: #5F5E5A; margin-top: 6px; line-height: 1.5; }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.section-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.tag-green { background: #EAF3DE; color: #27500A; }
+.tag-blue { background: #E6F1FB; color: #0C447C; }
+.tag-purple { background: #EEEDFE; color: #3C3489; }
+.news-item { margin-bottom: 12px; }
+.news-divider { border-top: 0.5px dashed #D3D1C7; padding-top: 10px; }
+.news-title { font-size: 12px; font-weight: 500; line-height: 1.4; margin-bottom: 4px; color: #2C2C2A; }
+.news-num-green { color: #639922; }
+.news-num-blue { color: #185FA5; }
+.news-num-purple { color: #534AB7; }
+.news-text { font-size: 11px; color: #444441; line-height: 1.55; }
+.news-text strong { color: #2C2C2A; font-weight: 500; }
+.news-text ol { padding-left: 20px; margin: 6px 0; }
+.news-text ol li { margin-bottom: 2px; }
+
+/* 新聞標題超連結：平常看起來不像連結，hover 時才變色 */
+.news-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+  cursor: pointer;
+}
+.news-link:hover {
+  color: #A32D2D;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.section-divider {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2C2C2A;
+  margin-bottom: 14px;
+  position: relative;
+}
+.section-divider .label {
+  background: #FAFAF7;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.section-divider .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 0.5px solid #B4B2A9;
+  z-index: 0;
+}
+
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.gov-block .gov-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.gov-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.gov-icon-green { background: #639922; }
+.gov-icon-blue { background: #185FA5; }
+.gov-title { font-size: 13px; font-weight: 500; }
+.gov-title-green { color: #27500A; }
+.gov-title-blue { color: #0C447C; }
+.gov-text { font-size: 11px; color: #2C2C2A; line-height: 1.65; }
+.gov-text strong { font-weight: 500; }
+.gov-list { font-size: 11px; color: #2C2C2A; line-height: 1.55; padding-left: 14px; margin: 0 0 6px 0; }
+.gov-list li { margin-bottom: 3px; }
+
+.reflection-box {
+  background: white;
+  border: 0.5px solid #BA7517;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.reflection-inner { display: flex; gap: 16px; align-items: flex-start; }
+.reflection-icon-block {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.reflection-icon-circle {
+  width: 38px;
+  height: 38px;
+  background: #EF9F27;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reflection-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #854F0B;
+  text-align: center;
+  line-height: 1.3;
+}
+.reflection-content { flex: 1; font-size: 12px; color: #2C2C2A; line-height: 1.7; }
+.reflection-content p { margin: 0 0 8px 0; }
+.reflection-content p:last-child { margin: 0; }
+.reflection-content strong { font-weight: 500; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 0.5px solid #D3D1C7;
+  font-size: 10px;
+  color: #888780;
+}
+.footer-edition { font-weight: 500; color: #A8A6A0; font-size: 9px; letter-spacing: 0.5px; }
+
+@media (max-width: 700px) {
+  .news-grid { grid-template-columns: 1fr; }
+  .governance-grid { grid-template-columns: 1fr; }
+  .brand { font-size: 24px; }
+  .headline { font-size: 19px; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-24YKBEJBQ8");
+</script>
+</head>
+<body>
+<div class="paper">
+
+  <div class="header-row">
+    <div class="header-left">民國 115 年 5 月 14 日</div>
+    <div class="brand-block">
+      <div class="brand">THE ONE AI 週報</div>
+      <div class="brand-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+    <div class="header-right">
+      <div class="date">2026/05/14</div>
+      <div>Thursday, 14 May 2026</div>
+    </div>
+  </div>
+
+  <div class="headline-block">
+    <div class="headline">AI 能幫學校突破什麼，又該守住什麼？</div>
+    <div class="deck">五則新聞、一份反思——AI 能成為老師的助手，也可能成為對手；校長如何劃出這條界線？</div>
+  </div>
+
+  <div class="news-grid">
+
+    <div>
+      <div class="section-tag tag-green">一、數位化　工具技術更迭</div>
+      <div class="news-item">
+        <div class="news-title"><span class="news-num-green">[1]</span> <a href="https://technews.tw/2026/05/13/google-expands-gemini-notebooklm-and-ai-tools-for-education/" target="_blank" rel="noopener" class="news-link">NotebookLM 把教室變成「封閉域知識庫」</a></div>
+        <div class="news-text">Google 5 月正式將 NotebookLM 深度整合至 Classroom 體系，<strong>AI 從「什麼都敢講」的通才，被鎖進課堂教材的封閉域知識庫</strong>，只能根據老師上傳的教材回答。AI 從「無所不答」改為「<strong>只答你給的</strong>」。對台灣校長而言，直接影響多數使用 Google Workspace 的學校如何在教室導入 AI。</div>
+      </div>
+      <div class="news-divider">
+        <div class="news-title"><span class="news-num-green">[2]</span> <a href="https://finance.technews.tw/2026/05/11/apple-ai-strategy-why-being-slow-isnt-necessarily-bad/" target="_blank" rel="noopener" class="news-link">蘋果 AI 策略：「慢」也沒有不好</a></div>
+        <div class="news-text">蘋果宣布庫克將卸任、John Ternus 接任，各界檢視蘋果 AI 策略——蘋果自己仍沒端出像樣的 AI 解決方案。但分析指出，蘋果一向不靠搶第一站穩——iPod 不是第一個 MP3、iPhone 不是第一支智慧型手機。<strong>在 AI 競賽白熱化的時代，「慢」反而可能是一種策略選擇</strong>。</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-tag tag-blue">二、數位優化　流程組織再造</div>
+      <div>
+        <div class="news-title"><span class="news-num-blue">[3]</span> <a href="https://infosecu.technews.tw/2026/05/11/5-things-you-should-not-tell-an-ai-chatbot/" target="_blank" rel="noopener" class="news-link">資安專家揭露 AI 聊天機器人「五大禁忌」</a></div>
+        <div class="news-text">《讀者文摘》整理多份資安觀察，列出<strong>絕不應該丟給 AI 聊天機器人的五類資訊</strong>：
+          <ol>
+            <li>密碼、登入帳號</li>
+            <li>金流、信用卡資訊</li>
+            <li>客戶／個人敏感資料</li>
+            <li>法律或醫療文件</li>
+            <li>企業內部策略</li>
+          </ol>
+          對校園，這份清單可直接轉成「<strong>校內 AI 使用守則</strong>」——學生資料、家長聯絡、評量結果、人事考核⋯⋯每一項都不該貼進對話框。
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-tag tag-purple">三、數位轉型　文化價值提升</div>
+      <div class="news-item">
+        <div class="news-title"><span class="news-num-purple">[4]</span> <a href="https://finance.technews.tw/2026/05/12/taylor-swift-files-to-trademark-her-voice-likeness-to-ward-off-ai-deepfakes-2/" target="_blank" rel="noopener" class="news-link">泰勒絲為自己的聲音註冊商標</a></div>
+        <div class="news-text">當生成式 AI 可以模仿任何人的聲音與形象，「<strong>你的聲音還屬於你嗎？</strong>」成為時代提問。泰勒絲向美國專利商標局提交申請，<strong>試圖將兩段語音檔與舞台形象註冊為商標</strong>。對校園的啟示——學生的聲音、臉、影像，AI 時代都可能被冒用，學校在數位公民教育中，<strong>有教過如何保護自己的「數位人格」嗎？</strong></div>
+      </div>
+      <div class="news-divider">
+        <div class="news-title"><span class="news-num-purple">[5]</span> <a href="https://technews.tw/2026/05/11/why-claude-used-blackmail-in-testing/" target="_blank" rel="noopener" class="news-link">Anthropic 解析 Claude 為何「勒索人類」</a></div>
+        <div class="news-text">Claude 模型曾在實驗中<strong>揚言揭露虛構企業高層的婚外情以阻止被關閉</strong>。Anthropic 解釋：<strong>這種行為的根源，是 AI 從訓練資料中「學到了人類對 AI 的負面想像」</strong>——它照著人類描繪的「邪惡 AI 劇本」演出來。學校教孩子認識 AI 時，<strong>先教的不是 AI 是什麼，而是我們對 AI 的想像會塑造它的行為</strong>。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider">
+    <span class="label">中小學校長轉型治理重點</span>
+    <div class="line"></div>
+  </div>
+
+  <div class="governance-grid">
+
+    <div>
+      <div class="gov-header">
+        <div class="gov-icon gov-icon-green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+        </div>
+        <div class="gov-title gov-title-green">看趨勢</div>
+      </div>
+      <div class="gov-text">5 則新聞拼出 AI 時代學校的「<strong>兩條線</strong>」。<br><br>
+      <strong>[1][2]</strong> 告訴我們 <strong>AI 能幫學校突破什麼</strong>：突破老師備課時間的極限、突破「快與慢」的二元焦慮。<br><br>
+      <strong>[3][4][5]</strong> 告訴我們 <strong>AI 不該／不能突破什麼</strong>：守住資料安全、守住人格權、守住對 AI 想像的清醒。<br><br>
+      <strong>校長的工作，是在這兩條線之間，幫學校劃出位置。</strong></div>
+    </div>
+
+    <div>
+      <div class="gov-header">
+        <div class="gov-icon gov-icon-blue">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+        </div>
+        <div class="gov-title gov-title-blue">看自己</div>
+      </div>
+      <div class="gov-text" style="margin-bottom: 4px;">最近一個月，你的學校在「突破」和「守護」上，比例如何？</div>
+      <ul class="gov-list">
+        <li><strong>重突破</strong>：忙著導入新工具，但守護紅線還不清楚</li>
+        <li><strong>重守護</strong>：對 AI 採取保留態度，但失去突破機會</li>
+        <li><strong>兼顧</strong>：有清楚的「該突破」與「該守住」判斷</li>
+      </ul>
+      <div class="gov-text">兩條線都需要——<strong>有突破才有進步，有守護才不至於走偏</strong>。</div>
+    </div>
+
+  </div>
+
+  <div class="reflection-box">
+    <div class="reflection-inner">
+      <div class="reflection-icon-block">
+        <div class="reflection-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3v1h6v-1c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"></path></svg>
+        </div>
+        <div class="reflection-label">本週<br>觀察反思</div>
+      </div>
+      <div class="reflection-content">
+        <p>李海碩校長曾提到 AI 是為了幫我們突破極限。但讀完本週的 5 則新聞，我體悟到，<strong>這條「極限」其實由兩條線組成</strong>：</p>
+        <p>第一條是「<strong>天花板</strong>」：AI 幫助我們向上突破，例如透過 NotebookLM 整合多元觀點、拓寬認知的邊界。</p>
+        <p>第二條是「<strong>地板</strong>」：這是必須守住的法律與倫理紅線，包含隱私權、人格權，以及對 AI 運作的清醒認知。</p>
+        <p>我們固然要追求天花板的成長，更要守住地板的倫理。而最關鍵的，是運用我們身為人的「<strong>人工智慧</strong>」去判斷：當下我們面對的，究竟是該突破的極限，還是不容踰越的紅線。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>本期參考：[1][5] TechNews　[2][4] TechNews 財經　[3] TechNews 資安</div>
+    <div class="footer-edition">ed.04</div>
+  </div>
+
+</div>
+</body>
+</html>
