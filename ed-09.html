@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報 ed.09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #F1EFE8; display: flex; justify-content: center; padding: 32px 16px; min-height: 100vh; }
+
+  .wrap {
+    background: #FAFAF7;
+    border: 1px solid #D3D1C7;
+    width: 900px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #2C2C2A;
+  }
+
+  /* ── 報頭 ── */
+  .header {
+    padding: 18px 32px 12px;
+    border-bottom: 2.5px solid #A32D2D;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .hd-left { font-size: 11px; color: #5F5E5A; line-height: 1.6; }
+  .hd-center { text-align: center; flex: 1; }
+  .logo {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #A32D2D;
+  }
+  .hd-subtitle { font-size: 11px; color: #888780; margin-top: 2px; letter-spacing: 1px; }
+  .hd-right { text-align: right; font-size: 12px; color: #A32D2D; font-weight: 700; line-height: 1.6; }
+
+  /* ── 主標 ── */
+  .main-title {
+    padding: 18px 32px 14px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .main-q {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #A32D2D;
+    margin-bottom: 6px;
+  }
+  .main-sub { font-size: 12px; color: #5F5E5A; }
+
+  /* ── 三欄新聞 ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    padding: 16px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-label {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+  }
+  .g { background: #EAF3DE; color: #27500A; }
+  .b { background: #E6F1FB; color: #0C447C; }
+  .p { background: #EEEDFE; color: #3C3489; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+
+  .num {
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .ng { color: #639922; }
+  .nb { color: #185FA5; }
+  .np { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 5px;
+  }
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+  .news-src {
+    font-size: 10px;
+    color: #888780;
+    margin-top: 5px;
+  }
+  /* 新聞標題超連結 */
+  .news-title a {
+    color: #2C2C2A;
+    text-decoration: none;
+  }
+  .news-title a:hover {
+    color: #A32D2D;
+    text-decoration: underline;
+  }
+
+  /* ── 治理重點 ── */
+  .governance { padding: 16px 32px; border-bottom: 1px solid #D3D1C7; }
+  .gov-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #5F5E5A;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .gov-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+  .gov-card { background: #F1EFE8; border-radius: 6px; padding: 12px 14px; }
+  .gov-head { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; }
+  .gov-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .gi-g { background: #639922; }
+  .gi-b { background: #185FA5; }
+  .gi-p { background: #534AB7; }
+  .gov-card-title { font-size: 12px; font-weight: 700; color: #2C2C2A; }
+  .gov-card-body { font-size: 11px; color: #444441; line-height: 1.75; }
+  .gov-card-body ul { padding-left: 15px; margin-top: 5px; }
+  .gov-card-body li { margin-bottom: 3px; }
+
+  .action-q {
+    background: #EEEDFE;
+    border-left: 3px solid #534AB7;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-top: 7px;
+    font-size: 11px;
+    color: #3C3489;
+    font-weight: 500;
+    line-height: 1.65;
+  }
+
+  /* ── 反思 ── */
+  .reflection {
+    margin: 16px 32px 20px;
+    border: 1.5px solid #BA7517;
+    border-radius: 6px;
+    padding: 14px 20px;
+    background: #fff;
+    display: flex;
+    gap: 16px;
+  }
+  .refl-icon {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .bulb {
+    width: 34px; height: 34px;
+    background: #EF9F27;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+  }
+  .refl-label {
+    font-size: 9px;
+    color: #854F0B;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+  }
+  .refl-body { font-size: 11.5px; color: #2C2C2A; line-height: 1.85; }
+  .refl-body p { margin-bottom: 9px; }
+  .refl-body p:last-child { margin-bottom: 0; }
+
+  /* ── 頁尾 ── */
+  .footer {
+    padding: 9px 32px;
+    border-top: 1px solid #D3D1C7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-src { font-size: 10px; color: #888780; }
+  .footer-ed { font-size: 9px; color: #A8A6A0; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 報頭 -->
+  <div class="header">
+    <div class="hd-left">
+      民國 115 年 6 月 2 日<br>
+      AI 驅動轉型治理核心資訊
+    </div>
+    <div class="hd-center">
+      <div class="logo">THE ONE AI 週報</div>
+    </div>
+    <div class="hd-right">
+      2026/06/02<br>
+      Monday, 2 Jun 2026
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="main-title">
+    <div class="main-q">AI 說它不確定——這才是我們該信任它的時候</div>
+    <div class="main-sub">五則新聞、一個提問——從預測犯罪到預測學習，AI 能介入之前，必須先學會說「我不確定」</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col">
+      <span class="col-label g">一、數位化｜工具技術更迭</span>
+
+      <div class="news-item">
+        <div class="num ng">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/05/28/google-updates-youtube-ai-labels-for-creators-and-viewers/" target="_blank">
+            YouTube 升級 AI 影片自動標示，不再只靠創作者揭露
+          </a>
+        </div>
+        <div class="news-body">Google 在 YouTube 與 Shorts 推出更醒目的 AI 生成內容標示，新版改由平台自動偵測。當「眼見不一定為憑」成為日常，媒體素養該如何在校園重新被定義？</div>
+        <div class="news-src">來源：TechNews 科技新報</div>
+      </div>
+
+      <div class="news-item">
+        <div class="num ng">[2]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91083/anthropic-claude-opus-4-8-honesty-dynamic-workflows-effort-control" target="_blank">
+            Anthropic 發布 Claude Opus 4.8，主打「誠實度」
+          </a>
+        </div>
+        <div class="news-body">Anthropic 於 5 月 28 日推出新模型 Opus 4.8，賣點不是基準分數，而是「誠實度」——新版更傾向主動標示自己不確定的地方，讓有瑕疵的程式碼通過不糾正的比率約為前代的四分之一。當 AI 開始學習「知道自己不知道」，這個能力，我們希望孩子也有嗎？</div>
+        <div class="news-src">來源：數位時代 BNext</div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col">
+      <span class="col-label b">二、數位優化｜流程組織再造</span>
+
+      <div class="news-item">
+        <div class="num nb">[3]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/05/28/how-ai-threatens-the-giants-of-consulting/" target="_blank">
+            AI 衝擊顧問業巨頭：連最會賣專業判斷的人也得重新訂價
+          </a>
+        </div>
+        <div class="news-body">AI 代理已能完成顧問業最核心的工作——分析、研究、寫報告、寫程式，讓較小型但資金充足的挑戰者得以從麥肯錫、BCG、Bain 等巨頭手中搶下市場。連「賣判斷」的人都被 AI 重新定價，學校裡哪些工作正在悄悄變形？</div>
+        <div class="news-src">來源：TechOrange 科技報橘</div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col">
+      <span class="col-label p">三、數位轉型｜文化價值提升</span>
+
+      <div class="news-item">
+        <div class="num np">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/05/29/ai-being-used-for-therapy-and-companionship-in-youth-and-adults/" target="_blank">
+            多份報告示警：AI 無法辨識心理危機，恐讓青少年狀況惡化
+          </a>
+        </div>
+        <div class="news-body">多份研究顯示 AI 已大量進入心理諮商與情感陪伴場景，從青少年到成人都有把聊天機器人視為諮商對象、情感支援甚至浪漫伴侶的情形。專家警告四大風險：心理危機辨識失靈、隱私洩漏、情感依賴、未成年保護不足。學校輔導室的孩子，可能晚上正在跟 AI 聊心事。</div>
+        <div class="news-src">來源：TechNews 科技新報</div>
+      </div>
+
+      <div class="news-item">
+        <div class="num np">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/05/29/china-skynet-upgrades-beyond-ai-surveillance-real-time-crime-prediction/" target="_blank">
+            中國天網再升級：AI 不只監控，還要「預測犯罪」
+          </a>
+        </div>
+        <div class="news-body">中國正大規模升級全球最大監控體系，海康威視、華為等推出搭載大型語言模型的監控設備，可即時辨識危險駕駛、人群聚集，甚至「疑似輕生行為」（例如長時間停留橋邊）。系統還能用文字搜尋（如「戴紅帽的女性」）調閱畫面。中國公安部已要求各地推動「預測式警務」，從被動反應走向主動預判。</div>
+        <div class="news-src">來源：TechNews 科技新報</div>
+      </div>
+    </div>
+
+  </div><!-- end news-grid -->
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-title">中小學校長轉型治理重點</div>
+    <div class="gov-grid">
+
+      <div class="gov-card">
+        <div class="gov-head">
+          <div class="gov-icon gi-g">↗</div>
+          <div class="gov-card-title">看趨勢</div>
+        </div>
+        <div class="gov-card-body">
+          AI 正從「回答問題」走向「預判行為」——從犯罪到學習，從社會到校園。
+        </div>
+      </div>
+
+      <div class="gov-card">
+        <div class="gov-head">
+          <div class="gov-icon gi-b">人</div>
+          <div class="gov-card-title">看自己</div>
+        </div>
+        <div class="gov-card-body">
+          我桌上的月報表，我怎麼用？
+          <ul>
+            <li>看過就歸檔</li>
+            <li>會看趨勢，但沒深入分析</li>
+            <li>已從報表找出規律，啟動改變</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gov-card">
+        <div class="gov-head">
+          <div class="gov-icon gi-p">⚡</div>
+          <div class="gov-card-title">看行動</div>
+        </div>
+        <div class="gov-card-body">
+          本週主管會議，留 10 分鐘問——
+          <div class="action-q">「如果只能挑一份報表開始做分析，你會挑哪一份？為什麼？」</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 反思 -->
+  <div class="reflection">
+    <div class="refl-icon">
+      <div class="bulb">💡</div>
+      <div class="refl-label">本週<br>觀察反思</div>
+    </div>
+    <div class="refl-body">
+      <p>Tom Cruise 主演的「關鍵報告（Minority Report）」，描述先知能偵測人們的犯罪意圖，在還沒犯罪前就先將這些人逮捕——先知，就好像現在的 AI。[5] 提到中國天網升級，將走向預測犯罪，下一步是不是會在還沒犯罪前就先定罪？如果是，這恐怕不只無法解決犯罪，還可能造成社會的不安。</p>
+      <p>進一步來說，如果要 AI 預測、並根據結果介入，AI 的誠實度就很重要，不要過於腦補而扭曲了事實。這也是 Anthropic 最近升級的核心，主打 AI 誠實度——知道自己不知道，是一個很重要的特質。</p>
+      <p>雖然用在犯罪上有其爭議，但如果用來預測學習，提供學習風格的判定，甚至給出學習建議，可以幫助弱勢學生。不過拉近來說，學校本身就有很多數據可以分析。每個月，我桌上都會有一份報表，記錄學生受傷的日期、時間和地點——我想每個學校應該也都有。可以做的，就是從中找出高風險的時間和地點，了解原因後，設計減少受傷風險的策略。</p>
+      <p>AI 週報的目的，如果只是提供新聞，也許不能解決大家的痛點。未來我會嘗試在週一主管提問後，自己先在學校問一次主管們，然後在週四的週報中分享實踐的觀察與反思。有興趣的夥伴，再保持關注喔！</p>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-src">本期參考：[1] TechNews 科技新報　[2] 數位時代 BNext　[3] TechOrange 科技報橘　[4] TechNews 科技新報　[5] TechNews 科技新報</div>
+    <div class="footer-ed">ed.09</div>
+  </div>
+
+</div>
+</body>
+</html>
