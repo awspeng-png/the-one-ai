@@ -6,232 +6,199 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="THE ONE AI 週報 — 給中小學校長的 AI 治理核心資訊，每週一／四更新，由西屯國小偉峰校長主編。">
 <title>THE ONE AI 週報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  background: #E8E6DD;
+  color: #2C2C2A;
+  line-height: 1.6;
+  min-height: 100vh;
+}
 
-  body {
-    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-    background: #E8E6DD;
-    color: #2C2C2A;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+header {
+  background: #FAFAF7;
+  border-bottom: 3px solid #A32D2D;
+  padding: 40px 24px 32px;
+  text-align: center;
+}
 
-  header {
-    background: #FAFAF7;
-    border-bottom: 3px solid #A32D2D;
-    padding: 40px 24px 32px;
-    text-align: center;
-  }
-  .brand {
-    font-family: 'Noto Serif TC', serif;
-    color: #A32D2D;
-    font-size: clamp(28px, 5vw, 44px);
-    font-weight: 700;
-    letter-spacing: 3px;
-    line-height: 1.2;
-  }
-  .brand-sub {
-    font-size: 14px;
-    color: #5F5E5A;
-    letter-spacing: 2px;
-    margin-top: 8px;
-  }
-  .tagline {
-    margin-top: 20px;
-    font-size: 15px;
-    color: #444441;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.75;
-  }
-  .update-badge {
-    display: inline-block;
-    margin-top: 16px;
-    background: #EAF3DE;
-    color: #27500A;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-  }
+.brand {
+  font-family: 'Noto Serif TC', serif;
+  color: #A32D2D;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
 
-  main {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 40px 20px 60px;
-  }
+.brand-sub {
+  font-size: 14px;
+  color: #5F5E5A;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
 
-  .section-title {
-    font-size: 12px;
-    font-weight: 700;
-    color: #888780;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #D3D1C7;
-  }
+.tagline {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #444441;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+}
 
-  .hero-card {
-    background: #FAFAF7;
-    border: 1px solid #D3D1C7;
-    border-left: 5px solid #A32D2D;
-    padding: 28px 32px;
-    margin-bottom: 32px;
-    text-decoration: none;
-    display: block;
-    transition: box-shadow 0.15s;
-  }
-  .hero-card:hover {
-    box-shadow: 0 4px 20px rgba(163,45,45,0.12);
-  }
-  .hero-badge {
-    font-size: 11px;
-    font-weight: 700;
-    color: #A32D2D;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  .hero-title {
-    font-family: 'Noto Serif TC', serif;
-    font-size: clamp(18px, 3vw, 24px);
-    font-weight: 700;
-    color: #2C2C2A;
-    line-height: 1.55;
-    margin-bottom: 10px;
-  }
-  .hero-lede {
-    font-size: 13.5px;
-    color: #5F5E5A;
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-  .hero-meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .hero-date {
-    font-size: 12px;
-    color: #888780;
-  }
-  .read-btn {
-    font-size: 13px;
-    font-weight: 700;
-    color: #A32D2D;
-    letter-spacing: 0.5px;
-  }
-  .read-btn::after { content: ' →'; }
+.update-badge {
+  display: inline-block;
+  margin-top: 16px;
+  background: #EAF3DE;
+  color: #27500A;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
 
-  .issues-grid {
-    display: grid;
-    gap: 14px;
-  }
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
 
-  .issue-card {
-    background: #FAFAF7;
-    border: 1px solid #D3D1C7;
-    padding: 18px 22px;
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    text-decoration: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
-  .issue-card:hover {
-    border-color: #A32D2D;
-    background: #FFF8F8;
-  }
-  .issue-card.unavailable {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-  }
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #888780;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #D3D1C7;
+}
 
-  .issue-num {
-    min-width: 44px;
-    text-align: center;
-    padding: 6px 0;
-    background: #F1EFE8;
-    border-radius: 4px;
-  }
-  .issue-num .ed {
-    font-size: 9.5px;
-    font-weight: 700;
-    color: #888780;
-    letter-spacing: 1px;
-    display: block;
-  }
-  .issue-num .num {
-    font-size: 20px;
-    font-weight: 700;
-    color: #A32D2D;
-    line-height: 1.2;
-  }
+/* ── Hero Card（最新一期）── */
+.hero-card {
+  background: #FAFAF7;
+  border: 1px solid #D3D1C7;
+  border-left: 5px solid #A32D2D;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 0.15s;
+}
+.hero-card:hover { box-shadow: 0 4px 20px rgba(163,45,45,0.12); }
 
-  .issue-info { flex: 1; min-width: 0; }
-  .issue-date { font-size: 11px; color: #888780; margin-bottom: 4px; }
-  .issue-title {
-    font-size: 14.5px;
-    font-weight: 700;
-    color: #2C2C2A;
-    line-height: 1.5;
-  }
-  .issue-type {
-    margin-top: 6px;
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .tag {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 3px;
-    letter-spacing: 0.3px;
-  }
-  .tag-mon  { background: #EEEDFE; color: #3C3489; }
-  .tag-thu  { background: #E6F1FB; color: #0C447C; }
-  .tag-soon { background: #F1EFE8; color: #888780; }
+.hero-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #A32D2D;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
 
-  .about-box {
-    margin-top: 44px;
-    background: #FAFAF7;
-    border: 1px solid #D3D1C7;
-    padding: 24px 28px;
-  }
-  .about-box h2 {
-    font-size: 12px;
-    font-weight: 700;
-    color: #888780;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #D3D1C7;
-  }
-  .about-box p {
-    font-size: 13.5px;
-    color: #444441;
-    line-height: 1.85;
-    margin-bottom: 10px;
-  }
-  .about-box p:last-child { margin-bottom: 0; }
-  .about-box strong { color: #2C2C2A; }
+.hero-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  color: #2C2C2A;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
 
-  footer {
-    text-align: center;
-    padding: 28px 20px;
-    font-size: 11px;
-    color: #888780;
-    letter-spacing: 0.5px;
-    border-top: 1px solid #D3D1C7;
-    background: #FAFAF7;
-  }
+.hero-lede {
+  font-size: 13.5px;
+  color: #5F5E5A;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-date { font-size: 12px; color: #888780; }
+
+.read-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: #A32D2D;
+  letter-spacing: 0.5px;
+}
+.read-btn::after { content: ' →'; }
+
+/* ── Issues Grid（過往期數）── */
+.issues-grid { display: grid; gap: 14px; }
+
+.issue-card {
+  background: #FAFAF7;
+  border: 1px solid #D3D1C7;
+  padding: 18px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+.issue-card:hover { border-color: #A32D2D; background: #FFF8F8; }
+.issue-card.unavailable { opacity: 0.5; cursor: default; pointer-events: none; }
+
+.issue-num {
+  min-width: 44px;
+  text-align: center;
+  padding: 6px 0;
+  background: #F1EFE8;
+  border-radius: 4px;
+}
+.issue-num .ed { font-size: 9.5px; font-weight: 700; color: #888780; letter-spacing: 1px; display: block; }
+.issue-num .num { font-size: 20px; font-weight: 700; color: #A32D2D; line-height: 1.2; }
+
+.issue-info { flex: 1; min-width: 0; }
+.issue-date { font-size: 11px; color: #888780; margin-bottom: 4px; }
+.issue-title { font-size: 14.5px; font-weight: 700; color: #2C2C2A; line-height: 1.5; }
+.issue-type { margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+.tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; letter-spacing: 0.3px; }
+.tag-mon { background: #EEEDFE; color: #3C3489; }
+.tag-thu { background: #E6F1FB; color: #0C447C; }
+.tag-soon { background: #F1EFE8; color: #888780; }
+
+/* ── About Box ── */
+.about-box {
+  margin-top: 44px;
+  background: #FAFAF7;
+  border: 1px solid #D3D1C7;
+  padding: 24px 28px;
+}
+.about-box h2 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #888780;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #D3D1C7;
+}
+.about-box p { font-size: 13.5px; color: #444441; line-height: 1.85; margin-bottom: 10px; }
+.about-box p:last-child { margin-bottom: 0; }
+.about-box strong { color: #2C2C2A; }
+
+footer {
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 11px;
+  color: #888780;
+  letter-spacing: 0.5px;
+  border-top: 1px solid #D3D1C7;
+  background: #FAFAF7;
+}
 </style>
 </head>
 <body>
@@ -251,12 +218,12 @@
 
   <p class="section-title">最新一期</p>
 
-  <a class="hero-card" href="ed-08.html">
-    <div class="hero-badge">ed.08 ・ 2026 / 05 / 28（週四）觀察反思版</div>
-    <div class="hero-title">AI 在幫忙，還是在掌控？</div>
-    <div class="hero-lede">五則新聞、一份反思——教宗通諭、台灣教師荒、中國校園監控同在一週，同樣是「導入 AI」，感知大不相同</div>
+  <a class="hero-card" href="ed-09.html">
+    <div class="hero-badge">ed.09 ・ 2026 / 06 / 02（週一）主管提問版</div>
+    <div class="hero-title">AI 說它不確定——這才是我們該信任它的時候</div>
+    <div class="hero-lede">五則新聞、一個提問——從預測犯罪到預測學習，AI 能介入之前，必須先學會說「我不確定」</div>
     <div class="hero-meta">
-      <span class="hero-date">教宗通諭 / 台灣教師荒 / 日本AI教育 / 中國校園監控 / 麥肯錫AI工具</span>
+      <span class="hero-date">YouTube AI 標示 / Claude 誠實度 / 顧問業衝擊 / AI 心理陪伴 / 中國天網預測犯罪</span>
       <span class="read-btn">閱讀全期</span>
     </div>
   </a>
@@ -265,14 +232,21 @@
 
   <div class="issues-grid">
 
+    <a class="issue-card" href="ed-08.html">
+      <div class="issue-num"><span class="ed">ed.</span><span class="num">08</span></div>
+      <div class="issue-info">
+        <div class="issue-date">2026 / 05 / 28（週四）</div>
+        <div class="issue-title">AI 在幫忙，還是在掌控？</div>
+        <div class="issue-type"><span class="tag tag-thu">觀察反思版</span></div>
+      </div>
+    </a>
+
     <a class="issue-card" href="ed-07.html">
       <div class="issue-num"><span class="ed">ed.</span><span class="num">07</span></div>
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 25（週一）</div>
         <div class="issue-title">你的學生每天在用 AI，還是在被 AI 用？</div>
-        <div class="issue-type">
-          <span class="tag tag-mon">主管提問版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-mon">主管提問版</span></div>
       </div>
     </a>
 
@@ -281,9 +255,7 @@
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 21（週四）</div>
         <div class="issue-title">AI 幫你看清事實，誰幫孩子找到意義？</div>
-        <div class="issue-type">
-          <span class="tag tag-thu">觀察反思版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-thu">觀察反思版</span></div>
       </div>
     </a>
 
@@ -292,9 +264,7 @@
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 18（週一）</div>
         <div class="issue-title">AI 24 小時盯著孩子讀書——你的學校要推、要擋、還是要學？</div>
-        <div class="issue-type">
-          <span class="tag tag-mon">主管提問版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-mon">主管提問版</span></div>
       </div>
     </a>
 
@@ -303,9 +273,7 @@
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 14（週四）</div>
         <div class="issue-title">AI 能幫學校突破什麼，又該守住什麼？</div>
-        <div class="issue-type">
-          <span class="tag tag-thu">觀察反思版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-thu">觀察反思版</span></div>
       </div>
     </a>
 
@@ -314,9 +282,7 @@
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 11（週一）</div>
         <div class="issue-title">當「AI 使用率」變成國家排名，你的學校有多少人正在用 AI？</div>
-        <div class="issue-type">
-          <span class="tag tag-mon">主管提問版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-mon">主管提問版</span></div>
       </div>
     </a>
 
@@ -325,9 +291,7 @@
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 07（週四）</div>
         <div class="issue-title">AI 重塑各行各業，學校在準備什麼樣的人？</div>
-        <div class="issue-type">
-          <span class="tag tag-thu">觀察反思版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-thu">觀察反思版</span></div>
       </div>
     </a>
 
@@ -336,9 +300,7 @@
       <div class="issue-info">
         <div class="issue-date">2026 / 05 / 04（週一）</div>
         <div class="issue-title">AI 越做越多，人的位置要放在哪？</div>
-        <div class="issue-type">
-          <span class="tag tag-mon">主管提問版</span>
-        </div>
+        <div class="issue-type"><span class="tag tag-mon">主管提問版</span></div>
       </div>
     </a>
 
