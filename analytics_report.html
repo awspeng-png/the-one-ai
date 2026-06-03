@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報｜九期數據分析報告</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red: #A32D2D;
+  --red-light: #F9EDED;
+  --ink: #2C2C2A;
+  --ink-mid: #5F5E5A;
+  --ink-light: #888780;
+  --border: #D3D1C7;
+  --bg: #E8E6DD;
+  --paper: #FAFAF7;
+  --green-bg: #EAF3DE;
+  --green-txt: #27500A;
+  --blue-bg: #E6F1FB;
+  --blue-txt: #0C447C;
+  --purple-bg: #EEEDFE;
+  --purple-txt: #3C3489;
+  --gold: #BA7517;
+  --gold-light: #FFF8EC;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  padding: 32px 16px 60px;
+}
+
+.wrap { max-width: 860px; margin: 0 auto; }
+
+/* ── 報頭 ── */
+.report-header {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--red);
+  padding: 36px 40px 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.report-brand {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+.report-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.report-meta {
+  font-size: 12px;
+  color: var(--ink-light);
+  letter-spacing: 0.5px;
+}
+.report-period {
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ── 區塊標題 ── */
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-light);
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  margin: 28px 0 16px;
+}
+
+/* ── KPI 卡片 ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.kpi-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 18px 16px 14px;
+  text-align: center;
+}
+.kpi-label { font-size: 10px; color: var(--ink-light); letter-spacing: 1px; margin-bottom: 8px; font-weight: 700; }
+.kpi-value { font-family: 'Noto Serif TC', serif; font-size: 32px; font-weight: 700; color: var(--red); line-height: 1; }
+.kpi-sub { font-size: 11px; color: var(--ink-mid); margin-top: 6px; }
+
+/* ── 期數總表 ── */
+.issues-table {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.issues-table th {
+  background: var(--ink);
+  color: #FAFAF7;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.issues-table th:last-child,
+.issues-table td:last-child { text-align: center; }
+.issues-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--ink);
+}
+.issues-table tr:last-child td { border-bottom: none; }
+.issues-table tr:hover td { background: #F5F4F0; }
+
+.ed-badge {
+  display: inline-block;
+  background: var(--red-light);
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.tag-mon { background: var(--purple-bg); color: var(--purple-txt); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+.tag-thu { background: var(--blue-bg); color: var(--blue-txt); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+
+.read-bar-wrap { display: flex; align-items: center; gap: 8px; }
+.read-bar-bg { flex: 1; height: 6px; background: #E8E6DD; border-radius: 3px; min-width: 60px; }
+.read-bar { height: 6px; background: var(--red); border-radius: 3px; }
+.read-num { font-weight: 700; color: var(--ink); min-width: 36px; text-align: right; }
+
+.reaction-dot { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 12px; font-weight: 700; }
+.r-high { background: #EAF3DE; color: #27500A; }
+.r-mid  { background: #FFF3CD; color: #856404; }
+.r-low  { background: #F1EFE8; color: var(--ink-light); }
+
+/* ── 趨勢分析雙欄 ── */
+.analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.analysis-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 20px 22px;
+}
+.ac-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--border);
+}
+.ac-body { font-size: 12px; color: var(--ink); line-height: 1.8; }
+.ac-body strong { color: var(--ink); font-weight: 700; }
+.ac-body .highlight { color: var(--red); font-weight: 700; }
+
+/* ── 忠實讀者 ── */
+.readers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.reader-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+}
+.reader-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.reader-count {
+  display: inline-block;
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+.reader-dots { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 6px; }
+.dot-filled { width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+.dot-empty  { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+
+/* ── GA 數據區 ── */
+.ga-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.ga-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 18px 20px;
+}
+.ga-title { font-size: 11px; font-weight: 700; color: var(--ink-light); letter-spacing: 1px; margin-bottom: 12px; }
+.ga-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid #F1EFE8;
+  font-size: 12px;
+}
+.ga-row:last-child { border-bottom: none; }
+.ga-page { color: var(--ink-mid); }
+.ga-num { font-weight: 700; color: var(--ink); }
+.ga-bar-wrap { flex: 1; margin: 0 10px; }
+.ga-bar-bg { height: 4px; background: #E8E6DD; border-radius: 2px; }
+.ga-bar-fill { height: 4px; background: #185FA5; border-radius: 2px; }
+
+/* ── 洞察與建議 ── */
+.insight-list { display: grid; gap: 12px; }
+.insight-item {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  padding: 16px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.insight-num {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: var(--red);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+}
+.insight-body { flex: 1; }
+.insight-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+.insight-text { font-size: 12px; color: var(--ink-mid); line-height: 1.75; }
+
+/* ── 反思摘要 ── */
+.reflection-summary {
+  background: var(--gold-light);
+  border: 1.5px solid var(--gold);
+  padding: 20px 24px;
+  margin-top: 4px;
+}
+.rs-title { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; margin-bottom: 12px; }
+.rs-quote {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.8;
+  padding-left: 16px;
+  border-left: 3px solid var(--gold);
+  margin-bottom: 10px;
+}
+.rs-quote:last-child { margin-bottom: 0; }
+.rs-ed { font-size: 10px; color: var(--ink-light); margin-top: 4px; }
+
+/* ── 頁尾 ── */
+.report-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--ink-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .analysis-grid, .ga-grid { grid-template-columns: 1fr; }
+  .readers-grid { grid-template-columns: repeat(2, 1fr); }
+  .report-header { padding: 24px 20px; }
+  .report-title { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 報頭 -->
+<div class="report-header">
+  <div class="report-brand">THE ONE AI 週報</div>
+  <div class="report-title">接棒九期數據分析報告</div>
+  <div class="report-meta">台中市西屯國小　彭偉峰校長　接棒主編</div>
+  <div class="report-period">2026/05/04 — 2026/06/02　共 9 期</div>
+</div>
+
+<!-- KPI -->
+<div class="section-label">核心指標總覽</div>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">群組讀者人數</div>
+    <div class="kpi-value">1,187</div>
+    <div class="kpi-sub">THE ONE 校長群組</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">平均已讀率</div>
+    <div class="kpi-value">80%</div>
+    <div class="kpi-sub">每期約 950 人</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">最高單期回應</div>
+    <div class="kpi-value">9</div>
+    <div class="kpi-sub">ed.06 ／ ed.07</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">網站頁面瀏覽</div>
+    <div class="kpi-value">139</div>
+    <div class="kpi-sub">5/26–6/1（GA）</div>
+  </div>
+</div>
+
+<!-- 九期數據總表 -->
+<div class="section-label">各期數據明細</div>
+<table class="issues-table">
+  <thead>
+    <tr>
+      <th>期次</th>
+      <th>日期</th>
+      <th>版型</th>
+      <th>主標題</th>
+      <th>已讀</th>
+      <th>回應</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="ed-badge">接棒公告</span></td>
+      <td>5/2</td>
+      <td>—</td>
+      <td style="font-size:11px;color:#5F5E5A">正式接棒說明</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:100%"></div></div>
+          <span class="read-num">1,060</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-high">55</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.01</span></td>
+      <td>5/4（一）</td>
+      <td><span class="tag-mon">主管提問</span></td>
+      <td style="font-size:11px">AI 越做越多，人的位置要放在哪？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:97%"></div></div>
+          <span class="read-num">1,035</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-mid">7</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.02</span></td>
+      <td>5/7（四）</td>
+      <td><span class="tag-thu">觀察反思</span></td>
+      <td style="font-size:11px">AI 重塑各行各業，學校在準備什麼樣的人？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:96%"></div></div>
+          <span class="read-num">1,023</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-low">2</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.03</span></td>
+      <td>5/11（一）</td>
+      <td><span class="tag-mon">主管提問</span></td>
+      <td style="font-size:11px">當「AI 使用率」變成國家排名，你的學校有多少人在用 AI？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:93%"></div></div>
+          <span class="read-num">987</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-low">4</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.04</span></td>
+      <td>5/14（四）</td>
+      <td><span class="tag-thu">觀察反思</span></td>
+      <td style="font-size:11px">AI 能幫學校突破什麼，又該守住什麼？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:87%"></div></div>
+          <span class="read-num">926</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-low">3</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.05</span></td>
+      <td>5/18（一）</td>
+      <td><span class="tag-mon">主管提問</span></td>
+      <td style="font-size:11px">AI 24 小時盯著孩子讀書——你的學校要推、要擋、還是要學？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:77%"></div></div>
+          <span class="read-num">816</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-low">4</span></td>
+    </tr>
+    <tr style="background:#FFFDF8">
+      <td><span class="ed-badge">ed.06</span></td>
+      <td>5/21（四）</td>
+      <td><span class="tag-thu">觀察反思</span></td>
+      <td style="font-size:11px">AI 幫你看清事實，誰幫孩子找到意義？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:89%"></div></div>
+          <span class="read-num">947</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-high">9</span></td>
+    </tr>
+    <tr style="background:#FFFDF8">
+      <td><span class="ed-badge">ed.07</span></td>
+      <td>5/25（一）</td>
+      <td><span class="tag-mon">主管提問</span></td>
+      <td style="font-size:11px">你的學生每天在用 AI，還是在被 AI 用？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:79%"></div></div>
+          <span class="read-num">841</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-high">9</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.08</span></td>
+      <td>5/28（四）</td>
+      <td><span class="tag-thu">觀察反思</span></td>
+      <td style="font-size:11px">AI 在幫忙，還是在掌控？</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:64%"></div></div>
+          <span class="read-num">677＊</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-mid">6</span></td>
+    </tr>
+    <tr>
+      <td><span class="ed-badge">ed.09</span></td>
+      <td>6/2（一）</td>
+      <td><span class="tag-mon">主管提問</span></td>
+      <td style="font-size:11px">AI 說它不確定——這才是我們該信任它的時候</td>
+      <td>
+        <div class="read-bar-wrap">
+          <div class="read-bar-bg"><div class="read-bar" style="width:20%"></div></div>
+          <span class="read-num" style="color:#888780">—＊＊</span>
+        </div>
+      </td>
+      <td><span class="reaction-dot r-low">—</span></td>
+    </tr>
+  </tbody>
+</table>
+<div style="font-size:10px;color:#888780;margin-top:6px;padding-left:4px">
+  ＊ ed.08 已讀為發布當日 7:18 截圖，非最終數字　　＊＊ ed.09 發布後尚未截圖
+</div>
+
+<!-- 趨勢分析 -->
+<div class="section-label">趨勢分析</div>
+<div class="analysis-grid">
+  <div class="analysis-card">
+    <div class="ac-title">📉 已讀數趨勢：下滑後出現 V 型反彈</div>
+    <div class="ac-body">
+      ed.01–05 已讀數從 1,035 持續下滑至 816，跌幅約 21%。<br><br>
+      <strong>ed.06 出現反彈（816 → 947）</strong>，原因明確：當期在 LINE 群組首次分享網站連結，校長點連結帶動已讀數回升。<br><br>
+      關鍵洞察：<span class="highlight">「給讀者一個新的互動方式」比「把內容寫得更好」更能拉動閱讀</span>，已讀數不只反映內容品質，也反映發布的附加行動。
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="ac-title">📈 回應數趨勢：明確 V 型反轉</div>
+    <div class="ac-body">
+      前五期回應數在 2–7 之間，ed.06、07 連續兩期達到 9 個——<strong>接棒以來最高</strong>。<br><br>
+      兩期高峰的觸發原因不同：<br>
+      • ed.06：<strong>網站連結帶來新鮮感</strong><br>
+      • ed.07：<strong>「被 AI 嫌我 AI 味太重」編後語帶來真誠感</strong><br><br>
+      校長願意回應的觸發點是<span class="highlight">「你做了讓他們覺得新鮮或有共鳴的事」</span>，不只是新聞選得好。
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="ac-title">🗺️ 地理擴散：從台中走向全台</div>
+    <div class="ac-body">
+      <strong>ed.01–04</strong>：回應者幾乎全為台中市校長<br>
+      <strong>ed.05</strong>：開始出現台中以外的名字<br>
+      <strong>ed.08</strong>：<span class="highlight">高雄藍田國小陳秉筠首次回應</span>——第一位公開回應的高雄校長，代表影響力正式跨出台中圈<br><br>
+      每兩三期都有新名字出現，顯示週報正在透過「第二圈」讀者的分享，向外擴散。
+    </div>
+  </div>
+  <div class="analysis-card">
+    <div class="ac-title">⚖️ 週一 vs 週四：兩種版型的差異</div>
+    <div class="ac-body">
+      <table style="width:100%;font-size:11px;border-collapse:collapse">
+        <tr style="color:#888780;font-weight:700">
+          <td style="padding:4px 0">版型</td>
+          <td style="text-align:center">平均已讀</td>
+          <td style="text-align:center">平均回應</td>
+        </tr>
+        <tr>
+          <td style="padding:4px 0">週一主管提問版</td>
+          <td style="text-align:center;font-weight:700">920</td>
+          <td style="text-align:center;font-weight:700">6.0</td>
+        </tr>
+        <tr>
+          <td style="padding:4px 0">週四觀察反思版</td>
+          <td style="text-align:center;font-weight:700">948</td>
+          <td style="text-align:center;font-weight:700">5.0</td>
+        </tr>
+      </table>
+      <br>
+      週四已讀略高，但兩者差距不大。版型本身不是影響回應數的主因——<span class="highlight">「內容裡有沒有觸發點」才是關鍵</span>。
+    </div>
+  </div>
+</div>
+
+<!-- 忠實讀者 -->
+<div class="section-label">核心讀者分析</div>
+<div class="readers-grid">
+  <div class="reader-card">
+    <div class="reader-name">國彰校長</div>
+    <div class="reader-count">出現 6 期</div>
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:6px">幾乎每期都回應，核心支持者</div>
+    <div class="reader-dots">
+      <div class="dot-filled"></div><div class="dot-filled"></div><div class="dot-empty"></div>
+      <div class="dot-filled"></div><div class="dot-filled"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+    </div>
+  </div>
+  <div class="reader-card">
+    <div class="reader-name">黃杏媛</div>
+    <div class="reader-count">出現 5 期</div>
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:6px">穩定核心讀者</div>
+    <div class="reader-dots">
+      <div class="dot-empty"></div><div class="dot-filled"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+    </div>
+  </div>
+  <div class="reader-card">
+    <div class="reader-name">李惠銘前桃校長</div>
+    <div class="reader-count">出現 5 期</div>
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:6px">前任，持續給予支持</div>
+    <div class="reader-dots">
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-filled"></div>
+      <div class="dot-empty"></div><div class="dot-filled"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+    </div>
+  </div>
+  <div class="reader-card">
+    <div class="reader-name">Sunny Lin（虎山實小）</div>
+    <div class="reader-count">出現 4 期</div>
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:6px">第二圈穩定讀者，ed.05 起固定出現</div>
+    <div class="reader-dots">
+      <div class="dot-empty"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+      <div class="dot-empty"></div><div class="dot-filled"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-filled"></div>
+    </div>
+  </div>
+  <div class="reader-card">
+    <div class="reader-name">shechen</div>
+    <div class="reader-count">出現 3 期</div>
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:6px">第二圈讀者</div>
+    <div class="reader-dots">
+      <div class="dot-empty"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+      <div class="dot-empty"></div><div class="dot-filled"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+    </div>
+  </div>
+  <div class="reader-card">
+    <div class="reader-name">倉漢</div>
+    <div class="reader-count">出現 3 期</div>
+    <div style="font-size:11px;color:#5F5E5A;margin-bottom:6px">第二圈讀者</div>
+    <div class="reader-dots">
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+      <div class="dot-empty"></div><div class="dot-empty"></div><div class="dot-filled"></div>
+      <div class="dot-filled"></div><div class="dot-empty"></div><div class="dot-empty"></div>
+    </div>
+  </div>
+</div>
+
+<!-- GA 數據 -->
+<div class="section-label">網站流量分析（Google Analytics）</div>
+<div style="font-size:11px;color:#888780;margin-bottom:12px">資料區間：2026/05/26–06/01　※ GA 追蹤碼於 5/31 加入，本週數據為初期基準值</div>
+<div class="ga-grid">
+  <div class="ga-card">
+    <div class="ga-title">各頁面瀏覽次數</div>
+    <div class="ga-row">
+      <span class="ga-page">首頁（index）</span>
+      <div class="ga-bar-wrap"><div class="ga-bar-bg"><div class="ga-bar-fill" style="width:100%"></div></div></div>
+      <span class="ga-num">99</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">ed.09</span>
+      <div class="ga-bar-wrap"><div class="ga-bar-bg"><div class="ga-bar-fill" style="width:15%"></div></div></div>
+      <span class="ga-num">15</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">歷期總覽</span>
+      <div class="ga-bar-wrap"><div class="ga-bar-bg"><div class="ga-bar-fill" style="width:5%"></div></div></div>
+      <span class="ga-num">5</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">ed.06</span>
+      <div class="ga-bar-wrap"><div class="ga-bar-bg"><div class="ga-bar-fill" style="width:4%"></div></div></div>
+      <span class="ga-num">4</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">ed.08</span>
+      <div class="ga-bar-wrap"><div class="ga-bar-bg"><div class="ga-bar-fill" style="width:4%"></div></div></div>
+      <span class="ga-num">4</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">ed.07</span>
+      <div class="ga-bar-wrap"><div class="ga-bar-bg"><div class="ga-bar-fill" style="width:3%"></div></div></div>
+      <span class="ga-num">3</span>
+    </div>
+  </div>
+  <div class="ga-card">
+    <div class="ga-title">核心行為指標</div>
+    <div class="ga-row">
+      <span class="ga-page">活躍使用者</span>
+      <span class="ga-num">76</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">頁面瀏覽總計</span>
+      <span class="ga-num">139</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">平均停留時間</span>
+      <span class="ga-num">34 秒</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">首頁→內頁轉換率</span>
+      <span class="ga-num" style="color:#A32D2D">28%</span>
+    </div>
+    <div class="ga-row">
+      <span class="ga-page">流量尖峰日</span>
+      <span class="ga-num">5/31</span>
+    </div>
+    <div style="margin-top:12px;padding:10px 12px;background:#F1EFE8;border-radius:4px;font-size:11px;color:#5F5E5A;line-height:1.65">
+      流量在 5/31 出現單日尖峰，與在 LINE 群組貼出網站連結的時間吻合。GA 數據將從 ed.09 起完整追蹤。
+    </div>
+  </div>
+</div>
+
+<!-- 核心洞察與建議 -->
+<div class="section-label">核心洞察與下一步建議</div>
+<div class="insight-list">
+  <div class="insight-item">
+    <div class="insight-num">1</div>
+    <div class="insight-body">
+      <div class="insight-title">已讀率 80% 遠高於大型 LINE 群組平均值</div>
+      <div class="insight-text">1,187 人的群組，每期約有 950 位校長打開週報。一般大型 LINE 群組互動率約 1–3‰，而 ed.06、07 的回應率達 7.6‰——是平均值的 2–3 倍。「按讚數少」不等於「影響力低」，沉默的閱讀才是主體。</div>
+    </div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">2</div>
+    <div class="insight-body">
+      <div class="insight-title">編後語是互動的超級武器——但要保持稀缺感</div>
+      <div class="insight-text">ed.07「被 AI 嫌我 AI 味太重」拿到 9 個回應中的 6 個笑臉。透明展示幕後過程 + 自嘲 + 邀請讀者「你覺得呢？」三合一，是最有效的互動觸發器。建議每 3–4 期放一次，保持讀者的期待感。</div>
+    </div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">3</div>
+    <div class="insight-body">
+      <div class="insight-title">LINE 文字版改貼單期網址，提升 GA 深度閱讀數</div>
+      <div class="insight-text">目前 GA 顯示首頁 99 次，但繼續點進各期的只有約 28 次，轉換率約 28%。若 LINE 文字版直接貼當期網址（如 ed-09.html），預估單期瀏覽數可從 15 提升至 50+，讓有意深度閱讀的校長直接進入。</div>
+    </div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">4</div>
+    <div class="insight-body">
+      <div class="insight-title">第 10 期後：「轉譯周記」模式正式啟動</div>
+      <div class="insight-text">ed.09 反思中已宣告：「未來我會嘗試在週一主管提問後，自己先在學校問一次主管們，然後在週四的週報中分享實踐的觀察與反思。」這是週報從「資訊整理者」升級為「實踐示範者」的關鍵轉型，也是與其他 AI 週報最大的差異化。</div>
+    </div>
+  </div>
+  <div class="insight-item">
+    <div class="insight-num">5</div>
+    <div class="insight-body">
+      <div class="insight-title">私訊 3 位核心讀者，取得質性回饋</div>
+      <div class="insight-text">量化數據（已讀數、回應數、GA）能告訴你「多少人看了」，但無法告訴你「有沒有人用了」。建議私訊國彰校長、黃杏媛、李惠銘校長，問一個問題：「這九期裡，有沒有哪一則內容您帶回學校用到了？」這個答案是量化數據永遠給不了的。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 累積金句 -->
+<div class="section-label">九期累積金句</div>
+<div class="reflection-summary">
+  <div class="rs-title">💡 各期觀察反思精華</div>
+  <div class="rs-quote">
+    「人的判斷與在乎，反而是最稀缺的價值。」
+    <div class="rs-ed">ed.01</div>
+  </div>
+  <div class="rs-quote">
+    「人類提高一個維度在看 AI；管理一群會寫程式的 AI。」
+    <div class="rs-ed">ed.02</div>
+  </div>
+  <div class="rs-quote">
+    「追逐工具下個月有取代，追尋素養才是根本。使用 AI 的目的，是幫你突破極限。」（引自李海碩校長）
+    <div class="rs-ed">ed.03</div>
+  </div>
+  <div class="rs-quote">
+    「天花板要突破、地板要守住；運用身為人的『人工智慧』去判斷。」
+    <div class="rs-ed">ed.04</div>
+  </div>
+  <div class="rs-quote">
+    「AI 帶來的，不該只是優化既有流程，而是帶來『結構』的改變。」
+    <div class="rs-ed">ed.05</div>
+  </div>
+  <div class="rs-quote">
+    「AI 愈來愈能產出 fact，人卻愈來愈難追問 truth。校長的工作，不只看 fact，更要看見學校的 truth。」
+    <div class="rs-ed">ed.06</div>
+  </div>
+  <div class="rs-quote">
+    「被 AI 嫌我 AI 味太重——哈！你覺得呢？」
+    <div class="rs-ed">ed.07 編後語（最高互動）</div>
+  </div>
+  <div class="rs-quote">
+    「同樣是『導入 AI』，有了教宗通諭的高度，感知會很不一樣。」
+    <div class="rs-ed">ed.08</div>
+  </div>
+  <div class="rs-quote">
+    「知道自己不知道，是一個很重要的特質——AI 如此，孩子亦然。」
+    <div class="rs-ed">ed.09</div>
+  </div>
+</div>
+
+<!-- 頁尾 -->
+<div class="report-footer">
+  THE ONE AI 週報　接棒九期數據分析報告<br>
+  資料截止：2026 年 6 月 3 日　　編製：彭偉峰校長（西屯國小）<br>
+  <span style="color:#B4B2A9">LINE 數據來源：THE ONE 校長群組（1,187 人）　網站數據來源：Google Analytics G-24YKBEJBQ8</span>
+</div>
+
+</div>
+</body>
+</html>
