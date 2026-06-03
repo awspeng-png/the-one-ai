@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報｜ed.10｜2026/06/05</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --border: #D3D1C7;
+    --red: #A32D2D;
+    --text: #1A1A18;
+    --muted: #6B6960;
+    --green-bg: #EAF3DE;
+    --green-text: #27500A;
+    --green-num: #639922;
+    --blue-bg: #E6F1FB;
+    --blue-text: #0C447C;
+    --blue-num: #185FA5;
+    --purple-bg: #EEEDFE;
+    --purple-text: #3C3489;
+    --purple-num: #534AB7;
+    --orange-border: #BA7517;
+    --orange-icon: #EF9F27;
+    --orange-title: #854F0B;
+    --ed-color: #A8A6A0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', '新細明體', 'PMingLiU', serif;
+    font-size: 13px;
+    line-height: 1.65;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+  }
+
+  /* ── 報頭 ── */
+  .masthead {
+    border-top: 3px solid var(--red);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0 12px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .masthead-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 2px;
+    font-family: 'Georgia', serif;
+    line-height: 1;
+  }
+  .masthead-meta {
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── 主標區 ── */
+  .headline-block {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .edition-badge {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+  .main-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .sub-title {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── 三欄新聞 ── */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .news-col {
+    border-radius: 4px;
+    padding: 13px 14px;
+  }
+  .news-col.green { background: var(--green-bg); }
+  .news-col.blue  { background: var(--blue-bg); }
+  .news-col.purple{ background: var(--purple-bg); }
+
+  .col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .green  .col-label { color: var(--green-num); }
+  .blue   .col-label { color: var(--blue-num); }
+  .purple .col-label { color: var(--purple-num); }
+
+  .news-item {
+    margin-bottom: 13px;
+  }
+  .news-item:last-child { margin-bottom: 0; }
+
+  .news-num {
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .green  .news-num { color: var(--green-num); }
+  .blue   .news-num { color: var(--blue-num); }
+  .purple .news-num { color: var(--purple-num); }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 4px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.15s;
+  }
+  .green  .news-title { color: var(--green-text); }
+  .blue   .news-title { color: var(--blue-text); }
+  .purple .news-title { color: var(--purple-text); }
+  .news-title:hover { color: var(--red); text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .news-source {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── 治理重點 ── */
+  .governance {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .gov-block {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 13px 14px;
+    background: #fff;
+  }
+  .gov-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border);
+  }
+  .gov-content {
+    font-size: 11.5px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  .gov-options {
+    list-style: none;
+    margin-top: 6px;
+  }
+  .gov-options li {
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 3px 0;
+    color: var(--text);
+    border-bottom: 1px dotted var(--border);
+  }
+  .gov-options li:last-child { border-bottom: none; }
+  .opt-label {
+    font-weight: 700;
+    color: var(--purple-num);
+    margin-right: 4px;
+  }
+
+  /* ── 反思區 ── */
+  .reflection {
+    border: 1.5px solid var(--orange-border);
+    border-radius: 4px;
+    padding: 16px 18px;
+    background: #fff;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 14px;
+  }
+  .reflection-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--orange-icon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  .reflection-body {}
+  .reflection-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange-title);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .reflection-text {
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--text);
+  }
+  .reflection-text p {
+    margin-bottom: 10px;
+  }
+  .reflection-text p:last-child { margin-bottom: 0; }
+
+  /* ── 頁尾 ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .sources {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .sources strong {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--muted);
+  }
+  .sources a {
+    color: var(--muted);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .sources a:hover { color: var(--red); }
+  .ed-num {
+    font-size: 9px;
+    color: var(--ed-color);
+    letter-spacing: 0.5px;
+    text-align: right;
+    flex-shrink: 0;
+    padding-left: 12px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 報頭 -->
+<div class="masthead">
+  <div>
+    <div class="masthead-title">THE ONE AI 週報</div>
+    <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+  </div>
+  <div class="masthead-meta">
+    2026/06/05（週四）<br>
+    觀察反思版
+  </div>
+</div>
+
+<!-- 主標 -->
+<div class="headline-block">
+  <div class="edition-badge">本週觀察反思版</div>
+  <div class="main-title">你在用什麼指標衡量 AI，就在塑造什麼樣的學校？</div>
+  <div class="sub-title">五則新聞、一份反思——從 Amazon 的 Tokenmaxxing 到蘇姿丰的 MIT 致詞，這週的新聞在說同一件事。</div>
+</div>
+
+<!-- 三欄新聞 -->
+<div class="news-grid">
+
+  <!-- 數位化 -->
+  <div class="news-col green">
+    <div class="col-label">數位化｜工具技術更迭</div>
+
+    <div class="news-item">
+      <div class="news-num">[1]</div>
+      <a class="news-title" href="https://technews.tw/2026/06/01/amd-ceo-lisa-su-gives-mit-commencement-address/" target="_blank">
+        蘇姿丰勉勵 MIT 畢業生：不要當只會用 AI 的人
+      </a>
+      <div class="news-body">AMD 執行長蘇姿丰（Lisa Su）於 MIT 畢業典禮致詞，強調真正決定未來的不是科技本身，而是人們如何使用它。她鼓勵畢業生勇於挑戰最艱難的問題，成為定義問題的人，而非只是工具的操作者。</div>
+      <div class="news-source">來源：TechNews 科技新報｜2026/06/01</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-num">[2]</div>
+      <a class="news-title" href="https://technews.tw/2026/06/01/the-next-version-of-search-w-ill-not-look-like-search/" target="_blank">
+        Google 正在換掉大門的鎖！25 年搜尋定律終結
+      </a>
+      <div class="news-body">Google I/O 宣告搜尋形態根本轉型：從「點擊連結」變為 AI 直接回答，傳統 SEO 規則全面失效。這不只是介面改版，而是資訊取得方式的底層邏輯正在改變——學生習慣的「查資料」方式，也將隨之翻轉。</div>
+      <div class="news-source">來源：TechNews 科技新報｜2026/06/01</div>
+    </div>
+  </div>
+
+  <!-- 數位優化 -->
+  <div class="news-col blue">
+    <div class="col-label">數位優化｜流程組織再造</div>
+
+    <div class="news-item">
+      <div class="news-num">[3]</div>
+      <a class="news-title" href="https://technews.tw/2026/06/02/white-collar-jobless/" target="_blank">
+        白領失業剛開始，AI 將帶來「衡量者」末日
+      </a>
+      <div class="news-body">高盛報告指出，資料中心建設潮創造的就業效應將結束，白領失業潮才正要開始。首當其衝的是「衡量者」——那些負責評估、審核但不直接生產的角色。對學校組織而言，這是一個值得對照的問題：誰在生產，誰只在衡量？</div>
+      <div class="news-source">來源：TechNews 科技新報｜2026/06/02</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-num">[4]</div>
+      <a class="news-title" href="https://technews.tw/2026/06/03/trump-signs-executive-order-asking-for-access-to-new-ai-models-before-they-launch/" target="_blank">
+        美建立 AI 預審機制，科技業須提前 30 天向政府分享模型
+      </a>
+      <div class="news-body">川普簽署行政命令，要求 Google、OpenAI、Anthropic 等公司在模型發布前 30 天提供政府存取權。這是全球首個大國建立 AI 上市前審查框架的嘗試，標誌著 AI 治理從企業自律走向政府介入的新階段。</div>
+      <div class="news-source">來源：TechNews 科技新報｜2026/06/03</div>
+    </div>
+  </div>
+
+  <!-- 數位轉型 -->
+  <div class="news-col purple">
+    <div class="col-label">數位轉型｜文化價值提升</div>
+
+    <div class="news-item">
+      <div class="news-num">[5]</div>
+      <a class="news-title" href="https://www.inside.com.tw/article/41456-amazon-token-leaderboard-ai-kpi-failure" target="_blank">
+        Token 燒好燒滿，AI 導入卻反成災難？
+      </a>
+      <div class="news-body">Amazon 以 Token 使用量排行榜評鑑員工 AI 導入成效，結果員工為衝排名無所不用其極，工作價值歸零。這正是品質管理大師戴明（W. E. Deming）的警告：當數字變成目標，它就不再是好指標。領導者的任務是改善系統，而非管理數字——這是 AI 時代的管理文化課題。</div>
+      <div class="news-source">來源：INSIDE｜2026/06/03</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 治理重點 -->
+<div class="governance">
+
+  <div class="gov-block">
+    <div class="gov-label">看趨勢</div>
+    <div class="gov-content">
+      AI 的導入不是比誰用得多，而是看它能幫你在真正的目標上推進多少。從蘇姿丰的 MIT 致詞到 Amazon 的 Tokenmaxxing，這週的新聞在說同一件事：指標設計錯了，方向就錯了。
+    </div>
+  </div>
+
+  <div class="gov-block">
+    <div class="gov-label">看自己</div>
+    <div class="gov-content">你現在如何使用 AI？</div>
+    <ul class="gov-options">
+      <li><span class="opt-label">A｜</span>偶爾問答，有需要才開</li>
+      <li><span class="opt-label">B｜</span>固定用在幾項日常工作流程</li>
+      <li><span class="opt-label">C｜</span>讓 AI 代理部分任務，我負責判斷與決策</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- 反思 -->
+<div class="reflection">
+  <div class="reflection-icon">💡</div>
+  <div class="reflection-body">
+    <div class="reflection-label">本週觀察反思</div>
+    <div class="reflection-text">
+      <p>我最近在想一個實驗：如果只能給校長推薦一則新聞，我會選哪一篇？這個想法會在後幾期慢慢試試看，看看大家的反應。</p>
+      <p>本週如果只讀一則，我會選 [5]——用 Token 使用量來評鑑員工 AI 導入成效，結果反而造成災難。企業原本的邏輯是：誰燒的 Token 多，誰就用得勤、效率就高。結果上有政策、下有對策，員工為了衝排名無所不用其極，Token 燒了一堆，真正的工作價值卻歸零。</p>
+      <p>這讓我想起惠銘校長時常提到的戴明學說。戴明反對用 KPI 來衡量員工，因為當數字變成目標，人就會為了那個數字扭曲自己的行為，甚至犧牲長期目標來完成短期指標。而領導者真正的任務，不是管理數字，而是改善系統。</p>
+      <p>Amazon 的案例，是戴明學說的 AI 版現場直播。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 頁尾 -->
+<div class="footer">
+  <div class="sources">
+    <strong>本期參考來源</strong>
+    [1] <a href="https://technews.tw/2026/06/01/amd-ceo-lisa-su-gives-mit-commencement-address/" target="_blank">https://technews.tw/2026/06/01/amd-ceo-lisa-su-gives-mit-commencement-address/</a><br>
+    [2] <a href="https://technews.tw/2026/06/01/the-next-version-of-search-w-ill-not-look-like-search/" target="_blank">https://technews.tw/2026/06/01/the-next-version-of-search-w-ill-not-look-like-search/</a><br>
+    [3] <a href="https://technews.tw/2026/06/02/white-collar-jobless/" target="_blank">https://technews.tw/2026/06/02/white-collar-jobless/</a><br>
+    [4] <a href="https://technews.tw/2026/06/03/trump-signs-executive-order-asking-for-access-to-new-ai-models-before-they-launch/" target="_blank">https://technews.tw/2026/06/03/trump-signs-executive-order-asking-for-access-to-new-ai-models-before-they-launch/</a><br>
+    [5] <a href="https://www.inside.com.tw/article/41456-amazon-token-leaderboard-ai-kpi-failure" target="_blank">https://www.inside.com.tw/article/41456-amazon-token-leaderboard-ai-kpi-failure</a>
+  </div>
+  <div class="ed-num">ed.10</div>
+</div>
+
+</body>
+</html>
