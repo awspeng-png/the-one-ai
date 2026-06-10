@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE ONE AI 週報 ed.12｜2026/06/11</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-24YKBEJBQ8');
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      background: #F0EFE9;
+      color: #2C2C2C;
+      padding: 20px;
+    }
+
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #FAFAF7;
+      border: 1px solid #D3D1C7;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ── 報頭 ── */
+    .masthead {
+      background: #FAFAF7;
+      border-bottom: 2px solid #A32D2D;
+      padding: 18px 24px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .masthead-title a {
+      text-decoration: none;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #A32D2D;
+    }
+    .masthead-right {
+      text-align: right;
+    }
+    .masthead-date {
+      font-size: 11px;
+      color: #6B6860;
+      line-height: 1.6;
+    }
+    .masthead-sub {
+      font-size: 10px;
+      color: #9A9890;
+      letter-spacing: 1px;
+    }
+
+    /* ── 主標區 ── */
+    .hero {
+      background: #FAFAF7;
+      border-bottom: 1px solid #D3D1C7;
+      padding: 18px 24px 16px;
+    }
+    .hero-main {
+      font-size: 22px;
+      font-weight: 900;
+      color: #A32D2D;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .hero-sub {
+      font-size: 12px;
+      color: #6B6860;
+      line-height: 1.6;
+    }
+
+    /* ── 三欄新聞 ── */
+    .news-grid {
+      width: 100%;
+      border-collapse: collapse;
+      border-bottom: 1px solid #D3D1C7;
+      display: table;
+      table-layout: fixed;
+    }
+
+    .news-col {
+      padding: 16px 16px 18px;
+      border-right: 1px solid #D3D1C7;
+      display: table-cell;
+      width: 33.33%;
+      vertical-align: top;
+    }
+    .news-col:last-child { border-right: none; }
+
+    .col-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-radius: 3px;
+      display: inline-block;
+      padding: 2px 8px;
+      margin-bottom: 12px;
+    }
+
+    /* 數位化 綠 */
+    .col-green { background: #EAF3DE; }
+    .col-green .col-label { background: #27500A; color: #fff; }
+    .col-green .news-num { color: #639922; }
+    .col-green .news-title a { color: #27500A; }
+
+    /* 數位優化 藍 */
+    .col-blue { background: #E6F1FB; }
+    .col-blue .col-label { background: #0C447C; color: #fff; }
+    .col-blue .news-num { color: #185FA5; }
+    .col-blue .news-title a { color: #0C447C; }
+
+    /* 數位轉型 紫 */
+    .col-purple { background: #EEEDFE; }
+    .col-purple .col-label { background: #3C3489; color: #fff; }
+    .col-purple .news-num { color: #534AB7; }
+    .col-purple .news-title a { color: #3C3489; }
+
+    .news-item { margin-bottom: 14px; }
+    .news-item:last-child { margin-bottom: 0; }
+
+    .news-num {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .news-title {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+    .news-title a {
+      text-decoration: none;
+    }
+    .news-title a:hover {
+      text-decoration: underline;
+      color: #A32D2D !important;
+    }
+    .news-body {
+      font-size: 11px;
+      line-height: 1.7;
+      color: #3C3C3A;
+    }
+
+    /* ── 治理重點 ── */
+    .governance {
+      width: 100%;
+      border-collapse: collapse;
+      border-bottom: 1px solid #D3D1C7;
+      display: table;
+      table-layout: fixed;
+    }
+
+    .gov-col {
+      padding: 16px 18px;
+      border-right: 1px solid #D3D1C7;
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+    }
+    .gov-col:last-child { border-right: none; }
+
+    .gov-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #A32D2D;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .gov-body {
+      font-size: 11px;
+      line-height: 1.8;
+      color: #3C3C3A;
+    }
+
+    /* ── 反思區 ── */
+    .reflection {
+      margin: 16px;
+      border: 1.5px solid #BA7517;
+      border-radius: 4px;
+      background: #fff;
+      padding: 16px 18px 16px 52px;
+      position: relative;
+      min-height: 80px;
+    }
+    .reflection-icon {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      width: 26px;
+      height: 26px;
+      background: #EF9F27;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .reflection-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #854F0B;
+      margin-bottom: 8px;
+    }
+    .reflection-body {
+      font-size: 11px;
+      line-height: 1.9;
+      color: #3C3C3A;
+    }
+    .reflection-body p { margin-bottom: 8px; }
+    .reflection-body p:last-child { margin-bottom: 0; }
+
+    /* ── 頁尾 ── */
+    .footer {
+      border-top: 1px solid #D3D1C7;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .footer-sources {
+      font-size: 9px;
+      color: #9A9890;
+      line-height: 1.8;
+    }
+    .footer-sources a {
+      color: #9A9890;
+      text-decoration: none;
+    }
+    .footer-sources a:hover { text-decoration: underline; }
+
+    .footer-right {
+      text-align: right;
+    }
+    .footer-back {
+      font-size: 10px;
+      color: #9A9890;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .footer-back:hover { color: #A32D2D; }
+    .edition-id {
+      font-size: 9px;
+      color: #A8A6A0;
+      letter-spacing: 0.5px;
+    }
+    .footer-disclaimer {
+      font-size: 9px;
+      color: #B0AEA8;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/06/11（四）｜觀察反思版</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 時代最缺的不是工具，是願意改變的人？</div>
+    <div class="hero-sub">五則新聞、一份反思——從企業組織到教育現場，AI 轉型的真正門檻從來不是技術，而是人願不願意先動起來。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/06/10/saas-to-taas/" target="_blank">
+            從 SaaS 到 TaaS：AI 時代，你不是付月費，而是付 Token
+          </a>
+        </div>
+        <div class="news-body">
+          黃仁勳在 GTC Taipei 指出，AI 不只是模型競賽，更是一門「算力與 Token」的新經濟學。過去企業採購軟體以「帳號月費（SaaS）」計算；進入 AI Agent 時代，計費單位正轉向「任務完成量（TaaS）」。這個轉變不只影響企業採購邏輯，也意味著學校在使用 AI 工具時，成本結構與選擇依據都需要重新思考。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/06/09/samsung-to-adopt-ai-initiative-to-reshape-work-culture/" target="_blank">
+            三星宣布「重大 AI 轉型」，會長李在鎔：全面重塑組織 DNA
+          </a>
+        </div>
+        <div class="news-body">
+          三星電子宣布全集團導入 AI，由各關係企業執行長親自帶頭，推動 AI 深入研發、製造、行銷等八大核心業務流程。三星強調，這不只是效率提升，而是以 AI 作為「管理創新的關鍵力量」。最高領導人親自主導的 AI 轉型宣示，讓外界看見：組織 DNA 的重塑，需要從最頂層開始。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91153/taiwan-lack-of-urgency-losing-ai-competitiveness" target="_blank">
+            簡立峰：矽谷裁員逼出危機感，台灣不裁員，養出一座溫水煮青蛙的島？
+          </a>
+        </div>
+        <div class="news-body">
+          前 Google 台灣董事總經理簡立峰直指：矽谷靠裁員逼出百萬人的 AI 學習動力，但台灣因缺工而不裁員，導致員工沒有升級的迫切感。他認為，「沒有危機感，才是 AI 時代最危險的事」。這個觀察直接呼應學校場域——當外部壓力不夠強，組織是否有內在動力自我驅動轉型？
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/06/08/ai-high-school/" target="_blank">
+            【全美第一所 AI 高中的現實】沒有明確定義的 AI 素養，如何衡量一所 AI 學校的成效？
+          </a>
+        </div>
+        <div class="news-body">
+          美國喬治亞州 Seckinger 高中以「全美第一所 AI 主題高中」聞名，吸引大量仿效。但深入探討後，核心問題浮現：若連「AI 素養」的定義都尚未明確，學校要如何設計課程、評估成效？這篇報導對台灣校長尤其有衝擊力——不是因為我們落後，而是因為這個問題，我們也還沒有答案。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/10/ai-skilled-labor-has-a-positive-attitude/" target="_blank">
+            AI 熟練者的優勢不是技術，芬蘭研究：是樂觀態度與適應性
+          </a>
+        </div>
+        <div class="news-body">
+          芬蘭一項研究發現，對 AI 工具最熟練的人，真正的優勢並非技術能力有多強，而是他們對工作轉變抱持正面心態、適應力更高。這個發現翻轉了「學工具才能存活」的焦慮敘事——學校培養的，或許不該只是會使用 AI 的人，而是面對不確定仍能保持開放心態的人。
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /news-grid -->
+
+  <!-- 治理重點 -->
+  <div class="governance">
+
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-body">
+        AI 轉型的真正門檻，不是技術，關鍵還是在人身上。
+      </div>
+    </div>
+
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-body">
+        AI 素養對我的學校來說，我說得清楚嗎？
+      </div>
+    </div>
+
+  </div><!-- /governance -->
+
+  <!-- 反思區 -->
+  <div class="reflection">
+    <div class="reflection-icon">💡</div>
+    <div class="reflection-label">本週觀察反思</div>
+    <div class="reflection-body">
+      <p>今天是大部分學校的畢業典禮，本期比較晚出刊，真的是有點匆匆忙忙、連滾帶爬。</p>
+      <p>這一期，簡立峰的文章頗讓人有感。他觀察到台灣因缺工而不裁員，導致員工沒有升級的急迫感——學校裡或許也有同樣的狀況：如果 AI 是 good to have，而不是 must have，自然就不會有人感到迫切。</p>
+      <p>但迫切之後呢？另一個問題隨之而來：在學校裡，「AI 應用」到底長什麼樣子、怎麼定義？就像第 [4] 篇寫的，全美第一所 AI 高中，因為沒有明確定義何謂 AI 素養，讓學生和家長身處其中，卻說不出這所學校和其他學校有什麼不同。</p>
+      <p>雖然這一切都還沒有確切的答案，但等到答案都出來了才開始做，其實就已經慢了。</p>
+      <p>這期的遺珠，我想推薦李飛飛那篇關於「世界模型」的文章。相對於大家已經很熟悉的大型語言模型，讀完會對 AI 的整體架構有更完整的理解，有空的校長很值得進一步閱讀。</p>
+      <p>最後，祝大家畢業典禮順利——我也要去準備了！</p>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong style="font-size:9px; color:#6B6860;">本期參考來源</strong><br>
+      [1] <a href="https://finance.technews.tw/2026/06/10/saas-to-taas/" target="_blank">TechNews 財經｜從 SaaS 到 TaaS</a><br>
+      [2] <a href="https://finance.technews.tw/2026/06/09/samsung-to-adopt-ai-initiative-to-reshape-work-culture/" target="_blank">TechNews 財經｜三星宣布重大 AI 轉型</a><br>
+      [3] <a href="https://www.bnext.com.tw/article/91153/taiwan-lack-of-urgency-losing-ai-competitiveness" target="_blank">BNext 數位時代｜簡立峰：溫水煮青蛙的島</a><br>
+      [4] <a href="https://techorange.com/2026/06/08/ai-high-school/" target="_blank">TechOrange｜全美第一所 AI 高中的現實</a><br>
+      [5] <a href="https://technews.tw/2026/06/10/ai-skilled-labor-has-a-positive-attitude/" target="_blank">TechNews｜AI 熟練者的優勢是樂觀態度</a>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明出處</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <div class="edition-id">ed.12</div>
+    </div>
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
