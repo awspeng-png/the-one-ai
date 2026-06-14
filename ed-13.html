@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ONE AI 週報｜2026/06/15</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#E8E6DF;
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    padding:24px 12px;
+    color:#2A2823;
+  }
+  .paper {
+    max-width:920px; margin:0 auto;
+    background:#FAFAF7;
+    border:1px solid #D3D1C7;
+    padding:34px 38px 26px;
+  }
+  /* 報頭 */
+  .masthead { text-align:center; border-bottom:2px solid #A32D2D; padding-bottom:14px; }
+  .masthead .brand {
+    font-family:"Noto Serif TC",serif;
+    color:#A32D2D; font-weight:900; font-size:32px; letter-spacing:2px;
+  }
+  .masthead .subbrand { font-size:12px; color:#6B6862; letter-spacing:1px; margin-top:5px; }
+  .masthead .date { font-size:12px; color:#8A8780; margin-top:6px; }
+  /* 主標 */
+  .headline { text-align:center; padding:22px 6px 18px; }
+  .headline h1 {
+    font-family:"Noto Serif TC",serif;
+    color:#A32D2D; font-size:25px; font-weight:900; line-height:1.45;
+  }
+  .headline .sub { font-size:12.5px; color:#55524C; line-height:1.7; margin-top:12px; }
+  /* 三欄 */
+  .cols { display:table; width:100%; border-spacing:10px 0; margin-top:6px; }
+  .col { display:table-cell; width:33.33%; vertical-align:top; }
+  .col-head {
+    font-weight:700; font-size:12px; padding:7px 9px; border-radius:4px 4px 0 0;
+    letter-spacing:0.5px;
+  }
+  .col-body { padding:10px 9px 4px; border-radius:0 0 4px 4px; min-height:340px; }
+  .c-green .col-head { background:#27500A; color:#fff; }
+  .c-green .col-body { background:#EAF3DE; }
+  .c-blue  .col-head { background:#0C447C; color:#fff; }
+  .c-blue  .col-body { background:#E6F1FB; }
+  .c-purple .col-head { background:#3C3489; color:#fff; }
+  .c-purple .col-body { background:#EEEDFE; }
+  .news { margin-bottom:14px; }
+  .news .num { font-weight:700; font-size:12px; }
+  .c-green .num { color:#639922; }
+  .c-blue  .num { color:#185FA5; }
+  .c-purple .num { color:#534AB7; }
+  .news .ntitle { font-weight:700; font-size:13px; line-height:1.5; margin:2px 0 4px; }
+  .news .ntitle a { text-decoration:none; }
+  .c-green .ntitle a { color:#27500A; }
+  .c-blue  .ntitle a { color:#0C447C; }
+  .c-purple .ntitle a { color:#3C3489; }
+  .news .ntitle a:hover { color:#A32D2D; text-decoration:underline; }
+  .news .ntext { font-size:11.5px; line-height:1.72; color:#3A382F; text-align:justify; }
+  /* 治理重點（週一版兩欄） */
+  .gov { display:table; width:100%; border-spacing:10px 0; margin-top:20px; }
+  .gov-box { display:table-cell; width:50%; vertical-align:top;
+    background:#F3F1E9; border:1px solid #DAD7CC; border-radius:5px; padding:13px 15px; }
+  .gov-box h3 { font-size:13px; color:#A32D2D; font-weight:700; margin-bottom:7px; }
+  .gov-box p { font-size:12px; line-height:1.75; color:#3A382F; }
+  .gov-box ol { font-size:12px; line-height:1.85; color:#3A382F; padding-left:18px; margin-top:4px; }
+  /* 反思 */
+  .reflect {
+    margin-top:20px; background:#fff; border:1.5px solid #BA7517; border-radius:6px;
+    padding:18px 22px 18px 56px; position:relative;
+  }
+  .reflect::before {
+    content:"💡"; position:absolute; left:16px; top:18px; font-size:22px;
+    background:#EF9F27; width:30px; height:30px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; line-height:1;
+  }
+  .reflect h3 { font-size:13px; color:#854F0B; font-weight:700; margin-bottom:10px; }
+  .reflect p { font-size:13px; line-height:1.95; color:#33312B; }
+  /* 頁尾 */
+  .foot { margin-top:22px; border-top:1px solid #D3D1C7; padding-top:12px; }
+  .foot .srctitle { font-size:11px; color:#8A8780; font-weight:700; margin-bottom:5px; }
+  .foot ol { font-size:10.5px; line-height:1.7; color:#9A978F; padding-left:18px; }
+  .foot ol a { color:#9A978F; text-decoration:none; }
+  .foot ol a:hover { color:#A32D2D; }
+  .edno { text-align:right; font-size:9px; color:#A8A6A0; letter-spacing:0.5px; margin-top:8px; }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="paper">
+
+  <div class="masthead">
+    <div class="brand">THE ONE AI 週報</div>
+    <div class="subbrand">AI 驅動轉型治理核心資訊</div>
+    <div class="date">2026/06/15</div>
+  </div>
+
+  <div class="headline">
+    <h1>到底是你在判斷，還是 AI 讓你以為是你在判斷？</h1>
+    <div class="sub">五則新聞、一份反思——當 AI 連密碼、職位、新聞真偽都能代理，校長如何確認「決定」還在自己手上？</div>
+  </div>
+
+  <div class="cols">
+    <!-- 數位化 -->
+    <div class="col c-green">
+      <div class="col-head">數位化｜工具技術更迭</div>
+      <div class="col-body">
+        <div class="news">
+          <span class="num">[1]</span>
+          <div class="ntitle"><a href="https://www.inside.com.tw/article/41540-ai-use-water" target="_blank">聯合國報告：2030 年 AI 用水量恐達 13 億人份</a></div>
+          <div class="ntext">聯合國最新報告指出，AI 的「水足跡」比碳足跡更嚴峻，推論（inference）階段就佔總能耗約 90%。報告估算到 2030 年，AI 資料中心的耗水量將相當於 13 億人一年的用水量。報告並警告，運算基礎設施過度集中，正同時加劇資源消耗與數位鴻溝，是治理層面的挑戰，而非單純的技術問題。</div>
+        </div>
+        <div class="news">
+          <span class="num">[2]</span>
+          <div class="ntitle"><a href="https://infosecu.technews.tw/2026/06/13/apple-intelligence-can-change-your-passwords-for-you-when-you-get-hacked/" target="_blank">Apple Intelligence 將能自動更換被駭的密碼</a></div>
+          <div class="ntext">蘋果在 6 月 8 日 WWDC 2026 發表新功能：當偵測到使用者密碼遭外洩或不安全，Apple Intelligence 能自動將其更換為更安全的密碼。這是 AI 代理（AI Agent）能自主完成從設定到達標完整流程的又一例，連手機密碼的管理都可全權交由 AI 處理。</div>
+        </div>
+      </div>
+    </div>
+    <!-- 數位優化 -->
+    <div class="col c-blue">
+      <div class="col-head">數位優化｜流程組織再造</div>
+      <div class="col-body">
+        <div class="news">
+          <span class="num">[3]</span>
+          <div class="ntitle"><a href="https://techorange.com/2026/06/11/new-job-titles-that-ai-created/" target="_blank">AI 一邊裁員、一邊創造兩年前還不存在的職位</a></div>
+          <div class="ntext">科技報橘報導，當多數新聞聚焦 AI 造成企業裁員，宣布裁員的同一批企業，同時正大舉招募兩年前根本不存在的職位——包括「Claude 佈道者」、首席 AI 長等。文章指出，AI 在淘汰部分舊職位的同時，也催生出一批全新的工作角色。</div>
+        </div>
+        <div class="news">
+          <span class="num">[4]</span>
+          <div class="ntitle"><a href="https://www.bnext.com.tw/article/91183/ai-recursive-self-improvement-taiwan-computing" target="_blank">AI 開始「自己寫自己」，台灣算力握著全人類的油門</a></div>
+          <div class="ntext">數位時代分析，當 AI 進入遞迴自我改進（recursive self-improvement）階段、能優化自身程式碼，AI 開發最終可能變成純粹的算力競賽。而今天全球算力供應鏈最關鍵的瓶頸是台積電、是台灣——誰掌握算力供應鏈，誰就握住整個產業的油門。</div>
+        </div>
+      </div>
+    </div>
+    <!-- 數位轉型 -->
+    <div class="col c-purple">
+      <div class="col-head">數位轉型｜文化價值提升</div>
+      <div class="col-body">
+        <div class="news">
+          <span class="num">[5]</span>
+          <div class="ntitle"><a href="https://technews.tw/2026/06/11/the-consequences-of-relying-on-ai-for-accurate-news/" target="_blank">MIT 研究：把判讀新聞外包給 AI，恐讓批判思考退化</a></div>
+          <div class="ntext">MIT 媒體實驗室研究發現，使用 ChatGPT 等 AI 工具查核新聞真偽，短期內能協助使用者更快判斷；但若長期把辨別真偽的工作完全外包給系統，使用者自行識讀假訊息的能力可能隨時間推移而退化。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gov">
+    <div class="gov-box">
+      <h3>看趨勢</h3>
+      <p>AI 受到算力、電力和資源的限度，但人類的想像力，受到好奇心的驅動是無限的。</p>
+    </div>
+    <div class="gov-box">
+      <h3>看自己</h3>
+      <p>面對一個難題，你通常——</p>
+      <ol>
+        <li>先問 AI 該怎麼做</li>
+        <li>先想好自己怎麼做，再請 AI 補強</li>
+        <li>做完才想起來可以問 AI</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="reflect">
+    <h3>本週觀察反思</h3>
+    <p>
+      我們常以為人可以做決定，不要讓 AI 做決定就好，<br>
+      因為判斷交給人類是最後防線，<br>
+      但，<br>
+      這句話，細思極恐⋯⋯<br><br>
+      你怎麼知道是你在判斷，<br>
+      還是 AI 讓你以為是你在判斷？<br><br>
+      高明的廣告，<br>
+      可以影響你的決定，<br>
+      甚至讓你以為是你在做決定。<br><br>
+      厲害的 AI，<br>
+      也可以影響你的決定，<br>
+      甚至讓你自以為是你在做決定。
+    </p>
+  </div>
+
+  <div class="foot">
+    <div class="srctitle">本期參考文章來源</div>
+    <ol>
+      <li><a href="https://www.inside.com.tw/article/41540-ai-use-water" target="_blank">聯合國發表報告：2030 年 AI 將喝掉 13 億人份的水（INSIDE）</a></li>
+      <li><a href="https://infosecu.technews.tw/2026/06/13/apple-intelligence-can-change-your-passwords-for-you-when-you-get-hacked/" target="_blank">AI 連手機密碼也能代理！Apple Intelligence 能自動更改不安全的密碼（TechNews 資安）</a></li>
+      <li><a href="https://techorange.com/2026/06/11/new-job-titles-that-ai-created/" target="_blank">在 AI 時代誕生的全新職位有哪些？（TechOrange）</a></li>
+      <li><a href="https://www.bnext.com.tw/article/91183/ai-recursive-self-improvement-taiwan-computing" target="_blank">AI 開始自己寫自己，握住 CoWoS 的台灣（BNext 數位時代）</a></li>
+      <li><a href="https://technews.tw/2026/06/11/the-consequences-of-relying-on-ai-for-accurate-news/" target="_blank">過度依賴 AI 判讀新聞，恐引發批判性思考退化危機（TechNews）</a></li>
+    </ol>
+    <div class="edno">ed.13</div>
+  </div>
+
+</div>
+</body>
+</html>
