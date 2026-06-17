@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/06/18</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/06/18（四）｜觀察反思版</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 工具越來越多、越來越強，但你學校裡最難改變的，是不是人？</div>
+    <div class="hero-sub">五則新聞、一份反思——當 AI 助理走向多強、工作流程被接手，真正的瓶頸從來不在技術。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/17/state-of-ai-apps-2026-sensor-tower" target="_blank">
+            ChatGPT 全球市占首度跌破 50%，AI 助理進入「三強鼎立」
+          </a>
+        </div>
+        <div class="news-body">
+          Sensor Tower《2026 AI 現狀報告》顯示，ChatGPT 月活用戶達 11 億仍居首位，但市占率已從年初的 50% 以上滑落至 5 月底的 46.4%。Google Gemini 以 6.62 億用戶、27.7% 市占緊追，Claude 以 2.45 億用戶居第三。報告指出，使用者正在多款 AI 工具間切換，不再只依賴單一平台。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91259/textile-dyeing-ai-transformation" target="_blank">
+            72 歲染整廠花 12 年說服老師傅用 AI，人力減近 3 成卻連年調薪
+          </a>
+        </div>
+        <div class="news-body">
+          台灣紡織老廠東豐纖維導入 AI 轉型，最難的不是技術，而是人。花了 12 年攻克「老師傅不願改變」的人性難題，讓儲備幹部下現場扛髒活、用數據說服資深員工接受新流程。結果：產值不變，人力縮減近 3 成，同時連年調薪，成為紡織業 AI 轉型典範。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/17/microsofts-newest-ai-agent-wants-to-take-entire-projects-off-your-plate" target="_blank">
+            微軟 Copilot Cowork 正式上線：AI 代理從「給草稿」到「接手整套專案」
+          </a>
+        </div>
+        <div class="news-body">
+          微軟 6 月 16 日宣布 Copilot Cowork 進入全球一般可用階段。與傳統 AI 助理不同，它能接手跨工具、長時間的多步驟工作流程，自動規劃、執行並追蹤進度。預覽期間已有超過半數《財星》500 大企業採用。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91254/ai-education-nycu-graduation-speech" target="_blank">
+            均一董事長呂冠緯：不要問「會不會被取代」，要問「能承擔什麼更大的責任」
+          </a>
+        </div>
+        <div class="news-body">
+          均一平台教育基金會董事長呂冠緯在陽明交通大學畢業典禮演講，以自身三個人生壞消息為例，指出每個壞消息背後都藏著重新塑造人生的轉折。他告訴畢業生：在 AI 時代感到不安時，別只問「我會不會被取代」，而要問「我可以用新的工具，承擔什麼更大的責任」。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/16/social-media-video-surpasses-traditional-media-primary-global-news-source/" target="_blank">
+            路透研究所：社群影音首度超越傳統媒體，成全球新聞主要來源
+          </a>
+        </div>
+        <div class="news-body">
+          牛津大學路透新聞學研究所《2026 數位新聞報告》調查 48 國近 10 萬人，發現 54% 受訪者透過社群媒體或影音平台獲取新聞，首度超越電視（52%）與新聞網站（51%）。18–24 歲族群中，半數以社群為主要新聞來源。此外，10% 受訪者每週用 AI 聊天機器人看新聞，高於去年的 7%。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點（週四兩欄） -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        只用過一種 AI 的經驗可能不夠——嘗試不同的 AI 工具，能截長補短，甚至交叉驗證彼此的產出。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        影響你選 AI 工具的標準是什麼？
+        <div class="option">追最新最強的模型</div>
+        <div class="option">看產出風格是否符合需要</div>
+        <div class="option">還沒認真比較過，一直用同一個</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>這週最抓住我注意力的，是東豐纖維那則新聞。</p>
+        <p>一家 72 歲的染整廠要導入 AI，最難的不是技術——是人。但他們沒有選擇「訓練老師傅學 AI」這條看起來最直覺的路。他們的做法是：讓一群願意嘗試新東西的人，走進現場，和老師傅一起扛髒活、一起磨合。不是由上而下的命令，是肩並肩的共事。花了 12 年。</p>
+        <p>學校何嘗不是如此？惠銘校長之前分享過一句話：作用力等於反作用力。推動轉型的力道越大，來自現場的抵抗也會越大。東豐的經驗讓我想到：或許不是「推」，而是「走進去」。</p>
+        <p>這 12 年的磨合，也許才是我們最值得借鏡的部分。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] TechNews｜ChatGPT 全球市占跌破 50%，AI 助理進入三強鼎立<br>
+      [2] BNext 數位時代｜72 歲染整廠說服老師傅用 AI，人力減近 3 成卻連年調薪<br>
+      [3] TechNews｜微軟 Copilot Cowork 正式上線，AI 代理接手整套專案<br>
+      [4] BNext 數位時代｜均一董事長呂冠緯陽明交大畢業演講<br>
+      [5] TechNews｜路透研究所：社群影音首超傳統媒體成全球新聞主要來源<br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.14</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
