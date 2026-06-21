@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/06/22</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/06/22（一）｜週一版</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 代理越來越普及，你的學校準備好「思、用、查、修」了嗎？</div>
+    <div class="hero-sub">五則新聞、一份反思——當非工程師與 AI 代理人都能直接上工，真正該升級的，不是技術，是判斷力。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://www.koc.com.tw/archives/646317" target="_blank">
+            Anthropic 揭密 Claude Code 使用者：23.5 萬人，非工程師逼近工程師
+          </a>
+        </div>
+        <div class="news-body">
+          Anthropic 分析 23.5 萬名 Claude Code 使用者發現，律師、會計等非工程師的程式任務成功率已逼近工程師（34% vs 29%）。關鍵差異不是會不會寫程式，而是懂不懂自己要解決的問題；新手卡關時 19% 放棄，專家僅 5-7%。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/06/18/estonia-ai-agents-personal-id-numbers/" target="_blank">
+            愛沙尼亞推出全球首創構想：AI 代理人也要有專屬身分證號
+          </a>
+        </div>
+        <div class="news-body">
+          愛沙尼亞總理 6 月 17 日核准全球首創構想，將替 AI 代理人核發專屬身分識別碼，終結 AI 必須「借用人類帳號」才能執行任務的模式，使其權限可被獨立授權、限制與追蹤。法律責任歸屬等細節尚未公布。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91257/taiwan-enterprises-ai-agents-adoption-impact-bcg-x-wu-xuelin" target="_blank">
+            BCG 台灣負責人示警：企業導入 AI 代理，千萬別「為了用AI而AI」
+          </a>
+        </div>
+        <div class="news-body">
+          BCG X 大中華區負責人吳學霖指出，台灣企業導入 AI 代理的「awareness 很高」，但效果仍是問號。他提醒企業千萬要避免「為了用AI而AI」——若只是把人類原本做的事再加一層 AI，等於同時付人力薪水與 tokens 成本，不一定划算。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91287/nadella-human-token-capital" target="_blank">
+            微軟納德拉：企業要同時累積「人力資本」與「token資本」
+          </a>
+        </div>
+        <div class="news-body">
+          微軟執行長納德拉發文指出，AI 時代企業須同時累積「人力資本」與「token資本」，靠自建的學習迴圈讓兩者複利成長。他警告，若把專業全交給少數最強模型，企業終將淪為使用者，把價值拱手讓人——這個迴圈無法外包，就像學習本身無法外包。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://www.thenewslens.com/article/268693" target="_blank">
+            面對 AI 學習外包隱憂，教育現場提出「思、用、查、修」原則
+          </a>
+        </div>
+        <div class="news-body">
+          面對 AI 帶來的「學習外包」隱憂，教育部資科司長葉家宏與台中教育大學校長郭伯臣提出「思、用、查、修」原則：先思考、再用 AI、查證來源、修正組織。另有教師讓學生用紅綠燈色彩標籤區分 AI 生成與個人觀點，培養查證習慣而非照單全收。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點（週四兩欄） -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        當寫程式的門檻降低、AI代理人甚至開始擁有專屬身分識別碼，工作被AI部分外包已是不可逆的趨勢；除了「思、用、查、修」的判斷原則，人類與AI互動更需要想辦法形成 Nadella 所說的「學習迴圈」，讓每一次互動都能持續迭代、累積。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        本週你與 AI 互動時，靠的是自己的判斷力（人力資本）比較多，還是仰賴 AI 生成的內容（token 資本）比較多？
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>這週讓我想最久的，是微軟執行長 Nadella 那篇談「學習迴圈」的文章。他講了幾個重點：你可以外包任務、外包工作，但學習無法外包；沒有人類指引方向，算力只會原地打轉；組織真正該做的不是選一個更好的模型，而是盡早建立學習迴圈，讓判斷力跟AI能力一起迭代。</p>
+        <p>這讓我想到學校治理——不是鼓勵老師多用AI，而是要找一件小事，從中看清楚人力資本和算力資本各自扮演的角色。我想到的是主管會議的追蹤事項：常常我或主任一忙，回報就忘了，等想起來，時效已經過了。</p>
+        <p>我想了很久AI在這裡能做什麼，後來發現：好像不需要它。只要在會議中把追蹤事項列出來，這個困擾本身就解決了。</p>
+        <p>有個念頭閃過——會議全程錄音，結束後讓AI整理，效率應該很高。但仔細想，主管會議裡常有人表達個人觀點，也會談到學生的個案，這些都不適合被留下逐字紀錄。錄音換來的效率，可能要用大家的安全感去交換，這個帳，我覺得不划算。</p>
+        <p>那就放過自己吧。就像本週新聞裡說的——千萬不要為了用AI而AI。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] KOC 電腦王阿達｜Anthropic 揭密 Claude Code 使用者，非工程師逼近工程師<br>
+      [2] TechOrange 科技報橘｜愛沙尼亞 AI 代理人專屬身分識別碼<br>
+      [3] BNext 數位時代｜BCG 吳學霖：避免為了用AI而AI<br>
+      [4] BNext 數位時代｜微軟納德拉：人力資本與 token 資本<br>
+      [5] TheNewsLens 關鍵評論網｜AI教育現場：思、用、查、修原則<br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.15</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
