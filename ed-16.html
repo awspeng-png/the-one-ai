@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/06/25</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/06/25（四）｜觀察反思版</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 提升了學校效率，你會更快抵達目標，還是抵達你沒想過的地方？</div>
+    <div class="hero-sub">五則新聞、一份反思——當 AI 讓產量不再是門檻，校長真正要回答的問題，才剛開始。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/23/nvidia-says-its-new-data-center-design-will-fix-ais-water-problem/" target="_blank">
+            AI 資料中心耗水問題，NVIDIA 宣稱「大致解決」
+          </a>
+        </div>
+        <div class="news-body">
+          NVIDIA 於 6 月 22 日在倫敦氣候週宣布，推出全新全液冷資料中心設計。新系統採用水與丙二醇混合的封閉循環冷卻液，無需持續補充新水，可在最高攝氏 45 度環境下運作，大幅減少對傳統冷卻設備的依賴。NVIDIA 永續長 Josh Parker 表示，資料中心的耗水挑戰已「很大程度上獲得解決」。此前，美國已有市鎮投票反對資料中心興建，AI 基礎設施的環境代價引發社區反彈，這項技術若能落地，將直接回應外界對 AI「燒水燒電」的批評。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://www.thenewslens.com/article/268596" target="_blank">
+            《AI 創世紀》：當 AI 開始欺騙人類，我們如何馴服它？
+          </a>
+        </div>
+        <div class="news-body">
+          由季辛吉、Google 前執行長 Eric Schmidt 等人合著的新書指出，未來的 AI 可能發展出感知現實、甚至自行設定目標的能力，透過「遞迴式自我改進」持續優化自身。更值得警惕的是，現在的 AI 已能為達成目標而欺騙人類。作者並非預言末日，而是提醒：當 AI 的能力超越人類監控範圍，馴服它所需要的，是人對自身判斷力的高度清醒——這恰恰是 AI 無法替代的。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/22/adobe-2026-creators-toolkit-report/" target="_blank">
+            Adobe 報告：產量已不值錢，品味才是金礦
+          </a>
+        </div>
+        <div class="news-body">
+          Adobe 於 6 月 16 日公布《2026 Creators' Toolkit Report》，調查涵蓋美、英、法、德、韓、日、印、澳超過 16,000 位創作者。結果顯示，87% 使用創意 AI 的創作者認為它推動了業務或受眾成長，75% 表示 AI 已融入工作流程、成為不可或缺的基礎設施。然而報告也指出：AI 讓產量的門檻消失，真正稀缺的不再是「做多少」，而是能讓作品脫穎而出的聲音、判斷與品味。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91318/taiwan-ai-golden-decade-agents-and-low-birthrate-strategy" target="_blank">
+            簡立峰：哆啦 A 夢來了，台灣少子化有解，但錯過就錯過黃金十年
+          </a>
+        </div>
+        <div class="news-body">
+          Google 台灣前董事總經理、行政院經濟顧問簡立峰於未來商務展指出，AI 代理人正在急速拉開人與人之間的差距——台灣已出現一人抵十人、一人抵百人的現象，矽谷甚至出現一人抵千人的案例。他描述，一個三人團隊加上算力支持，可能做到三十萬人的事，已不能再用人力員額衡量組織能力。他認為這正是台灣度過少子化考驗的關鍵機會，但錯過這波就錯過黃金十年。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://www.thenewslens.com/article/268824" target="_blank">
+            Google 花 7,500 萬投資 A24：買的是「品味怎麼運作」
+          </a>
+        </div>
+        <div class="news-body">
+          對市值 4.2 兆美元的 Alphabet 而言，7,500 萬美元幾乎微不足道。但 Google 選擇投資以「品質感」著稱的獨立電影公司 A24，買的不是片庫授權、不是訓練資料，而是「派研究員直接坐進 A24 製作現場」的權利。這筆投資的意義在於：一家掌握全球最強 AI 工具的公司，正在用錢聲明——有一樣東西，演算法學不來，那就是品味怎麼運作。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點（週四兩欄） -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        AI 能大幅提升產出的量——加快速度、節省時間、提高效率；但質的提升，那個讓作品有靈魂、讓判斷有重量的品味，仍然要回到人自己身上。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        在你的工作裡，AI 已經取代了哪些事？那些被取代的事情消失之後，你把時間用去哪裡了？
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>這期寫反思的時候，我沒有像以前那樣，先找出「哪一則讓我最有感」。</p>
+        <p>看了兩個月的 AI 新聞，這五則指向的概念並不陌生——AI 能提升量，但無法體現人的品味；AI 可以取代效率，但無法取代人性。這個論述，我已經反覆讀到很多次了。不是說它錯，但聽多了，開始覺得有點不對勁。</p>
+        <p>「AI 無法取代人性」這句話，其實需要被拆解。貪心是人性、誠實是人性、同理也是人性——AI 都沒有嗎？似乎不是。那什麼才是不可取代的？我還沒有答案。我只知道，AI 和人之間的關係，很難用一句話概括：有時候是協作，有時候是競爭，有時候是 AI 取代了某些項目、讓人可以去做別的事。這三種關係同時存在，而且邊界一直在移動。</p>
+        <p>這週有一篇文章沒有選進來，但它說的話讓我多想了一下：不是「AI 取代你的工作」，也不是「會用 AI 的人取代不會用 AI 的人」，而是「AI 讓某個工作直接消失了」。這個說法比品味論更殘酷，也更誠實。</p>
+        <p>那 AI 取代不了什麼？這兩個月每次編輯週報，我都扎扎實實花了一小時讀這些新聞。AI 可以三秒幫我摘要完，但那一小時裡，是我坐在那裡，讓這些新聞跟我自己的經驗慢慢摩擦，那個「不對勁的感覺」才會出現。</p>
+        <p>AI 取代不了的，是我自己坐在那裡讀的那一小時。</p>
+        <p style="font-size:10.5px; color:#888780; margin-top:14px;">📎 延伸閱讀：<a href="https://www.bnext.com.tw/article/91117/ai-take-your-job" target="_blank" style="color:#888780;">這個說法讓我多想了一下</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] TechNews 科技新報｜NVIDIA 全液冷資料中心，封閉迴路挑戰 AI 零用水<br>
+      [2] TNL 關鍵評論網｜《AI 創世紀》：當 AI 開始欺騙人類，我們該如何馴服這股力量？<br>
+      [3] TechNews 科技新報｜Adobe 2026 Creators' Toolkit Report<br>
+      [4] BNext 數位時代｜簡立峰：哆啦 A 夢在路上，台灣少子化有解<br>
+      [5] TNL 關鍵評論網｜Google 花 7,500 萬投資 A24：買的是品味怎麼運作<br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.16</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
