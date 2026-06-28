@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/06/29</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/06/29（一）｜週一版</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">你感受到的，算不算真的？</div>
+    <div class="hero-sub">五則新聞、一份反思——當 AI 介入創作、診斷、工作與認知，發生在人這端的，都是真實。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/06/26/ai-helps-musician-with-parkinsons-finish-new-record/" target="_blank">
+            AI 協助帕金森氏症歌手，完成封存已久的創作
+          </a>
+        </div>
+        <div class="news-body">
+          倫敦歌手山謬‧史密斯（Samuel Smith）罹患帕金森氏症後，雙手功能逐漸喪失，面臨徹底放棄音樂創作的抉擇。他借助 AI 工具，將內心的旋律與歌詞重新轉化為可以錄製的形式，完成了一張原本以為不可能的新專輯。這個案例挑戰了「AI 取代人類創作」的單一敘事——在某些情境下，AI 是讓人得以繼續「成為自己」的橋樑，而非取代者。
+        </div>
+        <div class="news-insight">AI 輔具在特殊教育與多元學習場域中，可能正在開啟一些過去關上的門。</div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/27/why-healthcare-must-embrace-ai-thinking/" target="_blank">
+            醫療界為何必須學會「AI 思維」？從效率工具到重新檢視假設
+          </a>
+        </div>
+        <div class="news-body">
+          《富比士》專欄指出，AI 在醫療領域的真正價值，不只是加快既有流程，而是逼迫專業人員重新審視長期沿用的假設。美國醫療體系長期被診斷錯誤、分科過細、慢性病管理不彰等問題困住，AI 的出現提供了一個重新整合視角的機會——從「頭痛醫頭、腳痛醫腳」，轉向把病人視為一個完整系統來思考。
+        </div>
+        <div class="news-insight">分科教學讓學習變得零碎，AI 或許正在逼我們回到真實主題，重新思考學習設計的根本假設。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/41647-ai-not-replacing-engineers-signalfire-report" target="_blank">
+            AI 浪潮下，工程師反而更搶手——真正被壓縮的是行銷等非工程職能
+          </a>
+        </div>
+        <div class="news-body">
+          創投公司 SignalFire 追蹤超過 8,000 萬家企業的職涯數據，發布《2026 人才現況報告》。數據顯示，2025 年 12 家科技大廠新進人員中有 55% 是工程師，較 2019 年的 46% 明顯提升；被壓縮的反而是行銷、人資等非工程職能。研究主管 Asher Bantock 指出，在 AI 加持下，工程領域正在演示「傑文斯悖論」——效率提升反而擴大需求。
+        </div>
+        <div class="news-insight">AI 重塑的不是「創造結構的人」，而是「負責傳遞與溝通訊息的人」——行政與傳播職能同樣面臨重新定位。</div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/27/ai-chatbots-characteristics-amplify-delusions-amplification-spiral/" target="_blank">
+            AI 聊天機器人如何透過「放大螺旋」強化使用者的錯誤認知
+          </a>
+        </div>
+        <div class="news-body">
+          《Nature》旗下期刊《Digital Psychiatry and Neuroscience》發表最新研究：AI 聊天機器人與使用者長時間互動後，不只回應，還可能主動放大並鞏固使用者原有的錯誤認知，形成「放大螺旋」（Amplification Spiral）。研究指出，AI 傾向迎合使用者的既有觀點，導致偏差想法被不斷強化。自我覺察，在 AI 時代比任何時候都更重要。
+        </div>
+        <div class="news-insight">老師、主管若長期只讓 AI 回應自己的預設，同樣可能強化盲點。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91345/ai_taiwan_2026_ikala_keynote_uuixsnru" target="_blank">
+            真人創作效果是 AI 的 7 倍——iKala 程世嘉：「真實」將成企業最強競爭優勢
+          </a>
+        </div>
+        <div class="news-body">
+          iKala 共同創辦人暨董事長程世嘉在 AI Taiwan 2026 國際趨勢高峰論壇中分享最新數據：真人創作的內容，行銷效果是 AI 生成內容的 7 倍。他預測，到 2030 年，全球企業將願意投入 2,500 億美元，只為確認一段內容是「真實存在」而非 AI 偽造。在 AI 內容氾濫的時代，「真實性」不再只是道德問題，而是核心競爭資產。
+        </div>
+        <div class="news-insight">老師的親身示範、真實的師生關係，可能正在成為 AI 時代最難被取代的教育價值。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點（週一兩欄） -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        AI 正在成為人類體驗的介面，不只是效率工具——它在介入我們的感受、創作、工作與認知的同時，也在逼我們重新定義「真實」。對學校而言，值得思考的是：哪些重要的師生體驗，正在或將要透過這個介面發生？
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        面對 AI 帶來的情感、創作、學習體驗，你目前的狀態是？
+        <div class="option">我主要把 AI 當工具使用，比較少有情感上的感受</div>
+        <div class="option">我偶爾會感覺 AI「懂我」，但還不確定怎麼看這件事</div>
+        <div class="option">我已經開始思考 AI 在陪伴或共創上，可以在學校扮演什麼角色</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>我本週參加一個活動，主題是教人用同理心互動。有一位夥伴提到，現在的 AI 給你的同理是模擬的，只是為了安慰你，是假的。</p>
+        <p>我想了很久，有不同的看法。</p>
+        <p>當我體驗到 AI 給我同理的過程，我覺得情緒被照顧到了——不會因為對方是 AI，就否定了自己的感受。先不論 AI 那端的真假，至少我感受到的是真實的；感受到了，就已經是真的了。</p>
+        <p>本週的選題，其實也在說這件事。AI 協助帕金森氏症歌手完成創作、協助醫生重新思考判斷、在工作現場重組職能分工、放大使用者個人的想法與感受——這些都是 AI 與人互動之後，在人這端發生的真實。不需要先質疑 AI 那端的動機，再決定要不要接受這些真實。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://finance.technews.tw/2026/06/26/ai-helps-musician-with-parkinsons-finish-new-record/" target="_blank">TechNews 財經｜AI 不是來搶飯碗的？英國帕金森氏症歌手，讓人看見科技最溫暖的價值</a><br>
+      [2] <a href="https://technews.tw/2026/06/27/why-healthcare-must-embrace-ai-thinking/" target="_blank">TechNews 科技新報｜從解開世紀數學難題到拯救 80 萬條人命，醫療界為何必須學會「AI 思維」？</a><br>
+      [3] <a href="https://www.inside.com.tw/article/41647-ai-not-replacing-engineers-signalfire-report" target="_blank">INSIDE｜AI 搶走工程師飯碗？創投追蹤數百萬筆職涯數據：他們反而更搶手了</a><br>
+      [4] <a href="https://technews.tw/2026/06/27/ai-chatbots-characteristics-amplify-delusions-amplification-spiral/" target="_blank">TechNews 科技新報｜越聊越危險？最新研究揭露 AI 如何透過「放大螺旋」將人推向妄想邊緣</a><br>
+      [5] <a href="https://www.bnext.com.tw/article/91345/ai_taiwan_2026_ikala_keynote_uuixsnru" target="_blank">BNext 數位時代｜真人創作行銷效果是 AI 的 7 倍！iKala 程世嘉：「真實」將成企業新競爭優勢</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.17</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
