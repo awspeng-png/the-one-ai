@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/07/02</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/07/02（四）｜觀察反思版</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 最先衝擊的是中層，不是基層——你學校的主任組長，要靠什麼重新定義價值？</div>
+    <div class="hero-sub">五則新聞、一份反思——AI 衝擊的不是最低層與最高層，而是那些整理資料、分析資料、做成果的人。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/41689-microsoft-2026-work-trend-index-taiwan-org-gap" target="_blank">
+            微軟《2026 工作趨勢指數》：AI 成效 67% 卡在組織
+          </a>
+        </div>
+        <div class="news-body">
+          微軟《2026 工作趨勢指數》調查 10 個市場、2 萬名 AI 使用者，指出 AI 成效的關鍵已從個人轉向組織：組織文化、主管支持與人才機制占 67%，是個人因素（32%）的兩倍以上。報告依個人能力與組織就緒度分成五群，僅 19% 是雙雙成熟的「前瞻型」、半數仍在「發展中」，並把「員工已就緒、組織卻沒跟上」的落差稱為「轉型悖論」。台灣個人採用領先（前瞻專業工作者 22%、高於全球 16%），組織與領導策略卻相對落後。
+        </div>
+        <div class="news-insight">這五大分群不是拿來看熱鬧的——值得對照著自己想一想：我個人落在哪一格，我的學校又落在哪一格？</div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/06/29/aws-ceo-matt-garman-says-ai-displacing-junior-employees-is-bad-for-business/" target="_blank">
+            AWS 執行長：用 AI 取代初階員工是「最愚蠢的想法之一」
+          </a>
+        </div>
+        <div class="news-body">
+          AWS 執行長馬特‧加曼（Matt Garman）接受《Wired》與 Platformer Podcast 訪問時，再度反對用 AI 取代年輕員工，直言裁初階工程師改用 AI 是「最愚蠢的想法之一」：企業會同時失去成本較低的人力、接班梯隊，以及最熟悉 AI 工具的新血，長期恐讓人才培育鏈斷裂、「整個系統自己爆炸」。亞馬遜今年仍預定招募 11,000 名實習生與應屆生；但報導也點出，亞馬遜自身去年裁掉的 1.4 萬個職位，主要落在中階管理層。
+        </div>
+        <div class="news-insight">執行長喊著別裁初階，但真正被裁的往往是中階。放到學校，最先被 AI 衝擊的可能不是老師，而是主任、組長——因為行政工作的可取代性，本來就比教學高。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/29/finland-public-sector-ai-implementation-2031-700k-employees-impacted/" target="_blank">
+            芬蘭公部門 2031 年前全面導入 AI，70 萬員工受衝擊
+          </a>
+        </div>
+        <div class="news-body">
+          芬蘭政府宣布，公部門將於 2031 年前轉型為以 AI 為基礎的運作模式，目標生產力提升 20%、約 70 萬名員工受影響。主導的財政部秘書長馬亞寧（Juha Majanen）坦言「AI 正在取代人類」，但面對經濟停滯與人口老化，芬蘭「別無選擇」，將靠人員自然退休精簡、不遞補缺額。不過也有國會議員質疑：若只把 AI 當成省錢、對員工說「AI 會搶走你的工作」，只會引發抵制；真正該做的是提供更好的服務、用誘因鼓勵員工把重複性工作自動化。
+        </div>
+        <div class="news-insight">導入 AI 不該被簡化成「裁多少人、少聘多少人」，而要再往下問一層：這樣的導入，到底能不能形成學習迴圈或工作迴圈？何況這案子由財政部主導，究竟要做什麼，其實還說不清楚。</div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/06/30/meta-contractors-posed-as-teens-to-prompt-rival-chatbots-about-suicide-sex-and-drugs/" target="_blank">
+            未經授權的「安全測試」？Meta 以假兒少帳號探測對手聊天機器人
+          </a>
+        </div>
+        <div class="news-body">
+          WIRED 揭露內部文件指出，Meta 承包商 Covalen 在代號「Cannes」計畫中，以看似未滿 18 歲的假帳號，向 ChatGPT、Gemini、Character.AI 等對手聊天機器人大量發送涉及自殺、自殘、飲食失調、性與毒品的高風險提示並記錄回應。Meta 稱這屬業界常見的安全與基準測試、不會用於訓練自家模型；但三家業者均表示未授權、恐違反服務條款，專家也質疑以假兒少身分長期、系統性測試，已逾越業界標準。
+        </div>
+        <div class="news-insight">這篇沒告訴我們測試結果，卻讓我想起強納森‧海德特（Jonathan Haidt）的《失控的焦慮世代》：我們在實體世界把孩子保護得太過，在虛擬世界卻保護不足——那在 AI 的世界呢？</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/feature/side-chat/41664-side-chat-e412" target="_blank">
+            同樣的 AI，只有不到 1% 的人做得出成果——Agent 該怎麼分工？
+          </a>
+        </div>
+        <div class="news-body">
+          INSIDE 塞掐 Side Chat 訪問前小紅書工程師 Nick Hsu，他指出「同樣的 AI，只有不到 1% 的人做得出成果」。關鍵不在工具，而在能否說清楚「要解決什麼問題、現在是什麼場景」——即下指令與給脈絡的能力；因此 AI agent 應按「事情」而非「職位」切分，從「提示詞工程」走向「駕馭工程」，只負責轉達的中層將被淘汰。他並直言，能下命令、給上下文的向來是管理與統治階層，這種能力還會被階級複製，多數人其實不需要、也不會想學。
+        </div>
+        <div class="news-insight">這篇最戳中我的，是他點破一件少有人講的事：能對 AI 下命令、把脈絡說清楚的，歷來是管理階層、統治階級的能力，而且還會被階級複製。那「人人都能用 AI」這句話，是不是太樂觀了？</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點（週一兩欄） -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        本週有幾篇文章，指向同一個想法：AI 衝擊的，不會是最低層的人以及最高層的人，反而是中層。因為這些中層的工作，就是整理資料、分析資料和做成果——這是不是很像是主任組長的日常？
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        你的學校導入 AI 後，比較接近哪一種？
+        <div class="option">還停在「聽過、試過」，沒真的進到日常工作</div>
+        <div class="option">有人用得很好，但成果沒累積成學校的東西（個人快、組織慢）</div>
+        <div class="option">用 AI 完成的事會被記錄、被複製，變成下次的起點</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>本週最讓我印象深刻的，無疑是微軟《2026 工作趨勢指數》。</p>
+        <p>它提到個人與組織兩個向度：個人使用 AI 會越來越 M 型化，用 AI 和不用 AI 的人被拉開，組織也一樣。這兩個向度交叉出四種組合——高度使用的「前瞻型」與都不使用的「停滯型」，兩個極端就佔了 35%；另外 15% 是兩邊不同步的落差，其中個人會用、組織卻沒跟上的「受阻型」人才，遲早會流向真正在用 AI 的單位，也讓那些單位更有效能。</p>
+        <p>但看完這些數字，我在意的其實是另一件事：組織使用 AI，重點在於能不能形成學習迴圈——在真實場景裡，真的用 AI 把一件事情完成。</p>
+        <p>而這，也正是中層主管最有價值的工作。中層主管能不能把 AI 用成一個迴圈，就是整個組織能不能完成轉型的關鍵。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://www.inside.com.tw/article/41689-microsoft-2026-work-trend-index-taiwan-org-gap" target="_blank">INSIDE｜台灣微軟公布 2026 工作趨勢指數，AI 成效 67% 卡在組織</a><br>
+      [2] <a href="https://finance.technews.tw/2026/06/29/aws-ceo-matt-garman-says-ai-displacing-junior-employees-is-bad-for-business/" target="_blank">TechNews 財經｜AWS 執行長：以 AI 取代初階員工是「最愚蠢想法」，這種公司有天終會自爆</a><br>
+      [3] <a href="https://technews.tw/2026/06/29/finland-public-sector-ai-implementation-2031-700k-employees-impacted/" target="_blank">TechNews 科技新報｜芬蘭公部門 2031 年前全面導入 AI，70 萬員工受衝擊</a><br>
+      [4] <a href="https://technews.tw/2026/06/30/meta-contractors-posed-as-teens-to-prompt-rival-chatbots-about-suicide-sex-and-drugs/" target="_blank">TechNews 科技新報｜未經授權的「安全測試」？Meta 承包商以假兒少帳號探測對手聊天機器人底線</a><br>
+      [5] <a href="https://www.inside.com.tw/feature/side-chat/41664-side-chat-e412" target="_blank">INSIDE｜Agent 該怎麼分工？同樣的 AI 只有不到 1% 的人做得出成果！｜前小紅書工程師 Nick Hsu</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.18</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
