@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/07/16</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/07/16（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 省下的時間，你的學校拿去做更多事，還是帶更多人？</div>
+    <div class="hero-sub">五則新聞、一份反思——當 AI 讓組織越變越輕，校長該如何守住「把人帶好」這件事？</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://www.koc.com.tw/archives/648715" target="_blank">
+            OpenAI 正式發表 ChatGPT Work：結合 Codex 與 GPT-5.6 的 AI 代理，跨應用程式自主工作數小時
+          </a>
+        </div>
+        <div class="news-body">
+          OpenAI 於 7/10 發表 ChatGPT Work，結合 Codex 與 GPT-5.6，不再只是聊天機器人，而是能跨應用程式、跨裝置自主工作數小時的 AI 代理。Codex 週活躍用戶已破 500 萬，其中非工程師占比達兩成，顯示 AI 辦公應用正快速從開發者工具走向全民助手。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/91029/ai-food-waste-2" target="_blank">
+            漢來美食導入 AI 廚餘辨識，人均廚餘砍近 70%、主廚也不再「無腦補餐」！
+          </a>
+        </div>
+        <div class="news-body">
+          高雄漢來海港自助餐導入國產 AI 廚餘辨識系統，半年內人均廚餘從 140 公克降到 42 公克，砍近七成。背後是 2027 年起禁止廚餘養豬、處理費暴增的成本壓力，逼企業從「靠直覺」轉向「靠數據」找出浪費源頭——結果竟發現配菜才是剩食大宗。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/10/ai-era-teams-need-pizzas/" target="_blank">
+            Cursor 技術長修正貝佐斯經典理論，「兩個披薩團隊」在 AI 時代嫌太多
+          </a>
+        </div>
+        <div class="news-body">
+          AI 工具 Cursor 技術長 David Pan 為貝佐斯經典的「兩個披薩原則」寫下悼詞：小團隊的精神沒有錯，但在 AI 時代，兩個披薩實在太多了。這番話引發熱議，反映職場正在 AI 輔助下重新拉鋸團隊該精簡還是維持扁平規模。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/13/my-ai-talking-boss-ai/" target="_blank">
+            我的 AI 在跟主管的 AI 對話？專家示警：演算法悄悄取代職場人際關係
+          </a>
+        </div>
+        <div class="news-body">
+          隨著生成式 AI 滲透職場，人與人之間的真實互動正被演算法悄悄取代，有員工形容「我的 AI 正在跟主管的 AI 對話」。專家點出核心是企業扁平化下的「領導真空」：中層精簡的同時，「帶人、陪伴」的功能也一併弱化，年輕世代首當其衝。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/07/14/harness-engineering-ai/" target="_blank">
+            Harness Engineering 為何是 AI 軟體交付護城河？因為模型只會越來越可替換
+          </a>
+        </div>
+        <div class="news-body">
+          當 AI 代理已能大量寫程式，真正決定軟體交付品質的關鍵正在改變。技術社群提出「Harness Engineering」概念：模型以外的那層工程環境——脈絡、技能、邊界、驗證、學習——才是 AI 時代真正持久的護城河，而非模型本身。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        這 5 則新聞共同指向：AI 正在讓企業的中層精簡——團隊可以變得更小（披薩比喻）、AI 代理能自己跑數小時任務、廚餘系統也能看見人力看不到的盲點；但社交卸載那篇提醒我們，被拿掉的不只是人力成本，還有中層原本該扮演的「帶人」角色。對學校的意義是：主任組長在學習 AI 的過程，不要停止對人的關懷。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        貴校主任組長現在花最多心力的，是「效率型任務」還是「帶人型任務」？
+        <div class="option">多數時間花在行政效率、系統操作與進度管控</div>
+        <div class="option">多數時間花在陪伴新進老師、處理人際張力與經驗傳承</div>
+        <div class="option">兩者都想做，但蠟燭兩頭燒，最後兩頭都顧不好</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>我們一直被提醒，AI 可以省下很多做事的時間，增進工作效率。但被省下的時間，去了哪裡？</p>
+        <p>拿去做更多事，還是去帶更多人？</p>
+        <p>做事可以被量化，帶人卻只能被質化。把 AI 省下的時間拿去做更多事，累積的是「量」；把這些時間拿去帶人、拿去改善組織文化，提升的才是「質」。</p>
+        <p>AI 時代，或許該有意識地用質的思維取代量的管理，回到以人為本的初衷。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://www.koc.com.tw/archives/648715" target="_blank">電腦王阿達｜OpenAI 正式發表 ChatGPT Work：結合 Codex 與 GPT-5.6 的 AI 代理，跨應用程式自主工作數小時</a><br>
+      [2] <a href="https://www.bnext.com.tw/article/91029/ai-food-waste-2" target="_blank">數位時代｜漢來美食導入 AI 廚餘辨識，人均廚餘砍近 70%、主廚也不再「無腦補餐」！</a><br>
+      [3] <a href="https://technews.tw/2026/07/10/ai-era-teams-need-pizzas/" target="_blank">TechNews 科技新報｜Cursor 技術長修正貝佐斯經典理論，「兩個披薩團隊」在 AI 時代嫌太多</a><br>
+      [4] <a href="https://technews.tw/2026/07/13/my-ai-talking-boss-ai/" target="_blank">TechNews 科技新報｜我的 AI 在跟主管的 AI 對話？專家示警：演算法悄悄取代職場人際關係</a><br>
+      [5] <a href="https://techorange.com/2026/07/14/harness-engineering-ai/" target="_blank">TechOrange 科技報橘｜Harness Engineering 為何是 AI 軟體交付護城河？因為模型只會越來越可替換</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.19</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
