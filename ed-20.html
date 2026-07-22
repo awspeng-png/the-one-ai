@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/07/23</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/07/23（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 能為你增進效率，但能為你訂方向嗎？</div>
+    <div class="hero-sub">五則新聞、一份反思——AI 能把事情做完，但誰決定要做什麼、誰該負責，答案還是人。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/17/alan-turings-biggest-ai-assumption-may-have-been-wrong/" target="_blank">
+            圖靈假設一開始就錯了？電腦科學家直言：AI 永遠無法掌握人類的「隱性知識」
+          </a>
+        </div>
+        <div class="news-body">
+          電腦科學家彼得・丹寧新書主張，圖靈 1950 年「智慧可脫離身體以軟體重現」的假設，可能從根本上就走錯方向。他指出 AI 真正難以跨越的是「隱性知識」——生活常識、情緒感官、文化脈絡，即使模型規模再擴大，也無法補上這道鴻溝。
+        </div>
+        <div class="news-insight">圖靈測試早就沒人在管了——現在的 AI 已經直接在幫我們做事，不用再騙誰。但做事最需要的，是常識判斷、看懂當下的狀況，這正是丹寧說的「隱性知識」。AI 會做事了，不代表它懂事。</div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/07/19/3-ai-workplace-research-studies-every-leader-should-know-this-week/" target="_blank">
+            AI 省了時間卻失去方向？三大職場研究揭企業導入 AI 盲點
+          </a>
+        </div>
+        <div class="news-body">
+          BCG 調查逾 1.1 萬名員工發現，42% 常用 AI 者每週可省下一個工作天以上，卻有 66% 幾乎沒獲得任何指引；另一份 Glean 調查則指出，員工每週平均花 6.4 小時當 AI「保母」，逾八成曾交出未完全驗證的 AI 成果。
+        </div>
+        <div class="news-insight">AI 省下時間，聽起來是好事，但這個問題沒那麼好回答。因為如果沒想清楚省下的時間要拿去做什麼，很可能只是換去做另一件 CP 值更低的事——時間是省了，但天花板還是沒被突破。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/17/mlb-bans-ai-coach-decisions/" target="_blank">
+            大聯盟祭出新規，嚴禁休息區平板使用 AI 輔助臨場決策
+          </a>
+        </div>
+        <div class="news-body">
+          大聯盟發布備忘錄，禁止球隊在休息區平板上用生成式 AI 提供換投、配球等即時戰術建議，約三分之一球隊此前曾以不同形式使用。聯盟強調：科技能整理呈現資訊，但不能取代教練與球員的臨場判斷。
+        </div>
+        <div class="news-insight">這條禁令，我猜擋不了太久。如果有人在場外用 AI 分析、再口頭轉達給場內教練呢？規則管得住平板，管不住人的嘴巴。話說回來，不管用什麼方式，最後做決定、要負責的，還是人。</div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/07/22/anthropic-to-pay-authors-1-5-billion-in-largest-ever-copyright-settlement/" target="_blank">
+            AI 訓練侵權首宗大型和解拍板，Anthropic 賠償 15 億美元並須銷毀盜版檔案
+          </a>
+        </div>
+        <div class="news-body">
+          美國聯邦法院核准和解案，涵蓋 48.2 萬本書、91% 已申領，每本書約獲 3,000 美元補償。主審法官先前已裁定：用受版權書籍訓練 AI 屬合理使用，但從盜版網站取得儲存書籍不合法。
+        </div>
+        <div class="news-insight">只看標題容易誤會成「用書訓練 AI 不合法」，但法院講得很清楚：用書訓練沒問題，問題出在從盜版網站取得書籍——這中間的差別，值得我們自己想清楚再轉述給別人。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/16/taiwan-eyes-local-ai-as-digital-bulwark-against-chinese-influence/" target="_blank">
+            日經亞洲：台灣發展本土生成式 AI，對抗中國內容影響
+          </a>
+        </div>
+        <div class="news-body">
+          《日經亞洲》報導，台灣正加速發展「可信任人工智慧對話引擎」（TAIDE），因主流 AI 模型的中文訓練資料多來自中國簡體內容。中研院學者黃瀚萱：「沒有自己的 AI，等於把社會的大腦交給外部力量。」
+        </div>
+        <div class="news-insight">餵 AI 台灣的內容，立意很好，但光靠這樣，恐怕擋不住什麼。而且嚴格說，TAIDE 也不是完全自己關起門來做——它是用 Google 開源的模型打底，再加上台灣自己的資料。真正該想的，或許不是怎麼防堵，而是怎麼讓繁體中文的內容，量多、質也好，自然而然就被更多 AI 學進去。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        這五則新聞，隱約指向同一件事：AI 補得了效率，卻補不了方向。圖靈測試測不到隱性知識、省了時間卻沒了方向、MLB 臨場決策還是要靠人、盜版取得才違法、提升的不是量，是質——拆開來看是五則新聞，合起來看，是同一個提醒。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        你的學校用 AI 省下時間之後，比較接近哪一種？
+        <div class="option">時間省下來了，但還沒想清楚要拿去做什麼</div>
+        <div class="option">時間省下來了，也已經有方向可以投入（教學研發、陪伴學生等）</div>
+        <div class="option">還在「要不要用」的階段，時間還沒真的省到</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>這週最有感的，是 Anthropic 15 億美元和解案這則新聞。</p>
+        <p>乍看標題，我以為 Anthropic 是用了未經授權的書籍訓練 AI——我猜很多人第一眼也是這樣理解。但事實不是這樣：用受版權保護的書籍訓練 AI，本身是合理使用，沒有問題；真正讓 Anthropic 付出 15 億美元代價的，是它從盜版網站取得這些書籍的內容。</p>
+        <p>這中間還有一件事，新聞沒有講清楚：究竟是人把這些盜版內容餵給 AI，還是 AI 自己去抓取的？這兩者其實有差——代表的是「刻意」還是「系統自動化」，責任的性質不一樣。但不管是哪一種，有一件事沒有差：實體的公司，還是得負責。</p>
+        <p>這也讓我體悟到一件事：我們每天接收的資訊量這麼大，常常只看標題就轉述出去——這件事本身，可能就是一個很大的風險。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/07/17/alan-turings-biggest-ai-assumption-may-have-been-wrong/" target="_blank">TechNews 科技新報｜圖靈假設一開始就錯了？電腦科學家直言：AI 永遠無法掌握人類的「隱性知識」</a><br>
+      [2] <a href="https://finance.technews.tw/2026/07/19/3-ai-workplace-research-studies-every-leader-should-know-this-week/" target="_blank">TechNews 財經新報｜AI 省了時間卻失去方向？三大職場研究揭企業導入 AI 盲點</a><br>
+      [3] <a href="https://technews.tw/2026/07/17/mlb-bans-ai-coach-decisions/" target="_blank">TechNews 科技新報｜大聯盟祭出新規，嚴禁休息區平板使用 AI 輔助臨場決策</a><br>
+      [4] <a href="https://finance.technews.tw/2026/07/22/anthropic-to-pay-authors-1-5-billion-in-largest-ever-copyright-settlement/" target="_blank">TechNews 財經新報｜AI 訓練侵權首宗大型和解拍板，Anthropic 賠償 15 億美元並須銷毀盜版檔案</a><br>
+      [5] <a href="https://technews.tw/2026/07/16/taiwan-eyes-local-ai-as-digital-bulwark-against-chinese-influence/" target="_blank">TechNews 科技新報｜日經亞洲：台灣發展本土生成式 AI，對抗中國內容影響</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.20</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
