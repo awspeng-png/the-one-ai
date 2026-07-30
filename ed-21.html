@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/07/30</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 本期加碼推薦 */
+  .recommend-wrap {
+    padding: 0 28px 24px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .recommend {
+    border: 1.5px solid #F0A868;
+    border-radius: 4px;
+    padding: 18px 22px;
+    background: #FDF1E1;
+  }
+  .recommend-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #C6691E;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .recommend-body {
+    font-size: 11px;
+    color: #5B4A38;
+    line-height: 1.85;
+  }
+  .recommend-body a {
+    color: #C6691E;
+    text-decoration: underline;
+  }
+  .recommend-body a:hover { color: #A32D2D; }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/07/30（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 能不能做，不是問題；AI 該不該做，才是關鍵</div>
+    <div class="hero-sub">六則新聞、一份反思——AI 的能力邊界不是重點，誰決定 AI 站在哪個位置，才是校長治理真正要面對的問題。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/29/formula-e-google-cloud/" target="_blank">
+            不只是贊助商，Google 雲端如何用 Formula E 幫自家 AI 做壓力測試
+          </a>
+        </div>
+        <div class="news-body">
+          Google Cloud 是 Formula E 電動方程式賽事首席 AI 合作夥伴，將 Gemini 系統性嵌入賽事營運、車手表現分析與轉播即時解說。資料先經工程層處理，再由規則引擎判斷有無故事，才送進 Gemini 翻譯成一句話——「策略智慧體」架構裡，AI 只佔一格，前面九成是資料工程與人工審批。
+        </div>
+        <div class="news-insight">AI 能力上完全做得到即時建議車隊該衝刺或保守，但工程團隊刻意把它鎖在只能翻譯數據給觀眾看。這不是能力上限，是設計選擇——什麼可以碰、什麼不能碰，是人劃出來的。</div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/28/eu-rules-require-ai-generated-content-to-be-labeled/" target="_blank">
+            歐盟 AI 透明度新制 8 月上路，AI 生成內容須依法標示
+          </a>
+        </div>
+        <div class="news-body">
+          歐盟 AI 法規 8/2 起分階段實施，企業須讓聊天機器人明確表明自己是 AI，AI 生成的圖片文字也要標示（可用浮水印），違者重罰。個人使用不受影響，藝術／諷刺／虛構作品排除在外，12/2 前有緩衝期。
+        </div>
+        <div class="news-insight">歐盟逼 AI 揭露自己是 AI，我也在想，這份週報是不是也該做同樣的事——反思是我自己寫的，新聞摘要是 AI 幫忙生成的，讓讀者知道每個段落跟 AI 共作的程度到哪裡。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/28/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/" target="_blank">
+            Google 從「網路入口」變「終點站」，AI 搜尋繼續改變上網方式
+          </a>
+        </div>
+        <div class="news-body">
+          Similarweb 報告指出，AI 摘要出現比例一年內從 15% 攀升到 43%，Google AI 模式月造訪量翻倍成長。媒體出版業流量流失，但含引用來源的 AI 回答數量也增加超過 5 倍，ChatGPT 導流佔比也在 5 月更新後回升到近 60%。
+        </div>
+        <div class="news-insight">以前網頁在爭取的是人的點擊，現在 AI 摘要吃掉了一大塊——網頁要爭取的，可能已經變成 AI 願不願意引用你，不是人願不願意點你。</div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.worldjournal.com/wj/story/123278/9651466" target="_blank">
+            新學年 10 新規上路，加州 AB 2148 明定 AI 不得取代教師、輔導員、校長
+          </a>
+        </div>
+        <div class="news-body">
+          加州新法 AB 2148 明定，公立學校員工與服務承包者須為「自然人」，AI 不得頂替教師、校長、輔導員等法定教育人員，但教師可用 AI 輔助備課、教學與行政。背景是加州州立大學曾有行政單位以 AI 聊天機器人頂替諮商師人力缺口，引發工會爭議。2027/1/1 生效。
+        </div>
+        <div class="news-insight">這條法律看似多此一舉——誰會真的聘 AI 當校長？但背後的爭議其實是行政單位拿 AI 頂替諮商師的人力缺口，才發現「自然人」這條線，現實裡比想像中容易被磨掉。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/07/29/skyfall-ai-ai-ceo/" target="_blank">
+            砸百萬美元買公司當白老鼠，微軟前團隊實測「AI 執行長」
+          </a>
+        </div>
+        <div class="news-body">
+          新創 Skyfall AI 由前微軟團隊創立，計劃斥資最高 100 萬美元收購一家小型 SaaS 或電商公司，把定價、行銷、客服、財務等核心決策全交給 AI，逐步降低人類介入，目標是把「CEO 能力」民主化到小企業。
+        </div>
+        <div class="news-insight">以前是人在用 AI，Skyfall 讓 AI 直接走進市場接受考驗做公司決策。如果這行得通，代表「當老闆」這件事的核心能力，可能不再是稀缺資源。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[6]</div>
+        <div class="news-title">
+          <a href="https://infosecu.technews.tw/2026/07/29/4-prompts-chatgpt-gemini-see-through-privacy/" target="_blank">
+            你沒說的它都知道，四句提示詞測出 AI 已能精準推斷使用者隱私
+          </a>
+        </div>
+        <div class="news-body">
+          《紐約時報》專欄作家實測 ChatGPT、Gemini，發現 AI 能從零散對話線索推斷出年齡、收入、居住地、性格盲點甚至敏感健康資訊，準確度堪比親近的朋友。
+        </div>
+        <div class="news-insight">AI 從零星對話就能推斷出我們自己都沒察覺的盲點。李海碩校長提過的周哈里窗剛好用得上——不要怕 AI 了解我們，真正該怕的是它會怎麼使用這些資訊。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        這六則新聞共同指向一個趨勢：AI 正被放進不同場景，決定的不是「AI 會不會」，而是「AI 該站在哪一個位置」。Formula E 把 AI 鎖在敘事報導——負責把數據翻譯給觀眾看；Skyfall 卻讓 AI 直接介入營運決策。AI 的能力夠不夠，其實不是真正該擔心的事，多數現場工作 AI 大致都能勝任；真正的問題是「該不該讓 AI 做」。這也是加州立法禁止 AI 頂替法定教育人員角色的原因——他們防的不是 AI 不夠聰明，是不讓 AI 擁有原本該由自然人承擔的位置。能力之外，倫理判斷，才是我們跟 AI 互動時真正的關鍵。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        這六則新聞問的是「AI 該站在哪個位置」，但真正該問自己的是：在你自己每天做的決定裡，你的思考停在哪一步？
+        <div class="option">想都沒想，直接把 AI 給的答案拿來用</div>
+        <div class="option">自己先有想法，再跟 AI 一來一往磨出更完整的判斷</div>
+        <div class="option">想法完全是自己的，AI 只負責幫忙把文字修順</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>順著「看自己」那段想下去——如果把 AI 換成主任，同樣的三格照樣成立：有些時候我想都沒想，直接把主任的答案拿來用；有些時候我先有自己的判斷，再跟主任來回討論，磨出更完整的決定；也有些時候，想法完全是我自己的，主任只是幫忙把文字修順。</p>
+        <p>我們跟 AI 的互動方式，其實一直都活在人際關係裡——跟主任如此，跟朋友、家人的討論也是同一套邏輯。這不是在鼓勵校長凡事都要自己想——全部自己扛，很快就會耗竭；但如果全部交給別人（不論是 AI 還是主任）想，也很快會變成隱私那則新聞裡描述的那種人——判斷力被悄悄掏空，自己卻不一定察覺。</p>
+        <p>真正該練習的，不是「多想」或「少想」，而是每次做決定之前，先問自己一句：這個判斷，是我自己想出來的，還是我照單全收的？</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 本期加碼推薦 -->
+  <div class="recommend-wrap">
+    <div class="recommend">
+      <div class="recommend-title">本期加碼推薦</div>
+      <div class="recommend-body">
+        福哥（王永福）最近開了一個新的 Substack《知識工作者的AI應用週報》，每週一主刊知識工作者、每週四刊出「教育與學習專題」，帶著 AI 團隊追蹤全球教育現場怎麼面對 AI——美國 27 州忙著把 AI 素養寫進畢業條件，愛沙尼亞直接發 ChatGPT 帳號給高中生，新加坡減考試（但其實跟 AI 無關），英國大學把考試搬回現場手寫。福哥自己下的結論，剛好也是這期週報想講的同一件事：「AI 可以代寫作業，但不能代替學習」。推薦給還在思考怎麼帶孩子、帶老師面對 AI 的校長們。<br>
+        👉 訂閱：<a href="https://afuai.substack.com/" target="_blank">afuai.substack.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/07/29/formula-e-google-cloud/" target="_blank">TechNews 科技新報｜不只是贊助商，Google 雲端如何用 Formula E 幫自家 AI 做壓力測試</a><br>
+      [2] <a href="https://technews.tw/2026/07/28/eu-rules-require-ai-generated-content-to-be-labeled/" target="_blank">TechNews 科技新報｜歐盟 AI 透明度新制 8 月上路，AI 生成內容須依法標示</a><br>
+      [3] <a href="https://technews.tw/2026/07/28/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/" target="_blank">TechNews 科技新報｜Google 從「網路入口」變「終點站」，AI 搜尋繼續改變上網方式</a><br>
+      [4] <a href="https://www.worldjournal.com/wj/story/123278/9651466" target="_blank">世界新聞網｜新學年 10 新規上路，加州 AB 2148 明定 AI 不得取代教師、輔導員、校長</a><br>
+      [5] <a href="https://technews.tw/2026/07/29/skyfall-ai-ai-ceo/" target="_blank">TechNews 科技新報｜砸百萬美元買公司當白老鼠，微軟前團隊實測「AI 執行長」</a><br>
+      [6] <a href="https://infosecu.technews.tw/2026/07/29/4-prompts-chatgpt-gemini-see-through-privacy/" target="_blank">TechNews 資安快報｜你沒說的它都知道，四句提示詞測出 AI 已能精準推斷使用者隱私</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.21</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
