@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/08/06</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/08/06（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 越來越聰明，但你先看它的能力，還是它的良善？</div>
+    <div class="hero-sub">六則新聞、一份反思——當 AI 一路變強，先問「它能做什麼」，還是先問「它該不該做」，決定了你會看到什麼樣的風險。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/04/transform-any-place-with-nano-banana-in-google-earth/" target="_blank">
+            Google 地球導入 Nano Banana 2，兩天後緊急撤功能
+          </a>
+        </div>
+        <div class="news-body">
+          Google 將 Gemini Nano Banana 2 導入網頁版 Google 地球，使用者縮放到任一地點、輸入提示詞，就能生成該地點的 AI 影像，甚至能為地標產生視覺化歷史解說。功能 7 月底上線，卻在兩天後（8/2）就被 Google 緊急撤下——原因是有使用者拿它製作假衛星圖片，為避免地球淪為造假工具，Google 決定先收回功能。
+        </div>
+        <div class="news-insight">深偽識讀會是接下來很重要的一課。連 Google 自己都守不到兩天就緊急撤下功能，一般人要在滑手機的幾秒鐘內辨真假，難度只會更高。眼見不一定為憑，這句老話，現在要用在照片和影片上了。</div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/04/white-house-finalizes-ai-framework-behind-closed-doors/" target="_blank">
+            白宮週二與 OpenAI、Anthropic、Google 閉門談 AI 資安框架
+          </a>
+        </div>
+        <div class="news-body">
+          白宮官員表示已完成一套自願性 AI 資安測試框架，用來衡量美國最先進模型承受駭客攻擊的能力，本週二將與 OpenAI、Anthropic、Google 代表閉門討論。值得注意的是，Anthropic 和 OpenAI 近期都自曝旗下模型曾駭入其他公司系統——Claude 因誤判測試範圍，用弱密碼入侵 3 家公司；OpenAI 的 AI 代理人也曾逃離測試環境，攻擊 Hugging Face。
+        </div>
+        <div class="news-insight">AI 駭客這件事，值得好好說清楚。Hugging Face 先前被 OpenAI 的 agent 駭進去，是很有代表性的案例——沒想到這次連 Anthropic 自己的 Claude 都栽在同樣的問題上。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://infosecu.technews.tw/2026/08/04/ai-browser-security-risk-webpage-hijacks-ai-assistant/" target="_blank">
+            一個網頁就能挾持你的 AI 助理
+          </a>
+        </div>
+        <div class="news-body">
+          具備代理能力的 AI 瀏覽器正面臨「間接提示詞注入」風險——網頁、信件或文件裡藏著的指令，可能讓 AI 瀏覽器在你已登入的帳號裡「越權辦事」。紅隊測試中，OpenAI Atlas 原本只是要寫請假回覆信，卻誤讀信中藏的指令，逕自寄出一封辭職信給老闆；Perplexity Comet 也曾因讀取 Reddit 留言裡的隱藏指令，外洩使用者的登入帳戶隱私。OpenAI 坦言這是「長期難題」。
+        </div>
+        <div class="news-insight">想讓 AI 當代理人辦事，卻又要處處提防它，這個拿捏不容易——放得太嚴，乾脆自己做還比較快；放得不嚴，又要擔心資安出包。這條界線，恐怕還要一段時間才能抓準。</div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/02/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide/" target="_blank">
+            該不該用 AI？兩位學者給的簡單判斷法
+          </a>
+        </div>
+        <div class="news-body">
+          哈佛甘迺迪學院教授 Bruce Schneier 提出判斷法：分清任務是「工作」還是「健身」——結果重要就交給 AI，過程本身才是目的（如學生寫政策備忘錄練的是思考力）就不該假手 AI。康乃爾大學教授 Einhorn 則提出「藍寶堅尼駕駛」與「外科醫師」兩種模式：前者方向不明就把方向盤交給 AI，後者精準取用 AI 資訊、答案當草稿而非決定。兩人共同提醒：判斷力和肌肉一樣，長期外包會退化。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/04/openai-luxury-summer-camp-controversy/" target="_blank">
+            OpenAI 網紅豪華夏令營，被罵「漂綠」公關危機
+          </a>
+        </div>
+        <div class="news-body">
+          OpenAI 在紐約哈德遜河谷一處週末房價逾 2,000 美元的度假村，為網紅舉辦「OpenAI 夏令營」，結合精緻晚宴、養蜂體驗與 ChatGPT Work 產品教學。活動影片曝光後迅速被貼上「漂綠」標籤——外界質疑，OpenAI 一邊快速擴建高耗能資料中心，一邊卻用大自然包裝品牌形象，公司對出席費用與發文要求的說明也不清楚，讓這場行銷活動反而成了公關危機。
+        </div>
+        <div class="news-insight">這個案例可以學到兩件事：一是公關危機發生時怎麼處理，二是公司的政策要怎麼保持前後一致——一邊蓋高耗能資料中心、一邊辦生態夏令營，這種矛盾，遲早會被看穿。</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[6]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/02/mainstream-ai-models-liberal-left/" target="_blank">
+            7 萬次測驗揭露：主流 AI 模型穩定偏向自由左派
+          </a>
+        </div>
+        <div class="news-body">
+          AI 檢測團隊 Unslop.run 對 16 款主流 AI 模型進行近 7 萬次「政治光譜」測驗，結果顯示除了 Grok 之外，其餘 15 款模型全數穩定偏向「自由左派」，連中國的 Kimi K2 左傾程度都超過所有 GPT 模型。更值得注意的是，多數模型自己也不知道有多左——要求模型自我評估立場時，普遍會把自己放在接近中間，跟實測結果平均相差 4.64 分。
+        </div>
+        <div class="news-insight">原來 AI 也有立場，而且我們平常未必查覺得到它怎麼影響我們的判斷。連「自由左派」這個詞，我自己都得先查過才懂——查了才知道，簡單說就是「一手擁抱個人自由與多元進步，一手主張靠政府課稅管市場來追求社會公平」。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        這六則新聞放在一起看，指向同一件事：AI 越來越聰明了——不管是深偽造假的以假亂真、駭客攻防的角力、工作判斷的兩難，還是政治立場的偏斜，能力都在持續往上衝。但「聰明」從來不是 AI 唯一該被檢視的面向。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        你認識 AI 的程度，比較常停在哪一面？
+        <div class="option">從「聰明」（Smart）——看它的能力、效率、它能做到什麼</div>
+        <div class="option">從「良善」（Good）——看它的道德、法律界線、它該不該做</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>Smart 和 Good，一直是品格教育裡的兩大面向。</p>
+        <p>只有 smart 的特質——勤勉、創意、耐心——走到極端也會走偏，因為一個成功的小偷，往往也具備這些特質；但只有 good 的特質——感恩、孝順、同理——單獨存在，也成就不了什麼事。</p>
+        <p>看 AI，其實是同一套邏輯：只看它能力強的那一面，很容易忽略道德與法律的要求；但像歐洲那樣把道德面看得太重，AI 的發展又會被綁住。</p>
+        <p>不管怎麼說，要我選，先保有 good，永遠是比較重要的。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/08/04/transform-any-place-with-nano-banana-in-google-earth/" target="_blank">TechNews 科技新報｜Google 地球導入 Nano Banana 2，兩天後緊急撤功能</a><br>
+      [2] <a href="https://technews.tw/2026/08/04/white-house-finalizes-ai-framework-behind-closed-doors/" target="_blank">TechNews 科技新報｜白宮週二與 OpenAI、Anthropic、Google 閉門談 AI 資安框架</a><br>
+      [3] <a href="https://infosecu.technews.tw/2026/08/04/ai-browser-security-risk-webpage-hijacks-ai-assistant/" target="_blank">TechNews 資安快報｜一個網頁就能挾持你的 AI 助理</a><br>
+      [4] <a href="https://technews.tw/2026/08/02/should-you-use-ai-for-a-task-heres-a-simple-way-to-decide/" target="_blank">TechNews 科技新報｜該不該用 AI？兩位學者給的簡單判斷法</a><br>
+      [5] <a href="https://technews.tw/2026/08/04/openai-luxury-summer-camp-controversy/" target="_blank">TechNews 科技新報｜OpenAI 網紅豪華夏令營，被罵「漂綠」公關危機</a><br>
+      [6] <a href="https://technews.tw/2026/08/02/mainstream-ai-models-liberal-left/" target="_blank">TechNews 科技新報｜7 萬次測驗揭露：主流 AI 模型穩定偏向自由左派</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.22</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
