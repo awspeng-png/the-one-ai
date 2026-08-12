@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/08/13</title>
+<style>
+  /* 校長演繹區塊 */
+  .news-insight {
+    margin-top: 8px;
+    padding: 7px 10px 7px 12px;
+    background: #F0EDE6;
+    font-size: 10.5px;
+    color: #4A4845;
+    line-height: 1.75;
+    border-radius: 2px;
+  }
+  .col-green .news-insight { border-left: 3px solid #639922; }
+  .col-blue  .news-insight { border-left: 3px solid #185FA5; }
+  .col-purple .news-insight { border-left: 3px solid #534AB7; }
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 治理重點 */
+  .governance {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F5F4EF;
+  }
+  .gov-col {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 18px 22px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .gov-col:last-child { border-right: none; }
+  .gov-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .gov-text {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+  }
+  .gov-text .option {
+    margin-top: 6px;
+    padding-left: 2px;
+  }
+  .gov-text .option::before {
+    content: '▸ ';
+    color: #A32D2D;
+  }
+
+  /* 反思區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/08/13（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">跟AI講話的習慣，你是不是也用在人身上了？</div>
+    <div class="hero-sub">六則新聞、一份反思——那天我發現，自己傳訊息的方式，早就把身邊的人也當成AI在用了。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://infosecu.technews.tw/2026/08/10/new-gpt-live-voice-mode/" target="_blank">
+            ChatGPT 語音大進化：GPT-Live 全雙工語音模式上線
+          </a>
+        </div>
+        <div class="news-body">
+          OpenAI 於 8 月 9 日推出以 GPT-Live 為核心的新一代語音模式，採全雙工架構，可在使用者說話時同步聆聽並即時回應，解決過去語音助理常見的「搶話」問題。功能同步開放至桌面版 ChatGPT Work 與 Codex，可用語音直接指揮試算表、簡報、程式碼等工作流程；但涉及付款、寄送訊息等高風險操作，系統仍要求手動確認才會執行。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/11/ios-27-apple-reference-image-ai/" target="_blank">
+            AI 假圖越來越真，iOS 27 將加入照片防偽機制
+          </a>
+        </div>
+        <div class="news-body">
+          蘋果在 iOS 27 測試版文件中，首度揭露名為 Apple Reference Image 的新功能。開啟「參考模式」拍攝的照片，會額外記錄感光元件資訊、拍攝時間與影像雜湊值，送往蘋果雲端驗證來源，確認影像確實出自該相機硬體、而非 AI 生成。蘋果強調，這只能證明照片「來自真實相機」，無法判斷照片內容本身是否造假；目前鎖定新聞攝影、司法蒐證等專業情境。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/08/11/abu-dhabi/" target="_blank">
+            阿布達比的 AI 原生政府：TAMM 主動代辦一切行政服務
+          </a>
+        </div>
+        <div class="news-body">
+          阿布達比政務平台 TAMM 讓 AI 主動代辦證件更新、醫療預約、車輛登記、罰款繳納，居民不需自行申請。背後是阿聯近十年 AI 戰略佈局——2017 年設立全球首位 AI 部長，2019 年成立 MBZUAI 研究型大學。分析指出，這套模式能快速整合跨部門資料的關鍵，在於阿聯王室同時掌握政府、國有資本與主權基金的集中權力結構；民主國家要做到同樣整合，通常得經過議會審查、資料保護規範等多重制衡，速度較慢，但也是防止權力過度集中的設計。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/42023-jeff-dean-demis-hassabis-google-ai-shakeup" target="_blank">
+            Google 人事地震：Jeff Dean 出走創業，Hassabis 轉任董事長
+          </a>
+        </div>
+        <div class="news-body">
+          Google 8 月 5 日宣布兩項人事異動：首席科學家 Jeff Dean（第 30 號員工，MapReduce、TensorFlow 等架構設計者）離職，與三位資深同事共同創辦 AI 新創 Discovery Loop；DeepMind 執行長 Demis Hassabis 同時卸任日常營運，轉任董事長兼 Alphabet 首席科學家，日常營運改由技術長 Koray Kavukcuoglu 接任、直接向 Sundar Pichai 報告。消息公布後 Alphabet 股價一度跌約 5%，市值蒸發近 1,900 億美元。今年稍早已有多位資深研究員（含諾貝爾獎得主 John Jumper）轉往 Anthropic、OpenAI。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/07/corporate-taste-the-key-asset-in-ai-transformation/" target="_blank">
+            AI 轉型的關鍵資產戰場已轉移，最難複製的是「企業品味」
+          </a>
+        </div>
+        <div class="news-body">
+          《富比士》專欄指出，AI 讓軟體、設計、文件都更容易被複製後，企業真正難以取代的資產是「企業品味」——團隊對該做什麼、該放棄什麼的判斷力，涵蓋領域理解、客戶需求掌握與決策取捨。這種能力無法用合約鎖住：員工離職時，企業能限制帶走程式或設計，卻無法要求對方留下判斷力；作者建議透過師徒傳承、資深員工帶領觀摩、決策覆盤說明取捨理由，讓判斷力持續傳遞。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[6]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/08/11/mark-zuckerberg-the-future-is-for-everyone/" target="_blank">
+            祖克柏長文重寫 AI 安全治理，同步推出開源模型 Muse Glimmer
+          </a>
+        </div>
+        <div class="news-body">
+          祖克柏 8 月 10 日發表逾 6,500 字長文，提出「個人賦權」「發明優先於自動化」「權力制衡」三項原則，主張超級智慧的權力不該集中於少數機構、而應下放給每個人；同時反對美國政府擬議的固定 30 天模型審查制，主張改以訓練過程中的中期檢查點與政府密切合作。同日 Meta 推出 300 億參數的開源模型 Muse Glimmer，採寬鬆 Apache 2.0 授權，壓縮後可在消費級 GPU 或 MacBook 運行，是這篇宣言的具體實踐；祖克柏也同步宣布成立 10 億美元「社區契約」基金，回應資料中心擴建引發的地方反彈。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 治理重點 -->
+  <div class="governance">
+    <div class="gov-col">
+      <div class="gov-label">看趨勢</div>
+      <div class="gov-text">
+        這週的新聞讓我觀察到一件事：行動當下、關鍵的那一步，通常還是需要交給人來確認，因為只有人能負責；一旦沒有守住這一步，就容易在不知不覺間把決定權外包給 AI。例如：付款當下的手動確認，或是人與人之間的價值傳承。
+      </div>
+    </div>
+    <div class="gov-col">
+      <div class="gov-label">看自己</div>
+      <div class="gov-text">
+        當你按下確認鍵的那一刻，你在想什麼？你會回頭驗證 AI 的建議，還是在衝動之下就決定了？我自己就在 AI 的建議下，加入了一個終身會費一萬元的協會；入會之後才驚覺，這個決定好像下得有點衝動。
+      </div>
+    </div>
+  </div>
+
+  <!-- 反思區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週觀察反思</div>
+      <div class="reflection-body">
+        <p>這週的新聞讓我想到人和 AI 之間的那條線——最後按下確認鍵的，還是人。但中間的論述鋪陳、氛圍的營造，人在做決定的過程裡，卻可能在不知不覺中受到 AI 影響。和 AI 共作久了，結果可能是人越來越像 AI。</p>
+        <p>那天我要傳好幾個檔案給他校的主任，我跟他說：「我現在要傳一些檔案給你，請先不用回應，等我傳完，我會說『完成』，再請你看看有沒有問題。」說完之後我愣了一下——對方是真人，我卻習慣用跟 AI 溝通的方式跟他說話。</p>
+        <p>我沒問過這位主任。但我猜想，在我傳送的過程中，他或許也想開口問我什麼，只是嘴巴被我封住了。我自以為是貼心地為他著想，其實只是我自己不想被打斷——主任沒得選擇。這樣的協議，對 AI 可以，對主任，下次我還是把他當人看待好了。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://infosecu.technews.tw/2026/08/10/new-gpt-live-voice-mode/" target="_blank">TechNews 資安快報｜ChatGPT 語音大進化：搭載 GPT-Live 模型，聊天更自然、無縫協作 Work 與 Codex</a><br>
+      [2] <a href="https://technews.tw/2026/08/11/ios-27-apple-reference-image-ai/" target="_blank">TechNews 科技新報｜AI 假圖越來越真，iOS 27 將加入 iPhone 照片防偽機制</a><br>
+      [3] <a href="https://techorange.com/2026/08/11/abu-dhabi/" target="_blank">TechOrange 科技報橘｜【阿布達比的 AI 原生政府】不只是政務 App，TAMM 把 AI 嵌入每一項日常行政服務</a><br>
+      [4] <a href="https://www.inside.com.tw/article/42023-jeff-dean-demis-hassabis-google-ai-shakeup" target="_blank">INSIDE｜離職撼動巨頭股價，他們是誰？Google 元老 Jeff Dean 離開 Google 創業，帶走三位頂尖 AI 人才</a><br>
+      [5] <a href="https://technews.tw/2026/08/07/corporate-taste-the-key-asset-in-ai-transformation/" target="_blank">TechNews 科技新報｜AI 轉型的關鍵資產戰場已轉移，最難複製的「企業品味」是什麼？</a><br>
+      [6] <a href="https://techorange.com/2026/08/11/mark-zuckerberg-the-future-is-for-everyone/" target="_blank">TechOrange 科技報橘｜模型誰能用、誰能發布、政府何時介入？祖克柏如何用「權力制衡」重寫 AI 安全治理</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.23</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
