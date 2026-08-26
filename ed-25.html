@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/08/27</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/08/27（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 讓你的學校變快了，然後呢？</div>
+    <div class="hero-sub">五則新聞、一份反思——這次我想追問：省下來的，最後都去了哪裡？</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://infosecu.technews.tw/2026/08/24/chatgpt-for-mac-can-search-messages-catch-up-on-conversations-and-send-replies/" target="_blank">
+            ChatGPT外掛程式存取Mac訊息，專家示警隱私風險
+          </a>
+        </div>
+        <div class="news-body">
+          OpenAI推出外掛程式，讓具Agent能力的ChatGPT Work與Codex能存取Mac電腦「訊息」App，可搜尋訊息、查看對話、代為草擬並發送回覆。隱私專家警告，這等於把私密對話完整交給OpenAI，即使對方未使用ChatGPT也會被牽連。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/21/jeff-dean-at-2026-frontier-and-pioneer-symposium/" target="_blank">
+            前Google首席科學家Jeff Dean：廣泛閱讀，找出尚未被連結的想法
+          </a>
+        </div>
+        <div class="news-body">
+          前Google首席科學家Jeff Dean離職後首度公開演講，建議年輕世代與其鑽研單一論文，不如廣泛閱讀多篇研究，找出研究間尚未被連結的關鍵想法。他離職後創辦新創Discovery Loop，希望以「遞迴自我改進」（RSI）加速科學與工程領域的AI自動化發現。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/23/i-found-a-prompt-that-keeps-ai-agents-from-taking-tasks-too-far/" target="_blank">
+            學生負責下令，AI負責讀大學：AI代理成高等教育誠信危機
+          </a>
+        </div>
+        <div class="news-body">
+          《紐約時報》報導，大學生只需簡單指令，AI代理就能登入線上課程平台，代為觀看課程、應付測驗、寫報告甚至參與討論。主流AI工具未拒絕此類請求，各校也難以有效偵測，部分學校已改回實體考試或重新設計評量方式因應。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/22/workforce-development-in-the-age-of-ai/" target="_blank">
+            企業AI導入為何卡關？領導示範與容錯文化是關鍵
+          </a>
+        </div>
+        <div class="news-body">
+          企業普遍完成AI培訓與工具導入，卻遲遲看不到成效，關鍵不在技術而在變革管理。文章主張員工需理解AI能力邊界並保留判斷力，領導者要親自示範使用、打造容錯文化，讓團隊敢公開討論AI的對與錯，信任才能逐步建立。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/23/theres-a-fatty-liver-epidemic-ai-could-help-get-ahead-of-it/" target="_blank">
+            AI化身第一道篩檢工具，及早揪出脂肪肝危機
+          </a>
+        </div>
+        <div class="news-body">
+          全球約10億人肝臟脂肪過量，多數無症狀難以及早發現。研究者提出用AI從電子病歷、血液指標與胸腔X光影像自動篩檢脂肪肝風險，協助基層醫師更快辨識高風險患者並轉介，被視為未來基層醫療的第一道篩檢工具。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>工具導入不等於實際改變。許多組織辦研習、教提示詞，努力增能，卻遲遲看不到真正的改變——這是這週最讓我有感的一則新聞，前半段講的正是這件事。</p>
+        <p>接著我看到商周執行長郭奕伶在臉書上的一篇貼文，非常推薦（連結附於文末）。她提到，為什麼每個人用AI都變快了，公司卻沒有真的變快？她的答案是：CEO不是要全面導入AI，而是要從組織設計出發——如果今天重新成立這家公司、而且已經有AI，流程還會設計成現在這樣嗎？答案如果是否定的，才值得真正動手改。</p>
+        <p>她另一句話我也深有同感：「不要告訴我AI省了多少小時，告訴我省下來的小時，最後去了哪裡。」這也呼應了《如果你有10分鐘》Podcast第4集裡，林筱玲校長提到的——她用了AI，卻發現能做的事更多，人反而更忙了。</p>
+        <p>身為校長，導入AI不等於完成組織轉型。真正要做的，是重新思考使用者端的真實需求，藉由AI重新設計流程，這樣才談得上轉型。</p>
+        <p>最近各校都在辦新生入學，很多學校用心扮演各種童話故事人物迎接孩子，背後的假設是：孩子看到這些角色會很開心，也更容易適應學校生活。但童話故事裡的白雪公主，不會每天出現在教室裡，這也不是學校真正的日常。如果重新想一想，入學第一天的孩子需要的是什麼、教室裡該有的風景是什麼，再用AI協助互動設計，應該會導出不一樣的流程。</p>
+        <p>過去在幫新聞分類——數位化、數位優化、數位轉型——這件事，我都是交給AI處理，分完也沒有再檢核，有時候會覺得歸類得有點奇怪。這次開始嘗試自己來分類，才發現同一則新聞，別人可能會有不同的看法。之後我想在摘要裡，試著從分類的角度切入寫作，讓歸類的標準能被看得更清楚。</p>
+        <p>說了這麼多，自己就是現職校長，我會找一條流程來試試看，到時候再上來跟大家分享。上週提到的「從反思到實踐」，本來想找三位校長一起聚焦討論，後來發現要喬三人共同時間不容易，加上開學在即，就先擱著；不過我會嘗試在校長社群中，引導大家聊聊怎麼實踐、有沒有什麼好例子，之後再上來分享。</p>
+        <p style="font-size:10px; color:#9A9890;">（參考：商周執行長郭奕伶臉書貼文 <a href="https://www.facebook.com/share/1DYiN1iKTd/?mibextid=wwXIfr" target="_blank">https://www.facebook.com/share/1DYiN1iKTd/</a>）</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://infosecu.technews.tw/2026/08/24/chatgpt-for-mac-can-search-messages-catch-up-on-conversations-and-send-replies/" target="_blank">TechNews 資安快報｜ChatGPT外掛程式存取Mac訊息，專家示警隱私風險</a><br>
+      [2] <a href="https://technews.tw/2026/08/21/jeff-dean-at-2026-frontier-and-pioneer-symposium/" target="_blank">TechNews 科技新報｜前Google首席科學家Jeff Dean：廣泛閱讀，找出尚未被連結的想法</a><br>
+      [3] <a href="https://technews.tw/2026/08/23/i-found-a-prompt-that-keeps-ai-agents-from-taking-tasks-too-far/" target="_blank">TechNews 科技新報｜學生負責下令，AI負責讀大學：AI代理成高等教育誠信危機</a><br>
+      [4] <a href="https://technews.tw/2026/08/22/workforce-development-in-the-age-of-ai/" target="_blank">TechNews 科技新報｜企業AI導入為何卡關？領導示範與容錯文化是關鍵</a><br>
+      [5] <a href="https://technews.tw/2026/08/23/theres-a-fatty-liver-epidemic-ai-could-help-get-ahead-of-it/" target="_blank">TechNews 科技新報｜AI化身第一道篩檢工具，及早揪出脂肪肝危機</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.25</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
