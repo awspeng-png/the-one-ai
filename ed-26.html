@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/09/03</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/09/03（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 幫你省下的時間，有多少花在檢查它？</div>
+    <div class="hero-sub">六則新聞、一份反思——這週我想算一筆很少人算的帳。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/42237-google-gemini-notebook-expert-intelligence-books" target="_blank">
+            買過的書都能變AI顧問：Gemini Notebook推出Expert Intelligence
+          </a>
+        </div>
+        <div class="news-body">
+          Google 8月27日為Gemini Notebook推出「Expert Intelligence」，使用者可把自己在Google Play Books購買的電子書加入筆記本提問，或產生資訊圖表、語音摘要與測驗，首波支援逾10萬本。未持有該書的協作者看得到書名卻讀不到內容，須自行購買。企鵝藍登書屋與美國作家協會都肯定這項授權設計；今年7月才有出版社與作者控告Google未經授權使用受著作權保護的作品。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/27/ai-predicts-typhoon-paths-more-accurately-meteorologists-roles-shift/" target="_blank">
+            AI預測颱風路徑更準確，氣象學家的功能正在改變
+          </a>
+        </div>
+        <div class="news-body">
+          歐洲中期天氣預報中心（ECMWF）2025年正式啟用AI預報系統AIFS，與傳統物理模式並行，熱帶氣旋路徑預測準確度最高提高約20%，運算成本大幅降低。今年《Nature》一篇研究指出，Google DeepMind的熱帶氣旋AI系統在2023至2025年取得超過一天的領先。但AI仍容易低估強颱強度。世界氣象組織認為，氣象學家可能從「計算天氣的人」轉為「判讀風險的人」。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/92027/t-shaped-ai-talent-future-skills" target="_blank">
+            台北大學校長拆解AI人才四層架構，最搶手的是「T型人才」
+          </a>
+        </div>
+        <div class="news-body">
+          台北大學校長林道通提出「產業AI人才四層架構」，指出需求最大的不是頂層研究人才，而是L2「AI領域專業人才」。他認為真正值錢的是三種能力：把複雜問題拆解清楚、把需求講精準、判斷AI做得對不對。台北大學已盤點全校130門AI課程、建立A1至A3學習路徑，並設「AI種子教師計畫」，以減授8至10小時鼓勵非理工教師開發跨域教材。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/08/28/%e2%80%8bhow-your-ai-writes-code-faster-than-your-team-can-trust-it/" target="_blank">
+            AI寫程式比人快，驗證卻沒跟上：程式審查淪為形式
+          </a>
+        </div>
+        <div class="news-body">
+          CodeROI技術長Anna Meadows在《富比士》指出，團隊導入AI程式工具後速度提升、Pull Request倍增，事故通報卻同步攀升。約800名開發者的研究顯示，使用AI助理的工程師產出的程式錯誤高41%，整體效率卻未明顯提升。AI的失敗不像人類草率，而是自信、結構完整卻在商業邏輯上細微偏差，檢查工具抓不到。她主張把信任從「閱讀」轉為「檢查」，並為每次合併指定負責人。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/01/stripe-president-says-checkout-pages-will-go-away-as-ai-commerce-expands/" target="_blank">
+            結帳頁面將消失？AI代理正在改寫購買流程
+          </a>
+        </div>
+        <div class="news-body">
+          Stripe總裁Will Gaybrick在Podcast節目「The a16z Show」判斷「結帳頁面將會消失」。當付款資訊、地址與身分已安全儲存，消費者可直接在產品頁完成交易，Stripe Link已累積約4億使用者。Stripe與Tempo並推出Machine Payments Protocol，讓AI代理直接處理機器支付。報導提醒，頁面消失後，讓使用者清楚知道買了什麼、花多少錢、如何反悔，反而成為更重要的設計課題。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[6]</div>
+        <div class="news-title">
+          <a href="https://www.kocpc.com.tw/archives/667258" target="_blank">
+            韓國啟動全民免費無限用AI：「AI for All」
+          </a>
+        </div>
+        <div class="news-body">
+          韓國科學技術情報通信部8月28日公告，選定SK Telecom、Kakao、KT各領軍的三個聯盟營運「AI for All」，目標讓全國約5,100萬國民免費使用生成式AI、不設token上限。政府先提供合計512張Nvidia B200 GPU，年底前上線，2027年起營運成本轉入國家預算。規則明訂通用聊天機器人與公共AI Agent必須完全免費，且不得以工作、學習、創作等用途區隔使用者；至少50%輸出token須由韓國主權基礎模型產出。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>這週的新聞有些讓我很有感，但想法一直發展不完整。</p>
+        <p>我取用「AI 寫程式比人快，驗證卻沒跟上」這則。新聞指出，使用 AI 程式助理的工程師，產出的程式錯誤比沒用的人高出 41%，整體效率卻沒有明顯提升。</p>
+        <p>這則我深受其害。我每次用 AI 剪輯 Podcast，改了 A，結果錯了 B；改了 B，又換 C 出問題。這就像 AI 剛出來時生成的圖，裡面錯字一堆——不過一年後，正確率提高非常多。</p>
+        <p>可以想見 AI 進化很快，這個問題遲早會有更好的解決。但現在得花時間在檢查上，這些時間加起來，可能還不如我自己直接剪了啊。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://www.inside.com.tw/article/42237-google-gemini-notebook-expert-intelligence-books" target="_blank">INSIDE｜買過的書都能變 AI 顧問！Google Gemini Notebook 首波支援逾 10 萬本書</a><br>
+      [2] <a href="https://technews.tw/2026/08/27/ai-predicts-typhoon-paths-more-accurately-meteorologists-roles-shift/" target="_blank">TechNews 科技新報｜AI 預測颱風路徑更準確，氣象學家功能轉變</a><br>
+      [3] <a href="https://www.bnext.com.tw/article/92027/t-shaped-ai-talent-future-skills" target="_blank">數位時代｜會用AI還不夠！台北大學校長拆解AI人才四層架構，未來最搶手的是「T型人才」</a><br>
+      [4] <a href="https://technews.tw/2026/08/28/%e2%80%8bhow-your-ai-writes-code-faster-than-your-team-can-trust-it/" target="_blank">TechNews 科技新報｜AI 寫程式比人快，驗證卻沒跟上：程式審查淪為形式化</a><br>
+      [5] <a href="https://technews.tw/2026/09/01/stripe-president-says-checkout-pages-will-go-away-as-ai-commerce-expands/" target="_blank">TechNews 科技新報｜結帳頁面將消失？AI 代理正在改寫電商購買流程</a><br>
+      [6] <a href="https://www.kocpc.com.tw/archives/667258" target="_blank">電腦王阿達｜韓國全民無限免費用 AI 服務「AI for All」啟動</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.26</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
