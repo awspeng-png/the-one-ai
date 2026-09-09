@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/09/10</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/09/10（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 幫得再多，思考的過程不該被省略</div>
+    <div class="hero-sub">四則新聞、兩段反思——這週想的是，AI越會生成，我們越該留住什麼。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/08/researcher-explores-what-consciousness-really-means/" target="_blank">
+            AI是否具有意識？神經科學家：現在還不能排除
+          </a>
+        </div>
+        <div class="news-body">
+          蒙特婁大學與柏林自由大學兩位神經科學家比較兩種立場：「生物自然主義」認為意識綁定在生物腦組織上，AI再怎麼運算都不算數；「功能主義」則認為意識取決於資訊處理的「做什麼」，理論上非生物系統也可能產生。兩人指出前者無法被實驗驗證，後者也說不清腦與電腦的運算差異是否真的決定意識有無，結論刻意不下定論，維持「不能完全排除AI有意識」的不可知立場。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/42314-nyc-ai-ban-students-2026" target="_blank">
+            全美最大規模禁令：紐約市K-8學生禁用生成式AI教學工具
+          </a>
+        </div>
+        <div class="news-body">
+          紐約市宣布禁用40款生成式AI教學工具，涵蓋國小到國中（K-8）約60萬名學生，占全市公校生三分之二，是美國學區規模最大的一次AI禁令。低年級（K-2）更嚴，上課時段連筆電、平板都禁止；高中生要先修完「AI批判思考」課程才能有限度使用，教師不受限。政策訂為期一年的實驗，屆時檢討存廢。Mamdani市長以維護「人際連結」、避免「認知萎縮」為由宣布，並提及南韓AI教科書試辦四個月即喊卡的前例；科技業與EdTech陣營則擔心這批學生日後升學會與AI素養較好的同儕產生落差。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/09/ai-use-in-classrooms-linked-to-lower-test-scores-oecd-data-suggests/" target="_blank">
+            OECD數據：常用AI寫作業的學生，科學測驗反而低20分
+          </a>
+        </div>
+        <div class="news-body">
+          OECD最新教育報告指出，每週至少用一次AI聊天機器人寫作業的學生（約占46%），科學測驗成績反而比不用的學生低約20分，相當於一年的學習落差。中國一項研究呈現同樣矛盾：AI讓平時作業分數變好看，但閉卷考試成績明顯下滑。報告同時點出OECD國家整體閱讀素養自2015年來平均下滑28分，部分歸因於數位工具與螢幕時間增加，但也強調「數位工具與AI並非全然有害」，關鍵在如何導入。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/07/ai-impact-us-journalism-ethics-code/" target="_blank">
+            AI衝擊新聞倫理，美國記者協會12年來首次大修守則
+          </a>
+        </div>
+        <div class="news-body">
+          美國專業新聞記者協會（SPJ）正在修訂其百年倫理守則，這是12年來首次大修、自1926年以來第六次。草案不直接點名AI，而是規定「速度、技術或媒介」都不能成為報導失準、失公的藉口，用意是避免守則因技術演進而過時；同時強化「記者對成品負最終責任」的原則，回應外界對AI介入可能稀釋編輯把關的疑慮。草案也拿掉沿用已久的「為無聲者發聲」措辭，改為要求媒體主動挖掘長期被忽視群體的多元觀點。目前草案已進入公眾意見徵詢階段，預計10月表決。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 網域多樣性例外：本期僅 technews.tw／inside.com.tw 兩個網域，經編輯確認採例外處理 -->
+
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>這陣子看到的新聞，立場幾乎一致地反對讓國小階段的學生自由使用 AI，理由是：該讓學生自己動腦成長的部分，如果被 AI 取代掉，思考能力就少了一次養成的機會。這件事放在老師身上也一樣——看到越來越多完全由 AI 生成的圖、生成的文章，我反而覺得，還是保留一點「人味」比較好。</p>
+        <p>這也讓我回頭反省自己：我自己每週都在做新聞週報，但現在我開始懷疑，追新聞對建立判斷力的幫助其實有限。新聞受限於字數，加上標題經常刻意聳動，點進去一看，往往是另一回事；如果自己的基本功不夠，看再多新聞也是多餘。所以我想開始看書，就從李開復的《AI・未來》開始吧，下週再跟大家分享我的發現。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/09/08/researcher-explores-what-consciousness-really-means/" target="_blank">TechNews 科技新報｜AI 是否具有意識？神經科學家從「生物自然主義」與「功能主義」辯論起</a><br>
+      [2] <a href="https://www.inside.com.tw/article/42314-nyc-ai-ban-students-2026" target="_blank">INSIDE｜紐約市宣布 K-8 全面禁用生成式 AI 教學工具，規模全美最大</a><br>
+      [3] <a href="https://technews.tw/2026/09/09/ai-use-in-classrooms-linked-to-lower-test-scores-oecd-data-suggests/" target="_blank">TechNews 科技新報｜OECD 數據：學生用 AI 寫作業，科學測驗反低 20 分</a><br>
+      [4] <a href="https://technews.tw/2026/09/07/ai-impact-us-journalism-ethics-code/" target="_blank">TechNews 科技新報｜美國新聞記者協會修訂倫理守則，因應 AI 衝擊</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.27</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
