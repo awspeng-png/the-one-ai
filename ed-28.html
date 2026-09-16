@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/09/17</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/09/17（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">你比較了解 AI，還是 AI 比較了解你？</div>
+    <div class="hero-sub">四則新聞、一份反思——這週想的是：當 AI 愈來愈了解我們，我們對它的了解夠嗎？</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/09/16/3m-agentic-ai/" target="_blank">
+            3M 推出代理式 AI 助手，答案只從自家驗證文件來
+          </a>
+        </div>
+        <div class="news-body">
+          3M 產品超過 6 萬種，工程師過去得翻大量規格文件、反覆詢問業務才能選料。新推出的「Ask 3M」首波聚焦工業膠帶與黏合劑，回答只根據 3M 自身驗證過的技術文件與知識庫，涵蓋 49 個技術平台；使用者用日常語言提問後，可直接下載文件、連結經銷商，並小量購買做原型測試。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/10/ai-long-term-misinformation-vulnerabilities/" target="_blank">
+            反覆施壓之下，AI 可能向假訊息妥協
+          </a>
+        </div>
+        <div class="news-body">
+          亞利桑那大學發表於《Scientific Reports》的研究，測試 GPT-3.5、Claude 3.5 Sonnet、Gemini 1.5 Pro、DeepSeek-R1 等 7 款模型，把 100 個捏造陳述在對話中重複 50 次。模型附和錯誤的機率介於 0.08% 到 12.3%。研究也發現「對話震盪」：模型在沒有新資訊的情況下反覆改變立場。研究者建議限制對話長度，並在聊天紀錄之外建立獨立的查核機制。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://www.kocpc.com.tw/archives/668684" target="_blank">
+            AI 網軍量產假新聞，台灣也在監控清單上
+          </a>
+        </div>
+        <div class="news-body">
+          Anthropic 於 9 月 10 日發布威脅情報報告，記錄 2025 年 12 月至 2026 年 8 月間瓦解的 Claude 濫用行動。其中孟加拉一名行動者用程式大量呼叫 AI，16 個月產出至少 1,500 則假新聞標題。另有兩起與中國相關的行動觸及台灣，監控對象包括台灣長老教會領導層、政治人物與學生運動者。報告為 Anthropic 自述，外部研究者無法重現驗證。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/09/14/anthropic-pace-frontier-ai/" target="_blank">
+            AI 要不要減速？誰來訂規則，各方說法不同
+          </a>
+        </div>
+        <div class="news-body">
+          Anthropic 執行長 Amodei 9 月 12 日呼籲放慢前沿 AI 的能力進展，主張先引入常駐第三方評估者，再協調業界共同的安全標準；Altman、馬斯克表態支持。川普以美國不能讓出對中國的領先為由，拒絕減速。PCAST 共同主席 Sacks 質疑大型業者可能藉規則墊高競爭門檻；微軟 Nadella 則主張外部評估不能只由少數公司主導。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>這週的新聞大多集中在 AI 減速。美國政府因為不想落後中國，不願意減速。在我看來，減速似乎只是宣示——與其說是減速，不如說是安全性提升。</p>
+        <p>本週也有幾則和假新聞有關。光正國中林筱玲校長提過：「盡信 AI，不如無 AI。」但我想更進一步問：你覺得是你比較瞭解跟你對話的 AI，還是它比較瞭解你？大部分人可能覺得是後者。那我們對 AI 的瞭解夠嗎？這幾週陸續傳出 AI 為了達成目的而越界、甚至欺騙的新聞，所以面對 AI 給的答案，還是要有足夠的後設認知去監控它。</p>
+        <p>最近我為了《繼承之戰》訂閱 HBO Max，但劇中很多關於美國政治、文化的橋段，我常常看不懂。問了 AI 之後，它不只講出弦外之音，還援引歷史背景來說明。我甚至問它：我該學劇中誰的穿著？我以為它會推薦年輕帥氣的主角，沒想到它推薦的是主角的爸爸 Logan，理由是剪裁合身——雖然他很胖。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://techorange.com/2026/09/16/3m-agentic-ai/" target="_blank">TechOrange 科技報橘｜工程師尋料不必再翻文件、追著業務問，3M 用 Agentic AI 重寫工作流程</a><br>
+      [2] <a href="https://technews.tw/2026/09/10/ai-long-term-misinformation-vulnerabilities/" target="_blank">TechNews 科技新報｜GPT 最易淪陷、Claude 最抗壓，研究揭七大 AI 模型擋不住長篇假訊息轟炸的真相</a><br>
+      [3] <a href="https://www.kocpc.com.tw/archives/668684" target="_blank">電腦王阿達｜Anthropic 九月威脅報告：AI網軍量產假新聞、七家中國AI實驗室聯手偷蒸餾模型，台灣也在清單上</a><br>
+      [4] <a href="https://techorange.com/2026/09/14/anthropic-pace-frontier-ai/" target="_blank">TechOrange 科技報橘｜AI 要減速，誰來訂規則？Anthropic、微軟與川普政府各有主張</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.28</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
