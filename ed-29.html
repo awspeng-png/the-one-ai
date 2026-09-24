@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/09/24</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/09/24（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">當 AI 替你做完一切，你的同仁還知道為何而做嗎？</div>
+    <div class="hero-sub">六則新聞、一份反思——這週想的是：推動 AI，由上而下與由下而上，差別究竟在哪裡？</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/22/taiwan-ai-usage-rate-rises-33-8-percent-19th-globally/" target="_blank">
+            台灣 AI 使用率升至 33.8%，全球第 19
+          </a>
+        </div>
+        <div class="news-body">
+          微軟 AI 經濟研究院最新報告：今年第 2 季，台灣 15–64 歲人口的生成式 AI 使用率是 33.8%，比上一季增加 2 個百分點，排名升到第 19，高於美國（33%）和德國。全球平均只有 18.8%，147 個經濟體中只有 31 個超過 30%。第一名是阿聯（73.3%），新加坡（64.3%）第二。報告也指出，全球南北的差距從 12.1 擴大到 12.6 個百分點。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/18/typesafe-ai-introduces-system-one-models-and-jev/" target="_blank">
+            ChatGPT 推手另起爐灶：只做「快思」的新模型 Jev
+          </a>
+        </div>
+        <div class="news-body">
+          Diogo Almeida 曾參與開發 ChatGPT 的關鍵技術 RLHF，他創立的 TypeSafe AI 推出新模型 Jev。Jev 不生成文字，專門做快速、結構化的決策。官方說法是反應比大型語言模型快 40–200 倍，成本比頂尖模型最多低 238 倍，並宣稱不會產生幻覺。模型類別的名稱取自康納曼《快思慢想》的「系統一」，也就是大腦裡快速直覺的那一半。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/23/qualcomm-snapdragon-summit-2026/" target="_blank">
+            高通阿蒙：從「你操作手機」到「Agent 替你行動」
+          </a>
+        </div>
+        <div class="news-body">
+          高通執行長阿蒙在 Snapdragon 高峰會上說，科技正從 App 時代走向助理時代，再走向 Agent 時代：過去由使用者開啟 App、一步步操作，未來由 AI 理解意圖和情境後代替使用者行動。他認為 Agent 要落地有兩個關鍵，一是「信任」，二是「無阻礙」，也就是必須比自己動手更容易，否則沒人會用。他的結論是：最好的 AI 不是要你做更多，而是替你做更多。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/92338/ai-developer-engineer" target="_blank">
+            工程師淪為「按 Enter 作業員」
+          </a>
+        </div>
+        <div class="news-body">
+          一名剛進大企業半個月的工程師在 X 上抱怨：從規格、程式碼到測試全由 AI 生成，團隊每天工作 12、13 小時不停按 Enter 送出程式碼，沒人有餘裕理解或檢查。貼文獲得超過 4 萬個讚，馬斯克也回了一句「不妙」。投資人帕利阿皮蒂亞形容這是把一代技術人才變成「拉霸的老人」，並主張企業導入 AI 需要由上而下帶領（他同時藉機推銷自家公司）。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/09/20/andrew-ng-says-ai-is-bad-for-learning/" target="_blank">
+            吳恩達：「AI 對學習來說很糟糕」
+          </a>
+        </div>
+        <div class="news-body">
+          吳恩達在 Podcast 上坦言，把 AI 當成給答案的機器，作業分數會變高，長期記憶卻變差。他自己用 AI 查技術問題，半年後也全忘了，他稱之為「認知外包」。他主張孩子只能在大人監督下使用 AI，但也承認多數大人沒有時間陪著。《大腦喜歡這樣學》作者歐克莉也提出建議：用 AI 幫自己出練習題，而不是直接要答案。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[6]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/09/23/horowitz-andreessen-academy-education-for-an-age-of-infinite-doing/" target="_blank">
+            a16z 砸 3,500 萬美元辦「另類學院」
+          </a>
+        </div>
+        <div class="news-body">
+          創投公司 a16z 投資 3,500 萬美元成立 Horowitz Andreessen Academy，招收 16–22 歲學生。學生最多 80% 的時間做專題實作，學校不要求教師具備傳統教學資格，教學方式受蒙特梭利啟發。首屆一年期課程 2027 年秋季開課、免學費；完整兩年制的學費將比照頂尖私立大學。這所學院沒有大學認證。布朗大學經濟學家 Friedman 提醒，長期辦學紀錄和資深教師的價值同樣不能忽視。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>本週讓我感興趣的，無疑是第 6 則 a16z 創辦的另類學院，因為它顛覆了傳統對學校教育的想像。</p>
+        <p>身為校長，如果我們把 AI 推動的方向分為由上而下與由下而上：由上而下偏重領導者積極規畫、改善流程，帶動組織轉型；由下而上則是領導者鼓勵更多人使用 AI，進而造成組織的改變。由上而下的規畫是領導者可以想像的，由下而上的樣貌則可能出乎領導者的預期。</p>
+        <p>a16z 讓我感受到由下而上的學習：學習者自己長出系統，也會有很強烈的學習動機。而商周執行長郭奕伶主張積極改善流程，則讓我感受到由上而下的力道。</p>
+        <p>但第 4 則的工程師，在接受上級指令時只會按 Enter，卻不知為何而做，就會失去學習和思考的能力。因此，由上而下更要讓大家知道這麼做的意義。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/09/22/taiwan-ai-usage-rate-rises-33-8-percent-19th-globally/" target="_blank">TechNews 科技新報｜台灣 AI 使用率升至 33.8%，躍居全球第 19 名</a><br>
+      [2] <a href="https://technews.tw/2026/09/18/typesafe-ai-introduces-system-one-models-and-jev/" target="_blank">TechNews 科技新報｜OpenAI 前研究員打造新模型 Jev，反應快、成本極低顛覆傳統 LLM</a><br>
+      [3] <a href="https://technews.tw/2026/09/23/qualcomm-snapdragon-summit-2026/" target="_blank">TechNews 科技新報｜AI 成為新使用介面！高通阿蒙揭 Agent 落地化「兩大關鍵」</a><br>
+      [4] <a href="https://www.bnext.com.tw/article/92338/ai-developer-engineer" target="_blank">數位時代｜工程師淪為「按Enter作業員」？每天工作13小時只為餵AI程式碼，馬斯克也回「不妙」</a><br>
+      [5] <a href="https://technews.tw/2026/09/20/andrew-ng-says-ai-is-bad-for-learning/" target="_blank">TechNews 科技新報（遠見雜誌授權）｜「AI 對學習來說很糟糕！」吳恩達談育兒與職場：用 AI「出題」比直接要答案更重要</a><br>
+      [6] <a href="https://techorange.com/2026/09/23/horowitz-andreessen-academy-education-for-an-age-of-infinite-doing/" target="_blank">TechOrange 科技報橘｜砸 3,500 萬美元辦學：a16z 打造矽谷「另類學院」，首屆免學費挑戰名校與 YC 模式？</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.29</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
