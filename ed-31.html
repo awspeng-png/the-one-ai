@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/10/08</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/10/08（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">成果報告交給 AI 寫得出來，那它原本要解決的是什麼問題？</div>
+    <div class="hero-sub">五則新聞、一份反思——當報告能被 AI 生成，也許該先問它為何存在。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/42570-openai-chatgpt-text-watermark-eu-image-ads" target="_blank">
+            OpenAI 為文字加隱形浮水印，自承「有重大限制」
+          </a>
+        </div>
+        <div class="news-body">
+          為符合歐盟 AI 法案，OpenAI 10 月 5 日宣布未來數週在歐盟為 ChatGPT 與 Codex 的文字輸出加上隱形浮水印 textGrain，台灣使用者這階段不在預設範圍內。OpenAI 坦言技術仍有重大限制：一段 400 token 的英文未經編輯時偵測率約 92%，以同義詞換掉一成字詞就降到 66%，換掉兩成五只剩 17%。偵測工具目前只開放給審核通過的研究者；OpenAI 也提醒，測不到浮水印，並不代表那段文字是人寫的。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/06/us-university-professors-clever-strategies-hidden-instructions-assignments-catch-ai-cheating/" target="_blank">
+            美國教授在作業裡藏指令，揪出 AI 作弊
+          </a>
+        </div>
+        <div class="news-body">
+          法新社報導，AI 偵測工具常把學生親手寫的作業誤判為 AI 生成。威斯康辛大學麥迪遜分校生物學教授鮑斯提安曾在作業中藏一行指令，要 AI 在第三段寫出「橘色」，350 名學生中抓到 60 人；但現在多數模型會忽略這類指令，招數已經失效。他坦言低年級課程幾乎放棄傳統書面作業，改搭配口試。耶魯、康乃爾等校已禁止或不鼓勵以偵測工具作為指控作弊的主要證據。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://techorange.com/2026/10/05/employees-are-trusting-ai/" target="_blank">
+            78% 員工自行使用未核准的 AI：「影子 AI」的治理課題
+          </a>
+        </div>
+        <div class="news-body">
+          雲端軟體經銷平台 Pax8 研究發現，約 78% 員工使用雇主未核准的 AI 工具，稱為「影子 AI」；其調查也顯示 90% 美國中小企業已導入 AI，卻只有 23% 訂有書面使用政策。報導舉例，美國一家銀行員工為求快，把客戶姓名與社會安全號碼輸入未核准的 AI，銀行因此須向證管會申報，整起事件沒有任何入侵，起因只是一條工作捷徑。文章主張不是禁止，而是比照資安分層授權，涉及敏感資料的決策保留人工判斷。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/92446/ikea-ai-billie-8500-call-center-reskilling" target="_blank">
+            AI 接走 47% 客服諮詢，IKEA 一個都沒裁（觀點）
+          </a>
+        </div>
+        <div class="news-body">
+          IKEA 2021 年導入 AI 客服 Billie，最初兩年在無人介入下解決 47% 的查詢，約 320 萬次，現已能處理 74%。但 IKEA 關注的是「AI 解決不了的那 53%」，重新培訓 8,500 名客服成為居家空間規劃專家。轉任的遠距銷售部門 2025 會計年度營收達 12.5 億歐元，客戶滿意度從 60% 升到 89%。一位轉任員工形容，AI 能照條款回答，卻接不住需要臨場判斷的情況。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/07/ai-reshapes-human-conversation-social-interaction/" target="_blank">
+            不知不覺滿口「AI 腔」：聊天機器人正在改寫人的說話方式
+          </a>
+        </div>
+        <div class="news-body">
+          創投合夥人 Sara Wimmercranz 在一次會議開場脫口說出「這不只是一場晨會，而是一次重置」，事後才驚覺自己學的是聊天機器人慣用的對比句型。報導指出，越來越多人在會議、群組甚至閒聊中模仿 AI 的表達結構。MIT 心理學家 Sherry Turkle 在新書《Artificial Intimacy》中認為，聊天機器人給的只是假性的同理；長期依賴隨傳隨到、百依百順的 AI，可能讓人在人際關係與自我判斷上逐漸「去技能化」。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>本週讓我印象最深的，就是Ikea導入AI客服，解決了47%的問題，而節省後的人力，並沒有裁員處理，而是用來提升尚未用AI可以解決的53%的問題上，這也讓我想到了，學校的例行業務工作，例如：青春專案成果、國防教育成果、品德教育成果等等，我自己以前在當組長的時候，最討厭花這些時間整理這些資料，似乎只要有就好，但做這些的意義在哪，真的搞不清楚，不如通通交給AI，產生結果後，就送出給上級機關存查；然後，把省下的時間，好好思考一下，到底不得不做的事情，是要用來解決什麼問題，而現在的做法，真的解決了嗎？</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://www.inside.com.tw/article/42570-openai-chatgpt-text-watermark-eu-image-ads" target="_blank">INSIDE｜ChatGPT 生圖視覺廣告美國先測！OpenAI 同日宣布歐盟文字加隱形浮水印、Codex 也納入</a><br>
+      [2] <a href="https://technews.tw/2026/10/06/us-university-professors-clever-strategies-hidden-instructions-assignments-catch-ai-cheating/" target="_blank">TechNews 科技新報（中央社）｜作業暗藏指令揪 AI 作弊，美大學教授各出奇招</a><br>
+      [3] <a href="https://techorange.com/2026/10/05/employees-are-trusting-ai/" target="_blank">TechOrange 科技報橘｜【用資安思維做 AI 治理】78% 員工自行使用未核准 AI，企業可比照資安管控分層授權</a><br>
+      [4] <a href="https://www.bnext.com.tw/article/92446/ikea-ai-billie-8500-call-center-reskilling" target="_blank">數位時代｜AI客服兩年接掉47%諮詢，IKEA為何一個都沒裁？8500名客服轉做設計顧問，撐起12.5億歐元營收</a><br>
+      [5] <a href="https://technews.tw/2026/10/07/ai-reshapes-human-conversation-social-interaction/" target="_blank">TechNews 科技新報｜不知不覺滿口「AI 腔」？聊天機器人正悄悄改寫人類的表達方式</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.31</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
