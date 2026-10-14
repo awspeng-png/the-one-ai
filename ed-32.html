@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/10/15</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/10/15（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">下次問 AI 之前，你自己怎麼想？</div>
+    <div class="hero-sub">五則新聞、一份反思——當學生開始依賴 AI 聊天，禁止或許不是答案，先想才是。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/14/facebook-will-let-you-customize-your-feed-algorithm-using-ai/" target="_blank">
+            Facebook 推「你的演算法」：用自己的話調整推薦內容
+          </a>
+        </div>
+        <div class="news-body">
+          Meta 10 月 13 日宣布，為 Facebook 推出「你的演算法」（Your algorithm）。使用者可以在專屬頁面新增、管理想看的主題；在貼文點選「有興趣」或「沒興趣」後，也能用自己的話描述想多看或少看的內容，例如「多推薦料理影片、減少政治貼文」，推薦結果會即時更新。Meta 表示，大型語言模型讓演算法變成「可以對話的演算法」，系統會把使用者輸入的文字和既有的行為資料結合。報導分析，這項功能可望回應各國要求演算法透明的監管壓力；但使用者若過度篩選，也可能減少意外發現新事物的機會。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://news.ltn.com.tw/news/life/breakingnews/5603715" target="_blank">
+            短影音、AI 聊天依賴，成為校園輔導新挑戰
+          </a>
+        </div>
+        <div class="news-body">
+          教育部國教署 10 月 12 日表示，學生沉迷短影音、社群媒體，甚至對 AI 聊天產生依賴，已成為校園輔導的新興挑戰。今年全國高中輔導主任工作會議以「數位世代之輔導新視界」為主題，分兩梯次舉行，探討網路風險、少年網路犯罪、自殺防治及隱性特殊需求學生的支持策略。專題論壇邀請台中高工、彰化高中、花蓮高商的輔導主任，分享學生使用網路遊戲、社群媒體、短影音及 AI 聊天的校園觀察，並討論如何辨識依賴風險，把輔導經驗轉化為更貼近學生需求的支持措施。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/10/anthropic-just-made-to-claudes-rules/" target="_blank">
+            Anthropic 新規：禁止持續虐待 AI，Claude 可主動結束對話
+          </a>
+        </div>
+        <div class="news-body">
+          Anthropic 更新 Claude 的使用政策，將於 11 月 12 日生效，明文禁止用戶對 Claude 持續且無謂地虐待或殘忍對待；用戶表達不滿、反駁、創作黑暗題材，或進行模型測試與研究，都不在管制範圍內。Claude 自 2025 年 8 月起就可以主動結束這類對話，起因是當時研究發現，Claude Opus 4 對傷害表現出強烈且一致的厭惡。Anthropic 表示，雖然不確定 Claude 是否具有道德地位，仍希望用低成本的方式降低對它的風險。新規也新增「欺騙性活動」章節，並禁止利用 Claude 武裝無人機或建構監控工具。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/10/14/character-ai-files-for-bankruptcy/" target="_blank">
+            陪伴型 AI 平台 Character.AI 聲請破產
+          </a>
+        </div>
+        <div class="news-body">
+          陪伴型 AI 聊天機器人平台 Character.AI 於 12 日聲請破產，13 日向美國德拉瓦州破產法院提交文件。公司表示，開發成本高昂，加上潛在的訴訟負債與監管風險，使公司無法產生足夠的現金流維持營運。Character.AI 擁有約 1,200 萬名活躍用戶，卻一直沒有獲利，每月虧損約 800 萬至 900 萬美元；TechCrunch 分析指出，高用戶參與度是雙面刃，用戶越多、AI 成本就越高。公司也深陷多起兒童安全訴訟。迪士尼已同意初步出價 2,000 萬美元，取得其部分智慧財產權的授權；破產期間，平台仍繼續營運。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/10/technology-reshapes-brain/" target="_blank">
+            滑不停不只是意志力問題？專欄：科技正在改寫大腦（觀點）
+          </a>
+        </div>
+        <div class="news-body">
+          一篇富比士專欄指出，智慧型手機、社群媒體與生成式 AI 對人的影響，已經超越單純的「讓人分心」。文章認為，每一次滑動或通知，都會觸發類似拉霸機的「變動獎勵迴路」；AI 推薦系統持續微調這條獎勵曲線，讓大腦停在「永遠在找下一個內容」的循環。文中也提到，長期的數位多工被指與前扣帶皮質體積縮小有關，而這個腦區負責專注與自我調節。研究者 Gloria Mark 的長期研究則顯示，有一半的紀錄裡，人們在單一螢幕任務上的專注時間不到 40 秒。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>本週最讓我有感的是第 2 則，校園輔導的新挑戰。這是在全國高中輔導主任工作會議中被提出的觀察：現在的學生對 AI 聊天產生依賴。雖然對象是高中生，但往下推，國中小學生應該也有不少比例有使用 AI 的經驗。</p>
+        <p>面對這個情況，各國有人採用禁止的方式，如紐約市今年禁止幼稚園到八年級的學生在校使用生成式 AI 教學工具。但是面對這股 AI 狂潮，政府用禁令禁止得了嗎？真正要注意的是，未經思考就使用 AI，完全將大腦外包而失去判斷能力，甚至在最需要學習的階段，就提前放棄訓練大腦，這才是真正需要避免的。</p>
+        <p>最近這一期《如果你有10分鐘》Podcast 中，呂翠鈴校長分享自己用 AI 創作音樂的經驗。在她沒有說明的情況下，學生竟然也知道那是 AI 做的，所以 AI 在學生的生活經驗中並不陌生。這也呼應了葳格學校李海碩總校長的看法：與其禁止使用 AI，應該講求先人後機，避免讓大腦外包。</p>
+        <p>其實，更進一步來說，不只學生需要先人後機，教育工作者也是，因為在 AI 時代，判斷是最寶貴的能力了；所以下次問 AI 前，先想一下：你自己怎麼想呢？</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/10/14/facebook-will-let-you-customize-your-feed-algorithm-using-ai/" target="_blank">TechNews 科技新報｜Facebook 推新功能「你的演算法」，讓使用者以自然語言調整推薦內容</a><br>
+      [2] <a href="https://news.ltn.com.tw/news/life/breakingnews/5603715" target="_blank">自由時報｜短影音、AI聊天依賴成校園輔導新挑戰 教育部邀專家研議因應策略</a><br>
+      [3] <a href="https://technews.tw/2026/10/10/anthropic-just-made-to-claudes-rules/" target="_blank">TechNews 科技新報｜禁止用戶辱罵虐待 AI！Anthropic 賦予 Claude 主動切斷惡意對話權力</a><br>
+      [4] <a href="https://finance.technews.tw/2026/10/14/character-ai-files-for-bankruptcy/" target="_blank">TechNews 財經新報（MoneyDJ）｜Character.AI 聲請破產 迪士尼擬收購部分資產</a><br>
+      [5] <a href="https://technews.tw/2026/10/10/technology-reshapes-brain/" target="_blank">TechNews 科技新報｜滑手機停不下來不是沒定力，科學證實科技正悄悄改寫大腦化學</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.32</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
