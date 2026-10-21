@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/10/22</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/10/22（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 幫你做出來了，你也跟著學會了嗎？</div>
+    <div class="hero-sub">六則新聞、一份反思——AI 代勞得越多，越要分清楚哪些是成果、哪些是能力。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/20/openfun/" target="_blank">
+            政府公開資料 AI 讀得懂：「歐噴資料庫」上線，年底前免費
+          </a>
+        </div>
+        <div class="news-body">
+          g0v 長期參與者王向榮創立的歐噴有限公司，10 月 1 日上線「歐噴資料庫」，把散落在數十個政府機關網站、格式不一的 3,400 多份公開資料，整理成 AI Agent 能直接查詢的結構，涵蓋政治、土地、企業、金融、社會經濟五大領域。每份資料附上來源、欄位定義與「給 AI 的說明書」，查得到會附原始來源，查不到就直說，不會捏造。使用時須搭配 Claude Code、Codex、Gemini CLI 等代理式 AI 工具；以 Google 帳號註冊每天可查 10 分鐘，完成手機認證則不限時，2026 年底前免費。王向榮形容，政府多半提供「肉絲炒麵」這類成品，而不是可以再利用的原料。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://www.inside.com.tw/article/42687-iphone-ios-26-call-screening-ai-voice-unknown-callers-delivery-drivers-missed-calls" target="_blank">
+            iPhone 讓 AI 先接陌生來電：擋掉騷擾，也可能擋掉正事
+          </a>
+        </div>
+        <div class="news-body">
+          iOS 26 電話 App 的「通話篩選」可讓 AI 語音先接聽陌生號碼，詢問來電者姓名與事由，回答即時轉成文字，再由使用者決定接或不接；這項功能預設關閉。美聯社的使用教學提醒，篩選不一定順利：不少外送員聽到語音後直接掛斷，預期中的修繕師傅也可能以為是答錄機而沒留言。台灣社群近日也有討論，擔心物流、訂位提醒或醫院通知因此打不進來。報導指出，這項設計把「確認對方是誰」的成本，從接電話的人轉移到打電話的人身上，建議在等外送、修繕或醫院通知時暫時關閉。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://www.kocpc.com.tw/archives/672392" target="_blank">
+            AI 假扮阿公阿嬤接詐騙電話，累計拖住騙子 17 年
+          </a>
+        </div>
+        <div class="news-body">
+          澳洲新創 Apate.ai 部署大批 AI「假受害者」，專門接詐騙電話、回覆詐騙簡訊、潛入詐騙群組，扮演友善、記性不太好的長輩，把騙子拖住，讓他們沒空去騙真人。截至 2026 年 10 月，累計與騙子進行 250 萬次對話，換算浪費對方 17 年的時間。騙子在對話中交出的銀行帳號、加密貨幣錢包地址與釣魚網站，會整理交給銀行、電信商與政府機關封鎖。這個點子源自創辦人 Dali Kaafar 教授在家庭烤肉會上陪一通詐騙電話周旋 44 分鐘，後來成為麥格里大學的研究專案，2024 年拆分成立公司。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/18/ai-raised-patent-drafting-scores-but-redlining-gains-varied-by-experience/" target="_blank">
+            用 AI 做得更好，不等於變得更會：MIT 研究示警「能力幻覺」
+          </a>
+        </div>
+        <div class="news-body">
+          MIT 經濟學者 David Autor 讓 11 家事務所的 133 名美國專利律師參與 3 個月實驗，約三分之二隨機使用 AI 撰寫助理。使用 AI 者的草稿評分明顯較高，90 天後提升 0.38 個標準差；但在不准用 AI 的修改測驗中，優勢集中在執業 7 年以上的資深律師（高出 0.45 個標準差），初階律師平均沒有進步。Autor 形容 AI 是「表現平衡器」，卻可能是「技能去平衡器」，並提醒企業若為效率削減初階員工的訓練機會，可能切斷培養未來資深人才的管道。本研究為尚未經同儕審查的工作論文。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/18/ai-literacy-teachers/" target="_blank">
+            蘇格蘭高中設專責「AI 素養教師」：不假裝 AI 不存在，也不鼓勵一味使用
+          </a>
+        </div>
+        <div class="news-body">
+          蘇格蘭米恩斯城堡高中（Mearns Castle High School）設立專責 AI 素養教師，被認為是英國首例，由前生物教師 Jamie Laycock 出任。他強調學校不能假裝 AI 不存在，重點也不是鼓勵一味使用，而是教學生保持批判思考、精準提問並主動查證，並提醒 AI 常會過度稱讚、附和使用者。課程涵蓋深偽辨識、AI 幻覺，以及把聊天機器人當朋友或專家的「擬人化」風險；S1、S2 學生接受基礎教學，高年級在公民與個人教育課深化倫理議題。校長 Stuart Clark 表示，學校必須避免重演社群媒體時代讓年輕人在不了解後果下就先使用的經驗。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[6]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/17/cognitive-boundaries-ai-human-consciousness/" target="_blank">
+            AI 表現得再像人，人們仍不認為它有「意識」
+          </a>
+        </div>
+        <div class="news-body">
+          德國慕尼黑大學（LMU）團隊在《Cognition》期刊發表研究，讓近 1,100 名受試者閱讀情境相同、主角分別為人類或 AI 的故事，評估主角的「感知／覺察」與「意識」。在感知層面，人與 AI 的界線幾乎消失，反應越靈敏就被評為越能覺察；但在意識層面，即使反應最靈敏的 AI，得分仍低於反應最遲鈍的人類。研究者指出，人們用「困惑」「貼心」等詞形容 AI，只是缺乏更好的詞彙，不代表相信機器有心智；也提醒科技業與媒體避免過度擬人化的包裝。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>本週對我來說，最有意思的是歐噴資料庫；根據它們網站的介紹：我們的核心是歐噴資料庫—把散落在各機關的台灣公共資料，整理成 AI 讀得懂的形式，讓任何人都能用問的，就問到答案。它有一個例子，很吸引我，如果你問AI，新北市有幾台夾娃娃機，AI就用推估的，誤差很大，但是如果AI去蒐尋這個資料庫，它就會去讀新北市的公司登記中提到的娃娃機，得出來的結果就更精準。</p>
+        <p>我認為自己常用的AI，如果不能基於事實提供想法，那都會讓人偏離現實太遠；所以我依照它提到的三步驟把歐噴資料庫連結到我常用的AI；我問它的第一個問題，就是請分析學校學區里的人數以及人口結構，驚訝地發現有一個里部分是學區，14歲以下的人數，卻遠高於其他全里是學校學區的人數，針對這個去理解新生的分布，比自己單純觀察、感覺或詢問的結果更準確，也更能對學區人口的圖像有清楚的認知。</p>
+        <p>這個資料庫到年底，只要註冊都可以免費使用；以 Google 帳號註冊，每天能查詢 10 分鐘；完成手機認證後不限時查詢。推薦給大家玩玩看。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/10/20/openfun/" target="_blank">TechNews 科技新報｜政府公開資料 AI 讀得懂，「歐噴資料庫」年底前免費使用</a><br>
+      [2] <a href="https://www.inside.com.tw/article/42687-iphone-ios-26-call-screening-ai-voice-unknown-callers-delivery-drivers-missed-calls" target="_blank">INSIDE｜iPhone 通話篩選讓 AI 先接電話！陌生來電被擋、外送與客服聯絡不上成困擾</a><br>
+      [3] <a href="https://www.kocpc.com.tw/archives/672392" target="_blank">電腦王阿達｜騙子打來遇到 AI 阿公阿嬤：Apate.ai 反釣詐騙集團，累計拖掉他們 17 年</a><br>
+      [4] <a href="https://technews.tw/2026/10/18/ai-raised-patent-drafting-scores-but-redlining-gains-varied-by-experience/" target="_blank">TechNews 科技新報｜年輕專業人士要小心「能力幻覺」，MIT 研究：用 AI 不等於能力成長</a><br>
+      [5] <a href="https://technews.tw/2026/10/18/ai-literacy-teachers/" target="_blank">TechNews 科技新報｜拆解 Deepfake 與 AI 幻覺，蘇格蘭高中設立全英首位「AI 素養專責教師」</a><br>
+      [6] <a href="https://technews.tw/2026/10/17/cognitive-boundaries-ai-human-consciousness/" target="_blank">TechNews 科技新報｜即使行為與人類無異，科學證實人們仍認為 AI 缺乏「真正意識」</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.33</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
