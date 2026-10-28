@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/10/29</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/10/29（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">AI 讓你更快完成了工作，但你完成的工作是什麼？</div>
+    <div class="hero-sub">五則新聞、一份反思——AI 接手的執行越多，越要看清楚自己真正在做的是哪一部分。</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/26/former-microsoft-vp-highly-efficient-ai-usage-workplace/" target="_blank">
+            別只拿 AI 代寫：微軟前人資副總的三種用法，與一條不碰的界線
+          </a>
+        </div>
+        <div class="news-body">
+          微軟前人資副總裁 Chris Williams 分享職場 AI 用法。第一是當「第二意見」：請 AI 點出計畫中的遺漏、刻意提出反駁觀點，在正式討論前多一個視角。第二是摘要冗長內容，先掌握重點再回頭對照原文，他強調摘要不等於完整答案。第三是整理歸檔：他曾請 AI 檢視換電腦前要轉移的資料，發現多年累積的檔案大多不必保留，因此體會到 AI 在「刪除」與「整理」上的表現，往往勝過「創作」。他也畫下明確界線：絕不讓 AI 自動寄出郵件、簡訊或正式文件。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://www.bnext.com.tw/article/92824/notebooklm-gemini-notebook-new-study-features-tutorial" target="_blank">
+            NotebookLM 新增課堂錄音與學習總覽：從蒐集到複習都能交給它
+          </a>
+        </div>
+        <div class="news-body">
+          Google 的 AI 筆記工具 Gemini Notebook（原 NotebookLM）新增四項學習功能：以近 100 種語言即時語音對話；手機錄音最長 1 小時，自動轉成逐字稿並加入來源；「互動式學習總覽」把摘要、圖表、測驗與學習卡整合成一份報告；以及約 60 秒的直式影片摘要。《數位時代》實測繁體中文可正常使用，但系統只保存逐字稿、不保留原始音檔，Workspace 教育版帳戶目前也不支援公開分享。Google 提醒，錄到他人聲音應先取得同意，AI 生成的內容仍須核對原始來源。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/28/shi-stan-opc/" target="_blank">
+            施振榮成立一人公司，聘兩名 AI 員工，幾天寫完一本書
+          </a>
+        </div>
+        <div class="news-body">
+          宏碁集團創辦人施振榮在 AI 物聯網大聯盟年會表示，退休 20 多年後「創業細胞」再次發動，成立一人公司（OPC），聘用兩名 AI 員工：以母親對他的暱稱命名的數位分身「阿贏」，以及負責淬鍊、萃取他的智慧，並與現實世界回饋相互激盪的「觀復」。他說過去寫一本書要半年以上，現在幾天就能完成；新書中文版完成後，英、日文版同步完成，紙本與電子書全球同時上架。他也認為 Artificial Intelligence 譯為「人工智慧」其實是誤譯，現在的目標是讓 AI 真正擁有智慧。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://www.technice.com.tw/work-place/329138/" target="_blank">
+            77% 主管：2027 年最大挑戰是技能落差，主管要從監督者變教練
+          </a>
+        </div>
+        <div class="news-body">
+          全球組織顧問公司 Korn Ferry 年度《人才趨勢報告》調查 75 個以上國家、逾 1,300 名人才管理與高階主管：77% 預期 2027 年技能落差的挑戰將超越人才短缺，78% 認為現有員工的能力仍不足以因應未來工作模式。最受重視的技能依序為適應能力、批判性思考與協作；63% 預期 AI 代理人將接手例行工作，65% 預期工作將以技能而非職務來安排。91% 預期教練式引導與人際互動能力更加重要，三分之二預期主管將花更多時間協助員工因應變革，而非監督日常工作。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[5]</div>
+        <div class="news-title">
+          <a href="https://technews.tw/2026/10/27/nintendos-shigeru-miyamoto-weighs-in-on-ai/" target="_blank">
+            宮本茂：AI 接手「做工」，人才有機會想清楚什麼是創作
+          </a>
+        </div>
+        <div class="news-body">
+          任天堂代表董事宮本茂獲頒日本文化勳章後，對生成式 AI 表達正面看法。他回顧自己經歷從打字機到文書處理器的轉變：技術接管部分製作流程後，版面感與整體判斷這類真正的個人能力，反而更清楚浮現。他區分「創作」與「做工」：建立整體架構是創作，補齊細節、修飾完成屬於執行；而執行本身很有成就感，容易讓人誤以為流程做完就等於好作品。他認為 AI 承擔越多執行，人越有機會重新思考什麼才重要；缺少個人意圖、只是複製貼上的作品難以流傳，即使 AI 幾乎包辦一切，人仍有不可或缺的角色。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思</div>
+      <div class="reflection-body">
+        <p>本週印象最深的，是任天堂宮本茂提到的「創作」與「做工」：先立整體架構是創作，補齊細節是做工。</p>
+        <p>我的第一個想法是：創作階段應該「人大於機」，人的投入要多於機器；做工階段則可以「機大於人」，讓機器補足細節，節省人的時間。</p>
+        <p>第二個想法是：校長有一個概念，交給主任、組長寫成計畫、去執行，那個交辦的情境，很像寫 prompt 交給 AI。乍看之下，如果 AI 能寫計畫、處理一定程度的行政作業，中階主管的功能似乎就被取代了。某種程度也許是，但想法不一定只來自校長——主任也可能有想法，需要校長出面支持，再由組長、老師推動。創作與做工，不是按職位分的，而是看有沒有想法。</p>
+        <p>有想法，就有人的價值，AI 取代不了；沒有想法，AI 就會先幫你想、給你建議、再幫你執行。這時你完成的只是事情，但完成的是什麼事情，恐怕已經迷失了。</p>
+        <p>所以，自己的想法很重要。千萬別用自動化思考去回應事情，也別一路按「下一步」去執行很多事情。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://technews.tw/2026/10/26/former-microsoft-vp-highly-efficient-ai-usage-workplace/" target="_blank">TechNews 科技新報｜別再只拿 AI 當代寫工具，微軟前高層親授三大職場 AI 高效用法</a><br>
+      [2] <a href="https://www.bnext.com.tw/article/92824/notebooklm-gemini-notebook-new-study-features-tutorial" target="_blank">數位時代｜NotebookLM新增4大功能！手機錄音轉逐字稿、語音對話怎麼用？</a><br>
+      [3] <a href="https://technews.tw/2026/10/28/shi-stan-opc/" target="_blank">TechNews 科技新報｜施振榮創業細胞再發動，設一人公司聘兩名 AI 員工出書</a><br>
+      [4] <a href="https://www.technice.com.tw/work-place/329138/" target="_blank">科技島｜AI改寫人才需求 77%主管：2027年技能落差將成最大挑戰</a><br>
+      [5] <a href="https://technews.tw/2026/10/27/nintendos-shigeru-miyamoto-weighs-in-on-ai/" target="_blank">TechNews 科技新報｜宮本茂正面看待生成式 AI：代勞重複工作，讓創作者回歸構想本身</a><br>
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.34</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
