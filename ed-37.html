@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE ONE AI 週報 — 2026/11/19</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #FAFAF7;
+    color: #2C2C2A;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid #D3D1C7;
+    background: #FAFAF7;
+  }
+
+  /* 報頭 */
+  .masthead {
+    display: table;
+    width: 100%;
+    padding: 18px 28px 14px;
+    border-bottom: 3px solid #A32D2D;
+  }
+  .masthead-title {
+    display: table-cell;
+    vertical-align: bottom;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #A32D2D;
+    letter-spacing: 2px;
+  }
+  .masthead-title a { color: #A32D2D; text-decoration: none; }
+  .masthead-title a:hover { text-decoration: none; }
+  .masthead-right {
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: right;
+  }
+  .masthead-date {
+    font-size: 12px;
+    color: #5F5E5A;
+    letter-spacing: 0.5px;
+  }
+  .masthead-sub {
+    font-size: 11px;
+    color: #888880;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* 主標 */
+  .hero {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .hero-main {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #A32D2D;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 12px;
+    color: #5F5E5A;
+    line-height: 1.7;
+  }
+
+  /* 三欄新聞 */
+  .news-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .news-col {
+    display: table-cell;
+    width: 33.33%;
+    vertical-align: top;
+    padding: 16px 18px 20px;
+    border-right: 1px solid #D3D1C7;
+  }
+  .news-col:last-child { border-right: none; }
+
+  .col-green { background: #EAF3DE; }
+  .col-blue { background: #E6F1FB; }
+  .col-purple { background: #EEEDFE; }
+
+  .col-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid;
+  }
+  .col-green .col-label { color: #27500A; border-color: #639922; }
+  .col-blue .col-label { color: #0C447C; border-color: #185FA5; }
+  .col-purple .col-label { color: #3C3489; border-color: #534AB7; }
+
+  .news-item { margin-bottom: 16px; }
+  .news-item:last-child { margin-bottom: 0; }
+  .news-num {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .col-green .news-num { color: #639922; }
+  .col-blue .news-num { color: #185FA5; }
+  .col-purple .news-num { color: #534AB7; }
+
+  .news-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .news-title a { color: #2C2C2A; text-decoration: none; }
+  .news-title a:hover { color: #A32D2D; text-decoration: underline; }
+
+  .news-body {
+    font-size: 11px;
+    color: #444441;
+    line-height: 1.75;
+  }
+
+  /* 反思實踐區 */
+  .reflection-wrap {
+    padding: 24px 28px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .reflection {
+    border: 1.5px solid #BA7517;
+    border-radius: 4px;
+    padding: 22px 26px 22px 56px;
+    position: relative;
+    background: #FFFEFA;
+  }
+  .reflection::before {
+    content: '💡';
+    position: absolute;
+    left: 18px;
+    top: 20px;
+    font-size: 20px;
+  }
+  .reflection-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .reflection-body {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.9;
+  }
+  .reflection-body p {
+    margin-bottom: 10px;
+  }
+  .reflection-body p:last-child {
+    margin-bottom: 0;
+  }
+  .reflection-subtitle {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #854F0B;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+  }
+  .reflection-subtitle:first-child {
+    margin-top: 0;
+  }
+  .reflection-divider {
+    border: none;
+    border-top: 1px dashed #D9C9A8;
+    margin: 16px 0;
+  }
+
+  /* 頁尾 */
+  .footer {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding: 16px 28px 20px;
+    background: #F5F4EF;
+  }
+  .footer-sources {
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    font-size: 9.5px;
+    color: #9A9890;
+    line-height: 1.8;
+  }
+  .footer-sources a {
+    color: #9A9890;
+    text-decoration: none;
+  }
+  .footer-sources a:hover { text-decoration: underline; }
+
+  .footer-right {
+    display: table-cell;
+    vertical-align: top;
+    text-align: right;
+    width: 25%;
+  }
+  .footer-back {
+    font-size: 10px;
+    color: #9A9890;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-back:hover { color: #A32D2D; }
+  .edition-id {
+    font-size: 9px;
+    color: #A8A6A0;
+    letter-spacing: 0.5px;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: #B0AEA8;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  /* 新聞追蹤 */
+  .tracker {
+    padding: 20px 28px 22px;
+    border-bottom: 1px solid #D3D1C7;
+    background: #F7F5EE;
+  }
+  .tracker-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #A32D2D;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #A32D2D;
+  }
+  .tracker-lead {
+    font-size: 11.5px;
+    color: #444441;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .tracker-lead strong { color: #2C2C2A; }
+  .timeline { display: table; width: 100%; table-layout: fixed; }
+  .tl-row { display: table-row; }
+  .tl-date, .tl-text {
+    display: table-cell;
+    font-size: 10.5px;
+    line-height: 1.7;
+    padding: 3px 0;
+    vertical-align: top;
+  }
+  .tl-date {
+    width: 82px;
+    font-weight: 700;
+    color: #A32D2D;
+    white-space: nowrap;
+  }
+  .tl-text { color: #444441; }
+  .tl-text a { color: #444441; border-bottom: 1px dotted #B0AEA8; }
+  .tracker-next {
+    font-size: 10.5px;
+    color: #5F5E5A;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #D3D1C7;
+  }
+  .tracker-next strong { color: #A32D2D; }
+
+  /* 治理提問 */
+  .question-wrap {
+    padding: 18px 28px 22px;
+    border-bottom: 1px solid #D3D1C7;
+  }
+  .question-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #A32D2D;
+    margin-bottom: 8px;
+  }
+  .question-body {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2C2C2A;
+    line-height: 1.7;
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-24YKBEJBQ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-24YKBEJBQ8');
+</script>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 報頭 -->
+  <div class="masthead">
+    <div class="masthead-title">
+      <a href="index.html">THE ONE AI 週報</a>
+    </div>
+    <div class="masthead-right">
+      <div class="masthead-date">2026/11/19（四）</div>
+      <div class="masthead-sub">AI 驅動轉型治理核心資訊</div>
+    </div>
+  </div>
+
+  <!-- 主標 -->
+  <div class="hero">
+    <div class="hero-main">衝撞，應該發生在什麼時候？</div>
+    <div class="hero-sub">四則新聞、一則追蹤、一份反思——微軟讓學校把 AI 鎖進學習模式、主管比員工更信 AI、波士頓的學校拿掉了老師，紐約和 Google 則還在僵持。當 AI 走進學校，誰在做決定？決定之前，又跟誰談過？</div>
+  </div>
+
+  <!-- 三欄新聞 -->
+  <div class="news-grid">
+
+    <!-- 數位化 -->
+    <div class="news-col col-green">
+      <div class="col-label">數位化｜工具技術更迭</div>
+
+      <div class="news-item">
+        <div class="news-num">[1]</div>
+        <div class="news-title">
+          <a href="https://techcommunity.microsoft.com/blog/educationblog/webinar-study-and-learn-limitslocks-down-copilot-chat/4569599" target="_blank">
+            微軟讓學校把學生的 Copilot「鎖」在學習模式
+          </a>
+        </div>
+        <div class="news-body">
+          微軟為教育版 Copilot Chat 推出由學校資訊管理員控制的「僅限學習模式」。開啟後，學生只能使用「Study and Learn」代理，不能切回一般聊天；這個代理不直接給答案、不替學生寫作業，目的是保留學習中「有益的掙扎」。微軟說，這是應學校強烈要求推出，11 月中旬開始推送，預計 12 月中旬完成。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位優化 -->
+    <div class="news-col col-blue">
+      <div class="col-label">數位優化｜流程組織再造</div>
+
+      <div class="news-item">
+        <div class="news-num">[2]</div>
+        <div class="news-title">
+          <a href="https://finance.technews.tw/2026/11/15/what-tech-leaders-get-wrong-about-ai-restructuring-and-morale" target="_blank">
+            AI 重整組織打擊士氣：18 位科技主管點出最常見的錯誤
+          </a>
+        </div>
+        <div class="news-body">
+          《富比士》科技委員會邀 18 位科技主管，指出推動 AI 重整時最傷士氣的錯誤：要員工親手把自己的工作自動化。如果協助自動化反而丟了飯碗，把專業藏起來就成了理性選擇；把決策推給「AI 逼我們這麼做」，等於放棄領導責任。另一個隱憂是：AI 最擅長接手的例行工作，往往正是新人累積經驗的途徑。
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-num">[3]</div>
+        <div class="news-title">
+          <a href="https://fortune.com/2026/11/16/executives-trust-ai-more-than-gen-z-charter-survey/" target="_blank">
+            主管比員工更信 AI：三分之一主管信 AI 勝過自己的判斷
+          </a>
+        </div>
+        <div class="news-body">
+          《財星》報導一項針對 5,002 名美國白領的調查：約三分之一的主管與高階主管，做工作決策時信 AI 勝過自己的判斷，非主管只有 16.3%；高階主管明知 AI 產出有疑慮仍照用的機率，是員工的 3.3 倍。文章提醒，升遷、預算、組織重整這類決定一旦被有瑕疵的 AI 影響，承擔後果的是沒有發言權的人。
+        </div>
+      </div>
+    </div>
+
+    <!-- 數位轉型 -->
+    <div class="news-col col-purple">
+      <div class="col-label">數位轉型｜文化價值提升</div>
+
+      <div class="news-item">
+        <div class="news-num">[4]</div>
+        <div class="news-title">
+          <a href="https://wgbh.org/news/local/2026-11-16/heres-how-a-typical-day-at-alpha-schools-an-ai-powered-institution-looks-for-students" target="_blank">
+            美國波士頓：一所「沒有老師」的 AI 學校
+          </a>
+        </div>
+        <div class="news-body">
+          AI 驅動的私立學校 Alpha School 今年秋天在波士頓開學，用「引導員」取代教師。學生每天約兩小時在 AI 平台完成學科學習，下午是生活技能工作坊；引導員不需要是學科專家，不改作業，主要工作是激勵和陪伴每個孩子。波士頓教師工會主席對拿掉傳統師生關係表達疑慮。報導中「兩小時學完八小時內容」是校方說法，未提出成果數據。
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 新聞追蹤 -->
+  <div class="tracker">
+    <div class="tracker-label">新聞追蹤｜紐約暫停校園 AI 大事記（第 1 回）</div>
+    <div class="tracker-lead"><strong>一句話看走向：</strong>從「學校自己訂指引」，到「家長和議會要求暫停」，再到「科技公司用產品設計反制」，現在進入「成立聯盟、用制度慢慢想清楚」的階段。</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="tl-date">2023 年</div><div class="tl-text"><a href="https://news.yahoo.com/york-city-schools-lift-ban-115000153.html" target="_blank">紐約公立學校曾封鎖 ChatGPT，同年解禁。</a></div></div>
+      <div class="tl-row"><div class="tl-date">2026/3/24</div><div class="tl-text"><a href="https://www.schools.nyc.gov/home/2026/03/24/new-york-city-public-schools-announces-release-of-ai-guidance-for-educators-and-school-leaders" target="_blank">教育局發布第一版 AI 指引，與包含業界、學者、校長的諮詢委員會合作制定。</a></div></div>
+      <div class="tl-row"><div class="tl-date">4/17</div><div class="tl-text"><a href="https://classsizematters.org/wp-content/uploads/2026/04/Politico.-Mamdani-allies-urge-him-to-issue-moratorium-on-AI-in-schools-4.17.26.pdf" target="_blank">家長、教育工作者集會，批評指引太寬，要求暫停兩年。</a></div></div>
+      <div class="tl-row"><div class="tl-date">6 月</div><div class="tl-text"><a href="https://connecticut.news12.com/nyc-council-members-urge-pause-on-ai-rollout-in-schools-as-backlash-grows" target="_blank">29 位市議員連署，要求立即暫停。</a></div></div>
+      <div class="tl-row"><div class="tl-date">9/2</div><div class="tl-text"><a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat.html" target="_blank">市長宣布學前到八年級暫停使用生成式 AI 一年，影響近 60 萬名學生。</a></div></div>
+      <div class="tl-row"><div class="tl-date">11/3</div><div class="tl-text"><a href="https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/" target="_blank">Google 宣布：學校不開 AI，學生可能連搜尋都不能用。</a></div></div>
+      <div class="tl-row"><div class="tl-date">11 月初</div><div class="tl-text"><a href="https://gothamist.com/news/nyc-schools-standoff-with-google-over-ai-raises-prospect-of-no-search-in-class" target="_blank">紐約市府：全市學校有 130 萬台 Chromebook，約 50 萬台配給學生。</a></div></div>
+      <div class="tl-row"><div class="tl-date">11/11</div><div class="tl-text"><a href="https://www.chalkbeat.org/chicago/2026/11/12/chicago-ai-protest-against-google-removal-in-school-classrooms/" target="_blank">七個城市的家長、學生、教師在 Google 辦公室外抗議。</a></div></div>
+      <div class="tl-row"><div class="tl-date">11/12</div><div class="tl-text"><a href="https://council.nyc.gov/press/2026/11/13/3348/" target="_blank">紐約市議會致函 Google 執行長，要求 11/19 前回答能否提供不含 AI 的學生版搜尋。</a></div></div>
+      <div class="tl-row"><div class="tl-date">11/17</div><div class="tl-text"><a href="https://www.epochtimes.com/b5/26/11/18/n14890502.htm" target="_blank">紐約「學校科技聯盟」成立：70 名成員，12 月首次開會，2027 年 6 月底提出建議。</a></div></div>
+    </div>
+    <div class="tracker-next"><strong>下一步看點｜</strong>11/19 Google 回覆市議會期限｜11/30 回覆參議員 Markey 期限｜12 月聯盟首次開會</div>
+  </div>
+
+  <!-- 反思實踐區 -->
+  <div class="reflection-wrap">
+    <div class="reflection">
+      <div class="reflection-title">本週反思｜衝撞，應該發生在什麼時候？</div>
+      <div class="reflection-body">
+        <p>追了紐約這條新聞兩週，我看到的是一項政策怎麼在多方力量之間被折衝出來。</p>
+        <p>紐約其實不是沒想過配套。3 月，教育局先發布 AI 指引，參與研商的還包括業界、學者和校長。但家長和教育工作者仍不放心，29 位市議員連署要求暫停。9 月，市長以行政決定宣布：學前到八年級學生，暫停使用生成式 AI 一年。</p>
+        <p>真正的衝突，是到執行時才浮上檯面。11 月初，Google 宣布：學校如果不開 AI，學生可能連搜尋都不能用。紐約全市學校有 130 萬台 Chromebook，大家對 Google 的依賴，讓政策卡在落實的那一步。</p>
+        <p>我的觀察是：從指引轉向暫停的過程中，談判桌上少了一方。回應家長與議會壓力的速度，快過了和所有相關方研商的速度。於是，本來該在會議室裡吵的事，變成政策公布後，才在街頭和議會裡吵。</p>
+        <p>回到學校也一樣。一項措施，越早讓相關的人完整參與，衝撞就越能在研商時完成，而不是在決定之後才開始。</p>
+        <p>但我還沒想清楚的是：Google 的設計是全美通用的，就算紐約當初找它來談，它也未必會為一個城市改。當有一方大到可以不上談判桌，學校還能做什麼？紐約目前的答案，是成立 70 人的「學校科技聯盟」，並從採購策略下手。這個答案夠不夠，我想再看下去。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 治理提問 -->
+  <div class="question-wrap">
+    <div class="question-label">本週治理提問</div>
+    <div class="question-body">學校下一個新措施，有哪個利害關係人，是我們預設「他們會配合」，而沒有找來談的？</div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    <div class="footer-sources">
+      <strong>本期參考來源</strong><br>
+      [1] <a href="https://techcommunity.microsoft.com/blog/educationblog/webinar-study-and-learn-limitslocks-down-copilot-chat/4569599" target="_blank">Microsoft Education Blog｜Study and Learn limits / locks down Copilot Chat</a><br>
+      [2] <a href="https://finance.technews.tw/2026/11/15/what-tech-leaders-get-wrong-about-ai-restructuring-and-morale" target="_blank">TechNews 科技新報｜科技主管談 AI 重整組織與士氣</a><br>
+      [3] <a href="https://fortune.com/2026/11/16/executives-trust-ai-more-than-gen-z-charter-survey/" target="_blank">Fortune｜Executives trust AI more than their own judgment</a><br>
+      [4] <a href="https://wgbh.org/news/local/2026-11-16/heres-how-a-typical-day-at-alpha-schools-an-ai-powered-institution-looks-for-students" target="_blank">GBH News｜A typical day at Alpha School, an AI-powered institution</a><br>
+      新聞追蹤各時間點來源，見上方大事記連結。
+      <div class="footer-disclaimer">本週報摘要均附原始來源；選材架構、治理觀點與編輯反思均受著作權保護，轉傳請註明「THE ONE AI 週報」出處。</div>
+    </div>
+    <div class="footer-right">
+      <a class="footer-back" href="index.html">← 所有期數</a>
+      <span class="edition-id">ed.37</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
